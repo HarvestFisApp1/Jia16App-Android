@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/white_round_shape_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/alert_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingLeft="49dp"
+        android:paddingRight="49dp"
+        android:paddingTop="10dp"
+        android:text="为了您的资金安全和使用便捷,请设置手势密码"
+        android:textColor="@color/main_text_color"
+        android:textSize="@dimen/text_size_17" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_devider_height"
+        android:background="@color/devider_color_gray" />
+
+
+    <TextView
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:text="去设置"
+        android:textColor="@color/main_color"
+        android:textSize="@dimen/text_size_17" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_devider_height"
+        android:background="@color/devider_color_gray" />
+
+
+    <TextView
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:text="暂不设置"
+        android:textColor="@color/main_text_color"
+        android:textSize="@dimen/text_size_17" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_devider_height"
+        android:background="@color/devider_color_gray" />
+
+
+    <TextView
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:text="不再提醒"
+        android:textColor="@color/main_text_color"
+        android:textSize="@dimen/text_size_17" />
+</LinearLayout>

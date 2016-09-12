@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/iv_notify_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_notify_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/iv_notify_icon"
+        android:text="卓金服更新"
+        android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/pb_notify"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2.5dp"
+        android:layout_below="@+id/tv_notify_title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_toRightOf="@+id/iv_notify_icon"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progressbar"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_notify_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前进度"
+        android:layout_toRightOf="@+id/iv_notify_icon"
+        android:layout_below="@+id/pb_notify"
+        android:layout_marginLeft="5dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
+
+    defaultConfig {
+        applicationId "com.jia16"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    //设置keystore
+    signingConfigs {
+        debug {
+            storeFile file('key.jks')
+            storePassword 'androidjia16'
+            keyAlias 'jia16'
+            keyPassword 'androidjia16'
+        }
+        release {
+            storeFile file('key.jks')
+            storePassword 'androidjia16'
+            keyAlias 'jia16'
+            keyPassword 'androidjia16'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    //    compile 'com.android.support:appcompat-v7:21.0.1'
+    compile project(path: ':volley')
+    //    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile files('src/main/libs/android-support-v4.jar')
+}

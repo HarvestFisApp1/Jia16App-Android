@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/white_round_shape_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/dialog_head_view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_devider_height"
+        android:background="@color/devider_color_gray" />
+
+    <!--使用账户余额-->
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/submit_btn"
+        style="@style/btn_orange_big"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@+id/textview_forget_pwd"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:text="确认投资" />
+</LinearLayout>
