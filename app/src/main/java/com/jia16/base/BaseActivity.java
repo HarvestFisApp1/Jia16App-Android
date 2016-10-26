@@ -85,6 +85,10 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         sharedPreferences.edit().remove("_csrf").apply();
         sharedPreferences.edit().remove("Cookie").apply();
         sharedPreferences.edit().remove("cookie").apply();
+
+        //shangjing修改
+        sharedPreferences.edit().remove("p2psessionid").apply();
+
         CookieSyncManager.createInstance(this);
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.removeAllCookie();

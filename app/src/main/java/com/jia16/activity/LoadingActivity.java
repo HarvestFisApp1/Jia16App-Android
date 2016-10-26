@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -63,6 +64,21 @@ public class LoadingActivity extends BaseActivity {
             checkUpdate();
         }
 //        initGesture();
+
+
+        //shangjing修改
+        //卓金服H5页面唤醒嘉石榴app获取参数
+        Uri uridata = this.getIntent().getData();
+        if(uridata !=null){
+            String url = Constants.HOME_PAGE + uridata.toString().substring(8);
+            Lg.e("uridata.........",uridata);//jia16://#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN]
+            Lg.e("url......",url);//https://app.jia16.com/#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN
+            //将数据存储到全局变量中
+            BaseApplication.getInstance().urlData = url;
+        }else{
+            BaseApplication.getInstance().urlData = null;
+        }
+
     }
 
     private void checkUpdate() {
@@ -94,7 +110,6 @@ public class LoadingActivity extends BaseActivity {
                             public void onTopClick(AlertDialog dlg) {
 
                             }
-
                             @Override
                             public void onCenterClick(AlertDialog dlg) {
 
@@ -206,4 +221,15 @@ public class LoadingActivity extends BaseActivity {
             super.handleMessage(msg);
         }
     };
+
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Uri uridata = this.getIntent().getData();
+        if(uridata !=null){
+            String url = Constants.HOME_PAGE + uridata.toString().substring(8);
+            BaseApplication.getInstance().urlData = url;
+        }else{
+            BaseApplication.getInstance().urlData = null;
+        }
+    }
 }

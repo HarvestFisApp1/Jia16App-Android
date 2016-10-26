@@ -83,9 +83,9 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initViews();
-        removePwd = getIntent().getBooleanExtra("removePwd", false);
-        changeUser = getIntent().getBooleanExtra("changeUser", false);
-        isSetting = getIntent().getBooleanExtra("isSetting", false);
+        removePwd = getIntent().getBooleanExtra("removePwd", false);//UnlockGesturePasswordActivity传递过来的清除手势密码
+        changeUser = getIntent().getBooleanExtra("changeUser", false);//UnlockGesturePasswordActivity传递过来的使用其他账户登录
+        isSetting = getIntent().getBooleanExtra("isSetting", false);//UnlockGesturePasswordActivity传递过来是否为修改密码
     }
 
 
@@ -254,6 +254,7 @@ public class LoginActivity extends BaseActivity {
                         sharedPreferences.edit().putInt("retry", 5).apply();
                         JSONObject obj = (JSONObject) response;
                         cookie = obj.optString("cookie");
+                        Lg.e("cookie........##",cookie);
                         if (!TextUtils.isEmpty(cookie)) {
                             //TODO HUANGJUN 切换账号的时候 不需要重置手势密码的状态  自动根据缓存判断
 //                            if (removePwd || changeUser) {//忘记密码和切换登录账号
@@ -343,10 +344,20 @@ public class LoginActivity extends BaseActivity {
                     Lg.e("csrf", csrf);
                     sharedPreferences.edit().putString("_csrf", csrf).apply();
                 }
+
+                //shangjing修改
+                if(cookie!=null&&cookie.contains("p2psessionid")){
+                    String[] paras = cookie.split(";");
+                    String p2psessionid = paras[0].split("=")[1];
+                    Lg.e("p2psessionid",p2psessionid);
+                    sharedPreferences.edit().putString("p2psessionid",p2psessionid).apply();
+                }
+
                 cookieManager.setCookie(Constants.HOME_PAGE, cookie);
+                Lg.e("cookie.....%%",cookie);
             }
         }
-        String cookieGesture = "";
+        String cookieGesture =  "";
         if ("1".equals(sharedPreferences.getString(Constants.GESTURE_STATUS, "0"))) {//已经设置密码 已经开启
             cookieGesture = "gesturestatus=1";
         } else if ("4".equals(sharedPreferences.getString(Constants.GESTURE_STATUS, "0"))) {//已经设置密码 关闭

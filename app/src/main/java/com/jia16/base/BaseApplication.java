@@ -21,6 +21,10 @@ import java.util.List;
  * Created by huangjun on 16/8/15.
  */
 public class BaseApplication extends Application {
+
+    public String urlData;//卓金服H5页面唤醒嘉石榴app获取参数,存储变量的成员变量
+
+
     /**
      * 应用实例
      */
