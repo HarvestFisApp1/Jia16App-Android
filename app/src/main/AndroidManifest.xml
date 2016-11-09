@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jia16">
 
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   
+
     <permission android:name="android.permission.INTERNET"></permission>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -17,6 +26,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58227d2ef5ade428f60031fb" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" >
+        </meta-data>
 
         <activity
             android:name=".activity.LoadingActivity"

@@ -40,6 +40,7 @@ import com.jia16.util.Constants;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
 import com.jia16.util.Util;
+import com.umeng.analytics.MobclickAgent;
 
 import org.json.JSONObject;
 
@@ -143,6 +144,8 @@ public class WebViewActivity extends BaseActivity {
 //                //mWebView.reload();
 //            }
         }
+
+        MobclickAgent.onResume(this);
         synCookies(this);
     }
 
@@ -152,6 +155,8 @@ public class WebViewActivity extends BaseActivity {
         if (mWebView != null) {
             mWebView.onPause();
         }
+
+        MobclickAgent.onPause(this);
     }
 
     private void initViews() {

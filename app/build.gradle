@@ -18,6 +18,11 @@ android {
         }
     }
 
+    allprojects {
+        repositories {
+            mavenCentral()
+        }
+    }
 
     //设置keystore
     signingConfigs {
@@ -34,13 +39,61 @@ android {
             keyPassword 'androidjia16'
         }
     }
+
+    //执行命令 gradlew assembleRelease  第一次执行可能需要让你下载gradle 下吧！
+
+    productFlavors {
+
+        yingyongbao {}
+        safe360 {}
+        xiaomi {}
+        meizu {}
+        wandoujia {}
+        oppo {}
+        pp {}
+        anzhi {}
+        leshangdian {}
+        samsung {}
+        leshi {}
+        mumayi {}
+        aiqiyi {}
+        jinli {}
+        changhong {}
+        sougou {}
+        jifeng {}
+        anbei {}
+        xiazai {}
+        shenma {}
+        zalljf {}
+        baidu {}
+        huawei {}
+        guanwang {}
+        zhushou91{}
+        hiapk{}
+        Google{}
+        Nduo{}
+        woshangdian{}
+        zalljf1 {}
+        zalljf2 {}
+        zalljf3 {}
+        zalljf4 {}
+        zalljf5 {}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     //    compile 'com.android.support:appcompat-v7:21.0.1'
     compile project(path: ':volley')
     //    compile 'com.loopj.android:android-async-http:1.4.9'
     compile files('src/main/libs/android-support-v4.jar')
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('src/main/libs/umeng-analytics-v6.0.4.jar')
+    compile files('src/main/libs/utdid4all-1.0.4.jar')
 }
