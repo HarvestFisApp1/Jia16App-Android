@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,8 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="15dp"
-        android:orientation="horizontal"
-        android:visibility="invisible">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/loading_point_1"
@@ -53,15 +54,26 @@
 
     </LinearLayout>
 
+    <!--<ImageView-->
+        <!--android:id="@+id/welcomeClose"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top|right"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:padding="6dp"-->
+        <!--android:src="@mipmap/icon_close_gray" />-->
+
     <ImageView
         android:id="@+id/welcomeClose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         android:layout_gravity="top|right"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:padding="6dp"
-        android:src="@mipmap/icon_close_gray" />
+        android:visibility="gone"/>
+
 
     <Button
         android:id="@+id/start_btn"

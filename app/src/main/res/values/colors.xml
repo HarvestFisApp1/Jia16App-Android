@@ -4,11 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-
+    <color name="line_background">#99cccccc</color>
     <color name="main_text_color">#333333</color>
     <color name="sub_text_color">#666666</color>
     <color name="third_text_color">#999999</color>
     <color name="hint_text_color">#c1c1c1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_color_dark_gray">#333333</color>
 
     <color name="forget_text_color">#2576b8</color>
 
@@ -18,8 +20,42 @@
     <color name="invest_confirm_item">#858585</color>
     <color name="invest_confirm_content">#505050</color>
     <color name="devider_color_gray_for_alert">#d7d7d7</color>
-    <color name="common_item_pressed_gray">#f7f7f7</color>
+    <color name="common_item_pressed_gray">#cccccc</color>
     <color name="main_color">#ff6600</color>
-    <color name="devider_color_gray">#d9d9d9</color>
+    <color name="main_color_notifycode">#88ff6600</color>
+    <!--<color name="devider_color_gray">#d9d9d9</color>-->
+    <color name="devider_color_gray">#f0f0f0</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- 文字区背景色 -->
+    <color name="border_color">#e1ddd9</color>
+    <color name="text_black_6">#666666</color>
+    <color name="line_color">#D9D9D9</color>
+
+    <!-- 主要的黑色字体 -->
+    <color name="black">#000000</color>
+    <color name="text_black_9">#ff999999</color>
+    <color name="text_black_8">#ff888888</color>te
+    <color name="text_news">#ff666666</color>
+    <color name="text_black_d">#ffdddddd</color>
+    <color name="progress_bg_color">#e6e5e4</color>
+    <color name="main_white">#fcfaf9</color>
+    <color name="text_grey">#aaaaaa</color>
+
+
+    <!--安全等级进度条的颜色-->
+    <color name="progress_bar">#82d700</color>
+    <color name="progress_zhong">#FFCC00</color>
+    <color name="progress_di">#ff0000</color>
+
+    <!--帮助中心的选择颜色-->
+    <color name="helper_center_select_line">#FE6320</color>
+    <color name="helper_center_line">#E6E5E3</color>
+    <color name="text_gray">#ff989898</color>
+
+
+
+    <color name="account_risk">#00ff00</color>
+    <color name="recommend_friends">#ff666666</color>
 
 </resources>

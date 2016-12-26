@@ -92,7 +92,7 @@ public class AmountUtil {
     }
 
     /**
-     * 千分位
+     * 千分位,字符串保留后两位小数
      *
      * @param str
      * @return

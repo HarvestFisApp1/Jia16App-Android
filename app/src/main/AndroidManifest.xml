@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jia16">
 
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18"/>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
     <permission android:name="android.permission.INTERNET"></permission>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -17,6 +24,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58227d2ef5ade428f60031fb" >
+        </meta-data>
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" >
+        </meta-data>
+
+
 
         <activity
             android:name=".activity.LoadingActivity"
@@ -24,9 +42,17 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!--卓金服H5页面唤醒嘉石榴app意图过滤器   shangjing修改-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="jia16" />
+            </intent-filter>
+
         </activity>
 
         <activity
@@ -35,7 +61,8 @@
 
         <activity
             android:name=".activity.LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"></activity>
 
         <activity
             android:name=".activity.InvestConfirmActivity"
@@ -53,8 +80,45 @@
             android:name=".activity.WelcomeActivity"
             android:screenOrientation="portrait"></activity>
 
+        <activity android:name=".activity.MainActivity"></activity>
+
+
+        <activity android:name=".activity.RegisterActivity"></activity>
+
         <!--更新服务-->
         <service android:name=".service.DownloadService"></service>
+
+        <activity android:name=".activity.account.MyAccountActivity"></activity>
+        <activity android:name=".web.WebActivity"></activity>
+        <activity android:name=".activity.account.ModificationUserActivity"></activity>
+        <activity android:name=".activity.account.ModificationLoginPwdActivity"></activity>
+
+
+        <activity
+            android:name=".base.BaseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustResize"></activity>
+
+
+        <activity android:name=".activity.account.ModifyDealPwdActivity"/>
+        <activity android:name=".activity.account.ModifyRememberPwdActivity"/>
+        <activity android:name=".activity.FindLoginActivity"/>
+        <activity android:name=".activity.FindLoginPwdActivity"/>
+        <activity android:name=".activity.account.ModifyPhoneActivity"/>
+        <activity android:name=".activity.account.ModifyPhoneNumActivity"/>
+
+        <activity android:name=".more.FeedBackActivity"/>
+        <activity android:name=".more.helpercenter.HelperCenterActivity"/>
+        <activity android:name=".more.advicescenter.AdvicesCenterActivity"/>
+
+        <activity android:name=".more.AboutMeActivity"/>
+        <activity android:name=".activity.account.RiskManagerActivity"/>
+        <activity android:name=".more.mywelfare.MyWelfareActivity"/>
+        <activity android:name=".more.invitefriends.InviteFriendsActivity"/>
+        <activity android:name=".assets.dealrun.CashRunActivity"/>
+        <activity android:name=".assets.MyTotalAconutActivity"/>
     </application>
 
 </manifest>

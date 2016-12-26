@@ -8,14 +8,27 @@
     <dimen name="third_margin">15dp</dimen>
     <dimen name="fourth_margin">20dp</dimen>
     <dimen name="fifth_margin">25dp</dimen>
-    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_14">14dp</dimen>
     <dimen name="default_devider_height">1px</dimen>
     <dimen name="space_10">10dp</dimen>
-    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_16">16dp</dimen>
     <dimen name="space_15">15dp</dimen>
     <dimen name="space_16">16dp</dimen>
     <dimen name="space_8">16dp</dimen>
     <dimen name="space_13">13dp</dimen>
     <dimen name="text_size_17">17sp</dimen>
-    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_18">18dp</dimen>
+
+    <dimen name="tab_bar_up_line">0.5dp</dimen>
+    <dimen name="text_size_12">12.0dp</dimen>
+
+    <!-- 下拉刷新字体 -->
+    <dimen name="picture_pull_to_refresh_loading_text_size">14dp</dimen>
+    <dimen name="picture_pull_to_refresh_last_update_time_text_size">10dp</dimen>
+    <dimen name="picture_pull_to_refresh_last_update_time_top_margin">6dp</dimen>
+    <dimen name="picture_pull_to_refresh_footer_height">40dp</dimen>
+    <dimen name="invest_money_big">28sp</dimen>
+    <dimen name="invest_money">18dp</dimen>
+
+
 </resources>

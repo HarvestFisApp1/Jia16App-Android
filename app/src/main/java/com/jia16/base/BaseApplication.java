@@ -3,6 +3,7 @@ package com.jia16.base;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.SparseBooleanArray;
 
@@ -21,6 +22,14 @@ import java.util.List;
  * Created by huangjun on 16/8/15.
  */
 public class BaseApplication extends Application {
+
+
+    public String urlData;//卓金服H5页面唤醒嘉石榴app获取参数,存储变量的成员变量
+
+    public SharedPreferences sharedPreferences;
+
+    public static Handler mainHandler;
+
     /**
      * 应用实例
      */
@@ -82,8 +91,11 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         requestQueue = Volley.newRequestQueue(this);
+        sharedPreferences=getSharedPreferences(Constants.STORE_NAME,MODE_PRIVATE);
         instance = this;
         AppContext.init(this);
+
+        mainHandler=new Handler();
     }
 
     /**
@@ -113,5 +125,20 @@ public class BaseApplication extends Application {
 //        } catch (DbException e) {
 //            e.printStackTrace();
 //        }
+    }
+
+    /**
+     * 判断是否登录过
+     */
+
+    public boolean isLogined(){
+        boolean isLogined=false;
+        String Cookie = sharedPreferences.getString("Cookie", "");
+        if(Cookie==null||Cookie.isEmpty()){
+            isLogined=false;
+        }else{
+            isLogined=true;
+        }
+        return isLogined;
     }
 }

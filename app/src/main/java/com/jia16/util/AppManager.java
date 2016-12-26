@@ -97,7 +97,6 @@ public class AppManager {
         } else {
             return 0;
         }
-
     }
 
     /**

@@ -50,6 +50,7 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
 
 
     private Button start;
+    private ImageView mWelcomClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,10 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
      */
     @SuppressLint("InflateParams")
     protected void initView() {
-        findViewById(R.id.welcomeClose).setOnClickListener(this);
+//        findViewById(R.id.welcomeClose).setOnClickListener(this);
+        mWelcomClose = (ImageView) findViewById(R.id.welcomeClose);
+        mWelcomClose.setOnClickListener(this);
+
         point1 = (ImageView) findViewById(R.id.loading_point_1);
         point2 = (ImageView) findViewById(R.id.loading_point_2);
         point3 = (ImageView) findViewById(R.id.loading_point_3);
@@ -111,29 +115,34 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
                     point4.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomClose.setVisibility(View.GONE);
                 } else if (arg0 == 1) {
                     start.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_yellow_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
                     point4.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomClose.setVisibility(View.GONE);
                 } else if (arg0 == 2) {
                     start.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_yellow_dot);
                     point4.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomClose.setVisibility(View.GONE);
                 } else if (arg0 == 3) {
                     start.setVisibility(View.VISIBLE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
                     point4.setImageResource(R.mipmap.icon_page_yellow_dot);
+                    mWelcomClose.setVisibility(View.VISIBLE);
                 } else {
                     start.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomClose.setVisibility(View.GONE);
                 }
             }
 
@@ -184,9 +193,11 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
                 point4.setImageResource(R.mipmap.icon_page_yellow_dot);
                 break;
             case R.id.start_btn:
-                gotoMainPage();
+                //跳转到注册界面
+                gotoRegisterPage();
                 break;
             case R.id.welcomeClose:
+                //跳转到首页
                 gotoMainPage();
                 break;
             default:
@@ -195,13 +206,28 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
     }
 
     /**
+     * 跳转到注册界面
+     */
+    private void gotoRegisterPage() {
+
+        sharedPreferences.edit().putBoolean("isFirstRun", false).apply();
+        //跳转到注册界面
+        Intent intent = new Intent(this, RegisterActivity.class);
+        intent.putExtra("welcome",true);
+        startActivity(intent);
+        finish();
+    }
+
+
+    /**
      * 跳转到首页
      */
     private void gotoMainPage() {
 
         sharedPreferences.edit().putBoolean("isFirstRun", false).apply();
         //跳转到首页
-        Intent intent = new Intent(this, WebViewActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("index",0);
         startActivity(intent);
         finish();
     }

@@ -40,6 +40,7 @@
         <item name="android:background">@drawable/btn_orange_selector</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:gravity">center</item>
     </style>
 
 
@@ -47,4 +48,109 @@
         <item name="android:button">@drawable/checkbox_style</item>
     </style>
 
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+
+    <!-- 有图标的，一般的EditText -->
+    <style name="main_edit_text">
+        <item name="android:background">@drawable/shape_edit_text_white_bg</item>
+        <item name="android:textColorHint">#cc000000</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--按钮样式-->
+    <style name="btn_orsnge_big">
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_orange_selector</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+
+
+    <!-- 弹出框中用的按钮 -->
+    <style name="btn_gray_small">
+        <item name="android:background">@drawable/btn_gray_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="btn_orange_small">
+        <item name="android:background">@drawable/btn_orange_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--我的账户界面的用户项-->
+    <style name="common_account">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_color_dark_gray</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!--我的账户界面的描述项-->
+    <style name="common_desc">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_black_9</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <!--帮助中心的线性布局的样式-->
+    <style name="helper_center_linearlayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/common_item_white_sele</item>
+    </style>
+
+    <!--邀请好友-->
+    <style name="invite_friend">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/space_13</item>
+        <item name="android:textColor">@color/recommend_friends</item>
+    </style>
+
+    <!--我的资产-->
+    <style name="my_assets_white">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/space_13</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!--我的资产界面，持有中，已回款等标的名称-->
+    <style name="asset_invest_name">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_color_dark_gray</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+
+    <!--我的资产界面，持有中，已回款等标的详情-->
+    <style name="asset_invest_desc">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/text_black_9</item>
+    </style>
+
 </resources>
+

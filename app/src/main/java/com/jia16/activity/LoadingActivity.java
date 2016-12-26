@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -36,6 +37,8 @@ public class LoadingActivity extends BaseActivity {
 
     boolean isFirstRun = true;
 
+    private  String url;
+
     /**
      * 获取应用版本号
      */
@@ -63,6 +66,20 @@ public class LoadingActivity extends BaseActivity {
             checkUpdate();
         }
 //        initGesture();
+
+
+        //shangjing修改
+        //卓金服H5页面唤醒嘉石榴app获取参数
+        Uri uridata = this.getIntent().getData();
+        url = Constants.HOME_PAGE;
+        if(uridata !=null){
+            url += uridata.toString().substring(8);
+            Lg.e("uridata.........",uridata);//jia16://#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN]
+            Lg.e("url......",url);//https://app.jia16.com/#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN
+            //将数据存储到全局变量中
+            BaseApplication.getInstance().urlData=url;
+        }
+
     }
 
     private void checkUpdate() {
@@ -94,7 +111,6 @@ public class LoadingActivity extends BaseActivity {
                             public void onTopClick(AlertDialog dlg) {
 
                             }
-
                             @Override
                             public void onCenterClick(AlertDialog dlg) {
 
@@ -195,7 +211,7 @@ public class LoadingActivity extends BaseActivity {
 
     private void intentToHome() {//清除cookie
         removeCookie();
-        startActivity(new Intent(LoadingActivity.this, WebViewActivity.class));
+        startActivity(new Intent(LoadingActivity.this, MainActivity.class));
         finish();
     }
 

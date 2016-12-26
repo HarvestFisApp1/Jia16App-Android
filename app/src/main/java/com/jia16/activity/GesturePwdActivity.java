@@ -108,6 +108,7 @@ public class GesturePwdActivity extends BaseActivity {
 
         @Override
         public void onPatternDetected(List<LockPatternView.Cell> pattern) {
+            Lg.e("第一次绘制密码成功..............");
             if (pattern == null)
                 return;
             // Log.i("way", "result = " + pattern.toString());
@@ -115,11 +116,13 @@ public class GesturePwdActivity extends BaseActivity {
                 if (mChosenPattern == null)
                     throw new IllegalStateException("null chosen pattern in stage 'need to confirm");
                 if (mChosenPattern.equals(pattern)) {
+                    Lg.e("再次绘制密码成功..............");
                     updateStage(Stage.ChoiceConfirmed);
                     //modea
                     saveChosenPatternAndFinish();
                 } else {
                     updateStage(Stage.ConfirmWrong);
+                    Lg.e("再次绘制密码失败，与上次不符合..............");
                     //mode
                     mChosenPattern = null;
                     mLockPatternView.clearPattern();
@@ -132,7 +135,7 @@ public class GesturePwdActivity extends BaseActivity {
                 } else {
                     mChosenPattern = new ArrayList<LockPatternView.Cell>(pattern);
                     updateStage(Stage.FirstChoiceValid);
-
+                    Lg.e("第一次绘制密码成功..............");
                     updateStage(Stage.NeedToConfirm);
                 }
             } else {
@@ -180,10 +183,10 @@ public class GesturePwdActivity extends BaseActivity {
         account = getIntent().getStringExtra("account");
         loginPwd = getIntent().getStringExtra("pwd");
         isRegister = getIntent().getBooleanExtra("isRegister", false);
-        cookie = getIntent().getStringExtra("cookie");
-        removePwd = getIntent().getBooleanExtra("removePwd", false);
-        isSetting = getIntent().getBooleanExtra("isSetting", false);
-        setup = getIntent().getBooleanExtra("setup", false);
+        cookie = getIntent().getStringExtra("cookie");              //LoginActivity传递过来的cookie
+        removePwd = getIntent().getBooleanExtra("removePwd", false);//LoginActivity传递过来的是否清除手势密码
+        isSetting = getIntent().getBooleanExtra("isSetting", false);//UnlockGesturePasswordActivity传递过来是否是重置密码
+        setup = getIntent().getBooleanExtra("setup", false);//WebViewActivity传递过来，是否是设置手势密码
         isOpen = getIntent().getBooleanExtra("isOpen", false);
         if (cookie != null) {//从登录过来
             mBackBtn.setVisibility(View.GONE);
@@ -411,6 +414,7 @@ public class GesturePwdActivity extends BaseActivity {
 
     private void saveChosenPatternAndFinish() {
         isSuccess = true;
+        //把手势密码转换为string类型
         final String pwd = LockPatternUtils.patternToString(mChosenPattern);
         userInfo = BaseApplication.getInstance().getUserInfo();
 

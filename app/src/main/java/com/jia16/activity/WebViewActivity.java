@@ -67,6 +67,9 @@ public class WebViewActivity extends BaseActivity {
 
     private RelativeLayout mLoadingView;
 
+
+    private String url;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +80,16 @@ public class WebViewActivity extends BaseActivity {
             sharedPreferences.edit().putString("cookie", cookie).apply();
             synCookies(this);
             getCurrentUser();
-            mWebView.loadUrl(Constants.HOME_PAGE);
+
+
+            url=BaseApplication.getInstance().urlData;
+            if(url != null){
+                url=BaseApplication.getInstance().urlData;
+                Lg.e("url..............",url);
+            }else{
+                url=Constants.HOME_PAGE;
+            }
+            mWebView.loadUrl(url);
             mWebView.reload();
         }
     }
@@ -132,6 +144,7 @@ public class WebViewActivity extends BaseActivity {
     }
 
     private void initViews() {
+
         mWebView = (WebView) findViewById(R.id.main_webview);
         mErrorInfoView = (RelativeLayout) findViewById(R.id.errorview);
         mLoadingView = (RelativeLayout) findViewById(R.id.loading_view);
@@ -149,7 +162,6 @@ public class WebViewActivity extends BaseActivity {
         anim.start();
         WebSettings webSettings = mWebView.getSettings();
 
-
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);// 根据cache-control决定是否从网络上取数据
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);// 显示放大缩小
@@ -163,16 +175,33 @@ public class WebViewActivity extends BaseActivity {
         webSettings.setLoadWithOverviewMode(true);// 影响默认满屏和手势缩放
         webSettings.setUserAgentString("android/1.0");
         Lg.e("ua", webSettings.getUserAgentString());
+
         targetUrl = getIntent().getStringExtra("targetUrl");
+
+        url=BaseApplication.getInstance().urlData;
         if (targetUrl == null) {
-            mWebView.loadUrl(Constants.HOME_PAGE);
+            if(url != null){
+                url=BaseApplication.getInstance().urlData;
+                Lg.e("url..............",url);
+            }else{
+                url=Constants.HOME_PAGE;
+            }
+            mWebView.loadUrl(url);
         } else {
             mWebView.loadUrl(targetUrl);
         }
+
+
+//        if (targetUrl == null) {
+//            mWebView.loadUrl(Constants.HOME_PAGE);
+//        } else {
+//            mWebView.loadUrl(targetUrl);
+//        }
+
         mWebView.setWebChromeClient(new WebChromeClient() {
         });
         mWebView.setWebViewClient(new WebViewClient() {
-            public boolean shouldOverrideUrlLoading(WebView view, String url) { //  重写此方法表明点击网页里面的链接还是在当前的webview里跳转，不跳到浏览器那边
+            public boolean shouldOverrideUrlLoading(WebView view, String url) { //重写此方法表明点击网页里面的链接还是在当前的webview里跳转，不跳到浏览器那边
                 Lg.e("shouldOverrideUrlLoading", url);
                 if (handleUrl(url)) {
                 } else {
@@ -263,6 +292,15 @@ public class WebViewActivity extends BaseActivity {
             } else if (requestCode == REQUEST_CODE_LOGIN) {
                 String cookie = data.getStringExtra("cookie");
                 String targetUrl = data.getStringExtra("targetUrl");
+
+                //shangjing修改
+                if(targetUrl==null){
+                    if(!data.getBooleanExtra("viewhome",false)){
+                        //没有设置手势密码
+                        targetUrl=WebViewActivity.this.targetUrl;
+                    }
+                }
+
                 if (data.getBooleanExtra("viewhome", false)) {//如果是设置完手势密码 需要跳转首页
                     targetUrl = Constants.HOME_PAGE;
                 }
@@ -293,8 +331,9 @@ public class WebViewActivity extends BaseActivity {
             }
         } else {
             if (requestCode == 10003 || requestCode ==
-                    REQUEST_CODE_CHANGE_GUESTURE) {
+                    REQUEST_CODE_CHANGE_GUESTURE) {//getUrl()获取当前页面的URL
                 String url = mWebView.getUrl();//此时应该在个人设置页面
+                Lg.e("getUrl....",url);
                 if (url != null && url.contains("?")) {
                     String[] urls = url.split("[?]");
                     if (urls != null && urls.length > 0) {
@@ -374,7 +413,7 @@ public class WebViewActivity extends BaseActivity {
         Lg.e("Cookie", cookieManager.getCookie(Constants.HOME_PAGE));
     }
 
-    private void getCurrentUser() {
+    public void getCurrentUser() {
         String url = UrlHelper.getUrl("/ums/users/current");
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -418,6 +457,7 @@ public class WebViewActivity extends BaseActivity {
                 mLoadingView.setVisibility(View.GONE);
             }
         } else if (url.contains("AutoLogin")) {
+            Lg.e("AutoLogin...",url);
             getCurrentUser();
             synCookies(this);
         } else if (url.contains("?PDFurl")) {//注册协议
@@ -427,7 +467,7 @@ public class WebViewActivity extends BaseActivity {
             Uri content_url = Uri.parse(url);
             intent.setData(content_url);
             startActivity(intent);
-        } else if (url.contains("LoginVC") && url.contains("?")) { //                http://100.100.5.96:1990/#!account?LoginVC 跳转登录
+        } else if (url.contains("LoginVC") && url.contains("?")) { //http://100.100.5.96:1990/#!account?LoginVC 跳转登录
             Lg.e("currentcookie====", CookieManager.getInstance().getCookie(Constants.HOME_PAGE));
             String[] strings = url.split("[?]");
             targetUrl = strings[0];

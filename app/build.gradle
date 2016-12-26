@@ -8,8 +8,8 @@ android {
         applicationId "com.jia16"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.2.1"
     }
     buildTypes {
         release {
@@ -18,6 +18,11 @@ android {
         }
     }
 
+    allprojects {
+        repositories {
+            mavenCentral()
+        }
+    }
 
     //设置keystore
     signingConfigs {
@@ -34,13 +39,49 @@ android {
             keyPassword 'androidjia16'
         }
     }
+
+    //执行命令 gradlew assembleRelease  第一次执行可能需要让你下载gradle 下吧！
+
+    productFlavors {
+
+        tengxun {}
+        sougousjzs {}
+        baidusjzs {}
+        yyhzs {}
+        lianxiang {}
+        vivo {}
+        ppzs {}
+        sanxing {}
+        chuizi {}
+        sjzs360 {}
+        xiaomi {}
+        meizu {}
+        wandoujia {}
+        oppo {}
+        anzhi {}
+        leshi {}
+        jifeng {}
+        huawei {}
+        sjzs91{}
+        anzhuosjzs {}
+        jia16 {}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     //    compile 'com.android.support:appcompat-v7:21.0.1'
     compile project(path: ':volley')
     //    compile 'com.loopj.android:android-async-http:1.4.9'
     compile files('src/main/libs/android-support-v4.jar')
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('src/main/libs/utdid4all-1.0.4.jar')
+    compile project(':PullToRefreshLib')
+    compile files('src/main/libs/hellocharts-library-1.5.8.jar')
 }

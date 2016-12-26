@@ -11,15 +11,23 @@ public class UrlHelper {
     public static final String HTTP = "http://";
     public static final String HTTPS = "https://";
 
-    //线上测试
+//    //线上测试
     public static final String HTTP_SERVER = "114.55.156.253";
 
     public static final String HTTPS_SERVER = "app.jia16.com";
 
 
-//    public static final String HTTPS_SERVER = "10.139.98.226";
+//http://114.55.156.253/test.html
+////
+//    public static final String HTTP_SERVER = "114.55.156.253";
+//
+//    public static final String HTTPS_SERVER = "114.55.156.253";
 
-//    public static final String HTTPS_SERVER = "test2.jia16.com";
+
+
+//    public static final String HTTP_SERVER = "testapp.jia16.com";
+//
+//    public static final String HTTPS_SERVER = "testapp.jia16.com";
 
     private static final HashMap<String, String> urlMaps = new HashMap<String, String>();
 

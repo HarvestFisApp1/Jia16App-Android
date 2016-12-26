@@ -176,7 +176,7 @@ public class UnlockGesturePasswordActivity extends BaseActivity implements OnCli
                     Lg.e("isTemp", isTemp + "");
                     if (!isTemp) {
                         //TODO HUANGJUN
-                        Intent intent = new Intent(UnlockGesturePasswordActivity.this, WebViewActivity.class);
+                        Intent intent = new Intent(UnlockGesturePasswordActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     } else {

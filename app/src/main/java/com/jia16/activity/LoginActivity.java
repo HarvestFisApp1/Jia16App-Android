@@ -39,6 +39,7 @@ import com.jia16.util.Lg;
 import com.jia16.util.ToastUtil;
 import com.jia16.util.UrlHelper;
 import com.jia16.util.Util;
+import com.umeng.analytics.MobclickAgent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,16 +77,32 @@ public class LoginActivity extends BaseActivity {
     private boolean isSetting = false;//是否为修改密码
 
     private String cookie;
+    private boolean isMyWelfare;
+    private  boolean isInviteFriend;
+
+    private  UserInfo userInfo;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //同步应用程序当前版本的cookie
+        synVersionNameCookie(LoginActivity.this);
+
+
         initViews();
-        removePwd = getIntent().getBooleanExtra("removePwd", false);
-        changeUser = getIntent().getBooleanExtra("changeUser", false);
-        isSetting = getIntent().getBooleanExtra("isSetting", false);
+        removePwd = getIntent().getBooleanExtra("removePwd", false);//UnlockGesturePasswordActivity传递过来的清除手势密码
+        changeUser = getIntent().getBooleanExtra("changeUser", false);//UnlockGesturePasswordActivity传递过来的使用其他账户登录
+        isSetting = getIntent().getBooleanExtra("isSetting", false);//UnlockGesturePasswordActivity传递过来是否为修改密码
+
+        //从更多界面的我的福利跳转过来的
+        isMyWelfare = getIntent().getBooleanExtra("isMyWelfare", false);
+
+        //从更多界面的邀请好友跳转过来的
+        isInviteFriend = getIntent().getBooleanExtra("isInviteFriend", false);
+
     }
 
 
@@ -96,18 +113,34 @@ public class LoginActivity extends BaseActivity {
 
     private void goHome() {
         if (isSetting) {//如果是修改手势密码进到登录 一定是重置了手势密码  返回的时候 直接都关闭
-            Intent it = getIntent();
-            it.putExtra("targetUrl", Constants.HOME_PAGE);
-            setResult(RESULT_OK, it);
-            finish();
-        } else if (removePwd || changeUser) {
-            Intent intent = new Intent(this, WebViewActivity.class);
+//            Intent it = getIntent();
+//            it.putExtra("targetUrl", Constants.HOME_PAGE);
+//            setResult(RESULT_OK, it);
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            intent.putExtra("index",0);
             startActivity(intent);
             finish();
-        } else {
-            Intent it = getIntent();
-            it.putExtra("targetUrl", Constants.HOME_PAGE);
-            setResult(RESULT_OK, it);
+        } else if (removePwd || changeUser) {
+//            Intent intent = new Intent(this, WebViewActivity.class);
+//            startActivity(intent);
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            intent.putExtra("index",0);
+            startActivity(intent);
+            finish();
+        } else if(isMyWelfare){//从更多界面的我的福利跳转过来的,按返回键，那么久跳转到更多界面
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            intent.putExtra("index",3);
+            startActivity(intent);
+            finish();
+        }else if(isInviteFriend){//从更多界面的邀请好友跳转过来的,按返回键，那么久跳转到更多界面
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            intent.putExtra("index",3);
+            startActivity(intent);
+            finish();
+        }else {
+//            Intent it = getIntent();
+//            it.putExtra("targetUrl", Constants.HOME_PAGE);
+//            setResult(RESULT_OK, it);
             finish();
         }
     }
@@ -152,6 +185,7 @@ public class LoginActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btn_back:
                 goHome();
+                //finish();
                 break;
             case R.id.btn_sure:
                 String mPhone = mEditPhone.getText().toString();
@@ -187,12 +221,20 @@ public class LoginActivity extends BaseActivity {
                 }
                 break;
             case R.id.btn_register:
-                String registUrl = Constants.HOME_PAGE + "/#!register";
-                jumpBack(registUrl);
+//                String registUrl = Constants.HOME_PAGE + "/#!register";
+//                jumpBack(registUrl);
+                if(checkClick(view.getId())){
+                    Intent intent=new Intent(this,RegisterActivity.class);
+                    startActivity(intent);
+                }
+
                 break;
-            case R.id.btn_forget_pwd:
-                String forgetUrl = Constants.HOME_PAGE + "/#!findloginpwd";
-                jumpBack(forgetUrl);
+            case R.id.btn_forget_pwd://忘记登陆密码按钮
+                //String forgetUrl = Constants.HOME_PAGE + "/#!findloginpwd";
+                //jumpBack(forgetUrl);
+                Intent intent=new Intent(LoginActivity.this,FindLoginActivity.class);
+                startActivity(intent);
+
                 break;
             default:
                 super.onClick(view);
@@ -200,26 +242,29 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    private void jumpBack(String url) {
-        if (isSetting) {
-            Intent intent = getIntent();
-            intent.putExtra("targetUrl", url);
-            setResult(RESULT_OK, intent);
-            finish();
-        } else {
-            if (changeUser || removePwd) {
-                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                intent.putExtra("targetUrl", url);
-                startActivity(intent);
-                finish();
-            } else {
-                Intent it = getIntent();
-                it.putExtra("targetUrl", url);
-                setResult(RESULT_OK, it);
-                finish();
-            }
-        }
-    }
+
+
+
+//    private void jumpBack(String url) {
+//        if (isSetting) {
+//            Intent intent = getIntent();
+//            intent.putExtra("targetUrl", url);
+//            setResult(RESULT_OK, intent);
+//            finish();
+//        } else {
+//            if (changeUser || removePwd) {
+//                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
+//                intent.putExtra("targetUrl", url);
+//                startActivity(intent);
+//                finish();
+//            } else {
+//                Intent it = getIntent();
+//                it.putExtra("targetUrl", url);
+//                setResult(RESULT_OK, it);
+//                finish();
+//            }
+//        }
+//    }
 
 
     private void postLogin() {
@@ -254,6 +299,7 @@ public class LoginActivity extends BaseActivity {
                         sharedPreferences.edit().putInt("retry", 5).apply();
                         JSONObject obj = (JSONObject) response;
                         cookie = obj.optString("cookie");
+                        Lg.e("cookie........##",cookie);
                         if (!TextUtils.isEmpty(cookie)) {
                             //TODO HUANGJUN 切换账号的时候 不需要重置手势密码的状态  自动根据缓存判断
 //                            if (removePwd || changeUser) {//忘记密码和切换登录账号
@@ -328,7 +374,7 @@ public class LoginActivity extends BaseActivity {
 
     CookieManager cookieManager;
 
-    private void synCookies(Context context) {
+    public void synCookies(Context context) {
         CookieSyncManager.createInstance(context);
         cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
@@ -342,11 +388,24 @@ public class LoginActivity extends BaseActivity {
                     String csrf = paras[0].split("=")[1];
                     Lg.e("csrf", csrf);
                     sharedPreferences.edit().putString("_csrf", csrf).apply();
+
+                    //shangjing修改
+                    sharedPreferences.edit().putString("find_csrf", csrf).apply();
                 }
+
+                //shangjing修改
+                if(cookie!=null&&cookie.contains("p2psessionid")){
+                    String[] paras = cookie.split(";");
+                    String p2psessionid = paras[0].split("=")[1];
+                    Lg.e("p2psessionid",p2psessionid);
+                    sharedPreferences.edit().putString("p2psessionid",p2psessionid).apply();
+                }
+
                 cookieManager.setCookie(Constants.HOME_PAGE, cookie);
+                Lg.e("cookie.....%%",cookie);
             }
         }
-        String cookieGesture = "";
+        String cookieGesture =  "";
         if ("1".equals(sharedPreferences.getString(Constants.GESTURE_STATUS, "0"))) {//已经设置密码 已经开启
             cookieGesture = "gesturestatus=1";
         } else if ("4".equals(sharedPreferences.getString(Constants.GESTURE_STATUS, "0"))) {//已经设置密码 关闭
@@ -356,12 +415,20 @@ public class LoginActivity extends BaseActivity {
         CookieSyncManager.getInstance().sync();
 //        Lg.e("cookie====", cookieManager.getCookie(Constants.HOME_PAGE));
         sharedPreferences.edit().putString("Cookie", cookieManager.getCookie(Constants.HOME_PAGE)).apply();
+
+        //shangjing修改
+        sharedPreferences.edit().putString("findCookie", cookieManager.getCookie(Constants.HOME_PAGE)).apply();
+
+
         Lg.e("Cookie", cookieManager.getCookie(Constants.HOME_PAGE));
         getCurrentUser();
     }
 
 
-    private void getCurrentUser() {
+    /**
+     * 请求用户的信息接口，获取用户信息
+     */
+    public void getCurrentUser() {
         String url = UrlHelper.getUrl("/ums/users/current");
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -369,9 +436,22 @@ public class LoginActivity extends BaseActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Lg.e("getcurrentUser", response.toString());
-                        UserInfo userInfo = new Gson().fromJson(response.toString(), new TypeToken<UserInfo>() {
+                      userInfo = new Gson().fromJson(response.toString(), new TypeToken<UserInfo>() {
                         }.getType());
                         BaseApplication.getInstance().setUserInfo(userInfo);
+
+
+                        //shangjing修改增加友盟统计
+                        //友盟 统计 登录帐号
+                        if(userInfo!=null){
+                            int userId = userInfo.getId();
+                            MobclickAgent.onProfileSignIn(String.valueOf(userId));
+                        }
+
+                        //统计用户登录的事件
+                        MobclickAgent.onEvent(LoginActivity.this,"login_user");
+
+
 
 
                         String lockPwdstr = sharedPreferences.getString(Constants.LOCK_PWD, "");
@@ -515,24 +595,36 @@ public class LoginActivity extends BaseActivity {
 
     private void loginSuccess(String cookie) {
         ToastUtil.getInstant().show(LoginActivity.this, "登录成功");
-        if (isSetting) {
-            Intent intent = new Intent();
-            intent.putExtra("cookie", cookie);
-            setResult(RESULT_OK, intent);
-            finish();
-        } else {
-            if (removePwd || changeUser) {
-                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                intent.putExtra("cookie", cookie);
+//        if (isSetting) {
+//            Intent intent = new Intent();
+//            intent.putExtra("cookie", cookie);
+//            setResult(RESULT_OK, intent);
+//            finish();
+//        } else {
+            if (removePwd /*|| changeUser*/) {//忘记密码，登录成功后就跳转到主界面
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("index", 0);
                 startActivity(intent);
                 finish();
-            } else {
+            } else if(isMyWelfare){//是从我的福利界面跳转过来的
                 Intent intent = getIntent();
-                intent.putExtra("cookie", cookie);
-                intent.putExtra("viewhome", viewhome);
+                intent.putExtra("userid",userInfo.getId());
                 setResult(RESULT_OK, intent);
                 finish();
+            }else if(isInviteFriend){//是从邀请好友界面跳转过来的
+                Intent intent = getIntent();
+                intent.putExtra("userid",userInfo.getId());
+                setResult(RESULT_OK, intent);
+                finish();
+            }else {
+                Intent intent = getIntent();
+                intent.putExtra("cookie", cookie);
+                //intent.putExtra("viewhome", viewhome);
+                setResult(RESULT_OK, intent);
+                finish();
+
             }
-        }
+       // }
     }
+
 }
