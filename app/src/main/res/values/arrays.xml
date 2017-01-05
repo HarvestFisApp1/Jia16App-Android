@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bottom_titles">
+        <item>精心优选</item>
+        <item>我要投资</item>
+        <item>我的资产</item>
+        <item>更多</item>
+    </string-array>
+</resources>

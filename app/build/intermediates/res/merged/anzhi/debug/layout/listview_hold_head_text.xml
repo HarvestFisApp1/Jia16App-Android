@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/devider_color_gray"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/asset_invest_desc"
+                android:text="当前持有(元)"/>
+
+            <TextView
+                android:id="@+id/tv_hold_amount"
+                style="@style/asset_invest_desc"
+                android:textColor="@color/main_color"
+                android:paddingTop="8dp"
+                android:text="0.00"/>
+            
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/asset_invest_desc"
+                android:text="预期应得收益(元)"/>
+
+            <TextView
+                android:id="@+id/tv_earning"
+                style="@style/asset_invest_desc"
+                android:textColor="@color/main_color"
+                android:paddingTop="8dp"
+                android:text="0.00"/>
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/recommend_friends"
+            android:text="无更多数据"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"/>
+</LinearLayout>

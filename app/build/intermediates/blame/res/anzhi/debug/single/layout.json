@@ -1,0 +1,334 @@
+[
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\common_loadingdialog.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\common_loadingdialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_recommend_detail_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_recommend_detail_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_cash_run.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_cash_run.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_my_account.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_my_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modify_phone.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modify_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\common_title_layout.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\common_title_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_gesturepassword_unlock.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_gesturepassword_unlock.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_find_login.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_find_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_deal_progress.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_deal_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_setting_pwd_content.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_setting_pwd_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_my_total_acount.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_my_total_acount.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\welcome.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\socialize_share_menu_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\socialize_share_menu_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_about_me.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_about_me.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_helper_common.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_helper_common.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\listview_head_invest_text.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\listview_head_invest_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_trade_password_content.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_trade_password_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_invite.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_invite.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\app_authadapter.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\app_authadapter.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modify_deal_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modify_deal_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_pwd_shoushi_setting_new.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_pwd_shoushi_setting_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modify_phone_num.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modify_phone_num.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\edit_text_show_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\edit_text_show_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\listview_head.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\listview_head.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\common_tab_indicator.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\common_tab_indicator.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_news_advices_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_news_advices_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_morefragment.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_morefragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_helper_inverster.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_helper_inverster.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_one_btn_base.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_one_btn_base.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_invest_transfer_ok.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_invest_transfer_ok.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_assets.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_assets.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_feed_back.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_feed_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_alert.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_alert.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_return_money_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_return_money_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_three_btn.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_three_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_find_login_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_find_login_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_helper_mobile.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_helper_mobile.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\exploded-aar\\Jia16App-Android\\PullToRefreshLib\\unspecified\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_advices_center.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_advices_center.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\common_remote_view_layout.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\common_remote_view_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_home_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_home_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_webview_content.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_webview_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_invest_year_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_invest_year_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_apply_for_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_apply_for_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modification_user.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modification_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_trade_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_trade_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_head_view.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_head_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\titlebar.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\titlebar.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modification_login_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modification_login_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\page_error.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\page_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\page_loading.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\page_loading.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_loading.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_loading.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modify_remember_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modify_remember_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_modify_foget_pwd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_modify_foget_pwd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_more_dddd.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_more_dddd.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_alldeal_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_alldeal_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_login.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_trade_password_content_hide_forgetpwd_tip.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_trade_password_content_hide_forgetpwd_tip.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\pop_window.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\pop_window.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\umeng_auth.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\umeng_auth.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\exploded-aar\\Jia16App-Android\\PullToRefreshLib\\unspecified\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_invest.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_invest.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_app_update.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_app_update.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_invite_friends.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_invite_friends.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\push_dialog_alert.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\push_dialog_alert.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_risk_manager.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_risk_manager.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\common_net_error_layout.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\common_net_error_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_register.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\listview_hold_head_text.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\listview_hold_head_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_activity_center.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_activity_center.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_my_welfare.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_my_welfare.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\umeng_socialize_oauth_dialog.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\umeng_socialize_oauth_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_transfer_money.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_transfer_money.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\ptr_refresh.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\ptr_refresh.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\item_ticket_item.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\item_ticket_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\webview_common.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\webview_common.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\listview_head_text.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\listview_head_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_invest_confirm.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_invest_confirm.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\dialog_goods_detail.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\dialog_goods_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_helper_center.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_helper_center.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\layout\\activity_webview.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\layout\\activity_webview.xml"
+    }
+]

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\shaders"/></dataSet><dataSet config="anzhi"><source path="C:\Users\DELL\Desktop\Jia16App-Android\app\src\anzhi\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\DELL\Desktop\Jia16App-Android\app\src\debug\shaders"/></dataSet><dataSet config="anzhiDebug"><source path="C:\Users\DELL\Desktop\Jia16App-Android\app\src\anzhiDebug\shaders"/></dataSet></merger>

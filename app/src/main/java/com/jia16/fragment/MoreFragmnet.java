@@ -1,8 +1,7 @@
 package com.jia16.fragment;
 
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,6 +32,9 @@ import com.jia16.activity.account.MyAccountActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.base.BaseFragment;
 import com.jia16.bean.UserInfo;
+
+import com.jia16.more.ActivityCenterActivity;
+
 import com.jia16.more.advicescenter.AdvicesCenterActivity;
 import com.jia16.more.helpercenter.HelperCenterActivity;
 import com.jia16.more.AboutMeActivity;
@@ -40,7 +42,8 @@ import com.jia16.more.FeedBackActivity;
 import com.jia16.more.invitefriends.InviteFriendsActivity;
 import com.jia16.more.mywelfare.MyWelfareActivity;
 import com.jia16.util.AlertUtil;
-import com.jia16.util.Constants;
+
+
 import com.jia16.util.DMConstant;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
@@ -191,11 +194,9 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
                     break;
 
 
-                    case 3:
-//                        intent=new Intent(getActivity(), WebActivity.class);
-//                        intent.putExtra("linkUrl", "https://app.jia16.com/#!activityCenter");
-//                        intent.putExtra("title","活动中心");
-//                        startActivity(intent);
+                    case 3://活动中心
+                        intent=new Intent(getActivity(),ActivityCenterActivity.class);
+                        startActivity(intent);
 
                     break;
 

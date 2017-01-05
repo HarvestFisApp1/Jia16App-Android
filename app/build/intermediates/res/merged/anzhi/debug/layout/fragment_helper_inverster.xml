@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--操作流程-->
+            <LinearLayout
+                android:id="@+id/ll_helper_operation"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="操作流程"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+            <!--注册认证-->
+            <LinearLayout
+                android:id="@+id/ll_helper_register"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="注册认证"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+
+            <!--绑卡认证-->
+            <LinearLayout
+                android:id="@+id/ll_helper_binding_card"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="绑卡认证"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+
+            <!--充值取现-->
+            <LinearLayout
+                android:id="@+id/ll_helper_recharge"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="充值取现"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+            <!--快捷支付-->
+            <LinearLayout
+                android:id="@+id/ll_helper_shortcut"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="快捷支付"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+            <!--换卡流程-->
+            <LinearLayout
+                android:id="@+id/ll_helper_changecard"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="换卡流程"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+
+            <!--产品介绍-->
+            <LinearLayout
+                android:id="@+id/ll_helper_product"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="产品介绍"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+            <!--产品投资-->
+            <LinearLayout
+                android:id="@+id/ll_helper_product_invester"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="产品投资"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+            <!--费用规则-->
+            <LinearLayout
+                android:id="@+id/ll_helper_cost"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="费用规则"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+            <!--银行充值限额表-->
+            <LinearLayout
+                android:id="@+id/ll_helper_bank"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="银行充值限额表"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray"/>
+
+
+            <!--转让指引-->
+            <LinearLayout
+                android:id="@+id/ll_helper_transfer"
+                style="@style/helper_center_linearlayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="转让指引"
+                    style="@style/common_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="〉"
+                    android:textColor="@color/text_black_9"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

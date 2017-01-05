@@ -40,6 +40,9 @@ public class HelperCenterActivity extends BaseActivity {
 
     private List<Fragment> fragments = new ArrayList<Fragment>();
 
+    private boolean is_home;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -67,6 +70,10 @@ public class HelperCenterActivity extends BaseActivity {
                 finish();
             }
         });
+
+
+        //是否是从主界面打开的帮助中心页面
+        is_home = getIntent().getBooleanExtra("is_home", false);
 
         mHelperViewPager = (ViewPager) findViewById(R.id.helper_view_pager);
 
@@ -110,6 +117,13 @@ public class HelperCenterActivity extends BaseActivity {
                 switchBtnList(i);
             }
         });
+
+
+        if(is_home){
+            //如果是从主界面打开的帮助中心，那么就选中安全保障
+            mHelperViewPager.setCurrentItem(2);
+        }
+
     }
 
     private void switchBtnList(int index) {

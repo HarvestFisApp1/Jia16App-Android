@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="@string/account_setting_pwd"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:maxLines="1"
+        android:padding="@dimen/space_13"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size_16" />
+
+    <LinearLayout
+        android:id="@+id/ll_pwd_show_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/space_10"
+        android:paddingRight="@dimen/space_10">
+
+        <CheckBox
+            android:id="@+id/rb_pwd_show_hint"
+            android:layout_width="25dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_pwd_show_hint"
+            android:button="@null"
+            android:checked="false" />
+    </LinearLayout>
+
+</RelativeLayout>

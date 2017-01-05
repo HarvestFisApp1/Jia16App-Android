@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/devider_color_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/fist_view"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/assets_title"
+                    style="@style/asset_invest_name"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="15dp"
+                    android:text=" "/>
+
+                <TextView
+                    android:id="@+id/tv_welfare"
+                    style="@style/asset_invest_name"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:visibility="gone"
+                    android:background="@drawable/shape_welfare"
+                    android:text="券"/>
+
+                <TextView
+                    android:id="@+id/tv_assets_state"
+                    style="@style/asset_invest_name"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/white"
+                    android:paddingLeft="3dp"
+                    android:visibility="gone"
+                    android:paddingRight="3dp"
+                    android:background="@drawable/shap_transfer"
+                    android:textSize="13dp"
+                    android:text="可转让"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_year_earn"
+                        style="@style/asset_invest_name"
+                        android:text="0.00%"
+                        android:textSize="25dp"
+                        android:textColor="@color/main_color"/>
+
+                    <TextView
+                        style="@style/asset_invest_name"
+                        android:text="预期年化收益"
+                        android:paddingTop="13dp"
+                        android:textColor="@color/text_black_9"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/text_black_9"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_begin_money"
+                        style="@style/asset_invest_name"
+                        android:text="起投 0元"
+                        android:textColor="@color/text_black_9"/>
+
+                    <TextView
+                        android:id="@+id/tv_invest_date"
+                        style="@style/asset_invest_name"
+                        android:text="期限 51 天"
+                        android:paddingTop="13dp"
+                        android:textColor="@color/text_black_9"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <com.jia16.view.RoundProgressBar
+                        android:id="@+id/rb_progress"
+                        android:layout_width="70dip"
+                        android:layout_marginRight="20dp"
+                        android:layout_height="70dip"
+                        android:layout_alignParentLeft="true" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/text_black_9"/>
+
+            <TextView
+                android:id="@+id/tv_earn_desc"
+                style="@style/asset_invest_name"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:textColor="@color/text_black_9"
+                android:text="次日起息"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:background="@color/devider_color_gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="13dp" />
+
+    <!--原交易密码-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/common_account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="原交易密码" />
+
+        <EditText
+            android:id="@+id/et_old_pwd"
+            style="@style/common_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="输入原交易密码"
+            android:inputType="textPassword"
+            android:textColor="@color/sub_text_color" />
+
+        <ImageView
+            android:id="@+id/iv_delete_old_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/icon_arrow_right_gray" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/common_account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="新交易密码" />
+
+        <EditText
+            android:id="@+id/et_new_pwd"
+            style="@style/common_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="输入新交易密码"
+            android:inputType="textPassword"
+            android:textColor="@color/sub_text_color" />
+
+        <ImageView
+            android:id="@+id/iv_delete_new_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/icon_arrow_right_gray" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:text="密码由6-18位英文字母,数字或者符号组成"
+        android:textColor="@color/sub_text_color"
+        android:textSize="15dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_show_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:paddingLeft="5dp"
+        android:button="@drawable/selector_check_box_bg_short"
+        android:checked="false"
+        android:textColor="@color/main_color"
+        android:layout_marginLeft="15dp"
+        android:text="显示密码"/>
+
+    <Button
+        android:id="@+id/bt_affirm"
+        style="@style/btn_orsnge_big"
+        android:onClick="register"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:text="确   认" />
+</LinearLayout>

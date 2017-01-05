@@ -84,4 +84,21 @@ dependencies {
     compile files('src/main/libs/utdid4all-1.0.4.jar')
     compile project(':PullToRefreshLib')
     compile files('src/main/libs/hellocharts-library-1.5.8.jar')
+
+    compile files('src/main/libs/universal-image-loader-1.9.4-with-sources.jar')
+    compile files('src/main/libs/libammsdk.jar')
+    compile files('src/main/libs/libapshare.jar')
+    compile files('src/main/libs/libddshare.jar')
+    compile files('src/main/libs/mta-sdk-1.6.2.jar')
+    compile files('src/main/libs/open_sdk_r5756_lite.jar')
+    compile files('src/main/libs/SocialSDK_QQ_Full.jar')
+    compile files('src/main/libs/SocialSDK_QQ_Simplify.jar')
+    compile files('src/main/libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('src/main/libs/SocialSDK_WeiXin_Full.jar')
+    compile files('src/main/libs/umeng_shareboard_widget.jar')
+    compile files('src/main/libs/umeng_social_api.jar')
+    compile files('src/main/libs/umeng_social_net.jar')
+    compile files('src/main/libs/umeng_social_shareboard.jar')
+    compile files('src/main/libs/umeng_social_tool.jar')
+
 }

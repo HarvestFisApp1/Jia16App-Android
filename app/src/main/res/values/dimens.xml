@@ -29,6 +29,11 @@
     <dimen name="picture_pull_to_refresh_footer_height">40dp</dimen>
     <dimen name="invest_money_big">28sp</dimen>
     <dimen name="invest_money">18dp</dimen>
+    <dimen name="titlebar">54dp</dimen>
+    <dimen name="actionbar_height">45dip</dimen>
+    <dimen name="actionbar_item_height">45dip</dimen>
+    <dimen name="actionbar_item_width">45dip</dimen>
+
 
 
 </resources>

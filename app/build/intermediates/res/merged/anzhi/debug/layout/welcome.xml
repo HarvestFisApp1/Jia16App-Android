@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/welcome_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/loading_point_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/icon_page_yellow_dot"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/loading_point_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/icon_page_blue_dot"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/loading_point_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/icon_page_blue_dot"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/loading_point_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/icon_page_blue_dot"
+            tools:ignore="ContentDescription" />
+
+
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/welcomeClose"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top|right"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:padding="6dp"-->
+        <!--android:src="@mipmap/icon_close_gray" />-->
+
+    <ImageView
+        android:id="@+id/welcomeClose"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="6dp"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/start_btn"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:background="@null"
+        android:visibility="gone" />
+</FrameLayout>

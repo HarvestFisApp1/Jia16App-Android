@@ -15,6 +15,11 @@ import com.jia16.bean.LockPwd;
 import com.jia16.bean.UserInfo;
 import com.jia16.util.Constants;
 import com.jia16.util.PreferencesUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.umeng.socialize.Config;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
 
 import java.util.List;
 
@@ -95,7 +100,18 @@ public class BaseApplication extends Application {
         instance = this;
         AppContext.init(this);
 
+
+        //加载图片,初始化imageloader.
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(this));
+
         mainHandler=new Handler();
+
+
+        //友盟分享
+        UMShareAPI.get(this);
+        Config.isJumptoAppStore = true;
+
+
     }
 
     /**
@@ -141,4 +157,21 @@ public class BaseApplication extends Application {
         }
         return isLogined;
     }
+
+
+
+    //各个平台的配置，建议放在全局Application或者程序入口
+    {
+
+        PlatformConfig.setWeixin("wx7208eaaf0f57f34d", "08034277e141e640cadbc6e26842f96a");
+        //PlatformConfig.setWeixin("wxcea464b68f53bf23", "89e23e59521457eab7c294529e31c673");
+        //PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad");
+        //PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        PlatformConfig.setQQZone("1105662722", "CeFHk1L2OFiYxsE5");
+
+    }
+
+
+
+
 }

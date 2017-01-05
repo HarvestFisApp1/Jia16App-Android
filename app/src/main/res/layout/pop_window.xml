@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/white"
+        android:text="代金券使用规则"
+        android:textSize="18dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="代金券是嘉石榴对广大会员的优惠和回馈,为使更多的会员享受到这种优惠,请您仔细阅读以下规则:"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="1)代金券仅供嘉石榴注册的用户在线投资时使用;"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="2)代金券不能兑换现金,不能转让;"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="3)每张代金券仅能使用一次;"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="4)代金券应在有效期内使用,过期作废;"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="5)代金券仅在已注册明可用代金券的标的投资时使用,使用时还需要遵循标的代金券使用规则;"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="6)使用代金券投资后,若该投资标的未成立,代金券退回至会员账户,会员可在有效期内继续使用;"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="解释权归嘉石榴所有。"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:gravity="center"
+            android:background="@color/white"
+            android:text="关闭"
+            android:textSize="17dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

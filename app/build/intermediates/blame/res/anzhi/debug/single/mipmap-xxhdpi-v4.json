@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\mipmap-xxhdpi-v4\\login_phone.jpg",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\mipmap-xxhdpi\\login_phone.jpg"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\mipmap-xxhdpi-v4\\login_pwd.jpg",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\mipmap-xxhdpi\\login_pwd.jpg"
+    }
+]

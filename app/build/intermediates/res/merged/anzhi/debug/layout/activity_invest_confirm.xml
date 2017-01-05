@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:src="@mipmap/icon_back" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="投资"
+            android:textColor="@color/main_text_color"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/divider_color"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/fourth_margin"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="标的名称        "
+            android:textColor="@color/invest_confirm_item" />
+
+
+        <TextView
+            android:id="@+id/bid_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="标的名称"
+            android:textColor="@color/invest_confirm_content" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:background="@color/divider_color"></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="本次投资金额"
+            android:textColor="@color/invest_confirm_item" />
+
+
+        <TextView
+            android:id="@+id/bid_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="10000.00元"
+            android:textColor="@color/invest_confirm_content" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/voucher_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:background="@color/divider_color"></View>
+
+
+    <LinearLayout
+        android:id="@+id/voucher_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="代金券抵扣    "
+            android:textColor="@color/invest_confirm_item" />
+
+
+        <TextView
+            android:id="@+id/coupon_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="未使用"
+            android:textColor="@color/invest_confirm_content" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/paid_amount_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:background="@color/divider_color"></View>
+
+    <LinearLayout
+        android:id="@+id/paid_amount_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="实付金额        "
+            android:textColor="@color/invest_confirm_item" />
+
+
+        <TextView
+            android:id="@+id/paid_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="1000.00元"
+            android:textColor="@color/invest_confirm_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/agreement_check"
+            style="@style/CustomCheckboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:text="我已阅读并同意"
+            android:textColor="@color/sub_text_color" />
+
+        <TextView
+            android:id="@+id/btn_service_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:gravity="center_vertical"
+            android:text="《网站投资协议》"
+            android:textColor="#2576b8" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:gravity="center_vertical"
+        android:text="确认后资金将进入冻结账户" />
+
+
+    <Button
+        android:id="@+id/invest_confirm_btn"
+        style="@style/btn_orange_big"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginRight="@dimen/double_margin"
+        android:layout_marginTop="20dp"
+        android:text="确认投资"
+        android:textColor="@android:color/white" />
+
+
+</LinearLayout>
