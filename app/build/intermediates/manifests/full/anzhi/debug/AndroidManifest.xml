@@ -152,6 +152,7 @@
             android:name="com.google.android.maps"
             android:required="false" />
         <uses-library android:name="android.test.runner" />
+>>>>>>> Stashed changes
     </application>
 
 </manifest>

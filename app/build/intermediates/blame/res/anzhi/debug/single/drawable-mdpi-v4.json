@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\exploded-aar\\Jia16App-Android\\PullToRefreshLib\\unspecified\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\exploded-aar\\Jia16App-Android\\PullToRefreshLib\\unspecified\\res\\drawable-mdpi-v4\\indicator_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\exploded-aar\\Jia16App-Android\\PullToRefreshLib\\unspecified\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",

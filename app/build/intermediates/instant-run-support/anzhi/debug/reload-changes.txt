@@ -1,3 +1,0 @@
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\pulltorefreshview\holder\TransferMoneyHolder$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\pulltorefreshview\holder\TransferMoneyHolder$1$override.class

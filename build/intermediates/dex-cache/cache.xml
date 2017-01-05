@@ -1,3 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\incremental-classes\anzhi\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="e8d3c8c99fc9295448416d12f0fc14108c6b9ca0">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\instant-run-bootstrap_17b7441bfb967739c378ba6c600c632610659ff4.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\libammsdk.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="11b09244aedaa51bfd09269637be7c32c60da314">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\libammsdk_42dae5ce950f0dbd48212110a8924f935f523068.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\hellocharts-library-1.5.8.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="700944cb3a8ce4fe543cfac1a9146a11cbf702dc">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\hellocharts-library-1.5.8_9ce93f5b1df0b1c29d1b4dd8c42c930b6a35f591.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\open_sdk_r5756_lite.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="06379788d59fda28f99848b542d55c94f48322a9">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\open_sdk_r5756_lite_3b35577524efa99a6976f022f5b9245d57f93b23.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\utdid4all-1.0.4.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\utdid4all-1.0.4_19bc48c5581a875839cd2ce1d452988a7ec6d4ce.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\umeng_social_net.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="7d183d7985c0d28f16486e7f0f8122cde13a1c9f">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\umeng_social_net_8e6fbd1d4e5e3e4a663e24f942d58e34a80cb6cc.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\SocialSDK_QQ_Simplify.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="39012cb4df11e4b9a5e1778adf1a0b8d37c60635">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\SocialSDK_QQ_Simplify_42d8480dfa4ad1c03332e5aeb0dfa5cf23c119a3.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\SocialSDK_WeChat_Simplify.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="f84f7a91e9f8eaa578591c684d8e994c7ee8c508">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\SocialSDK_WeChat_Simplify_89289c49ebf654ed0d075358dcc08899c316c06f.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\gson-2.6.2_792a4a023b3151d7e2d63131039cb9ac449ba6a5.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\umeng_social_api.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="8cb740080f86fd7800527bb853ac6f68c452053f">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\umeng_social_api_dbda418c7c521a3f9d613ea7aaeb489d52887866.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\umeng_social_tool.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="9e850ff89b00626dad1ed98590b663c64b674034">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\umeng_social_tool_6e56e9fc0ce32f4a603ca3d019af1b61c581cf30.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\universal-image-loader-1.9.4-with-sources.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="40595dbd3e3f1b87b27e914340d0e7dfd2d5b3d3">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\universal-image-loader-1.9.4-with-sources_88f717dd33ef59c9ce435f865f745351a0eb55ab.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\libapshare.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="18847ccd171b966c0e05319a709420e87f8fd5c3">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\libapshare_437331fdd68e1c098d7cb9a1180a17d4b7181432.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\SocialSDK_QQ_Full.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="8ebec5387932befc5e6e70352df51c55d219220a">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\SocialSDK_QQ_Full_ff2569399e2bb0c712379b0a0802f63da0c029d9.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\SocialSDK_WeiXin_Full.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="fd84f4511be6d9e8dc5d5898651a8330aa684722">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\SocialSDK_WeiXin_Full_9929ec97f342215cfd757c7ef99b9b7cd16676af.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\mta-sdk-1.6.2.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="c184c69f43b1fe46390f7123717c65bd844bccb6">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\mta-sdk-1.6.2_a3844e6d27d7efb4d5bde774338dfeeb2e8d465e.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\umeng_shareboard_widget.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="f16de3f9ededdf9f65f872bd4fcd3ff5db23f6f6">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\umeng_shareboard_widget_e6cfe3bea6f1a95cfc78447fad922a726fa3fc09.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\libddshare.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="6916ed94c5f9805ce5d9bf19a624e7e20551fbe1">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\libddshare_81e3d22846a601fd9f97fbfc630dfe4510812536.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\.gradle\caches\modules-2\files-2.1\com.umeng.analytics\analytics\6.0.7\7224178d65af1443d8be61a2c20914bf3a6088fd\analytics-6.0.7.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="7224178d65af1443d8be61a2c20914bf3a6088fd">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\analytics-6.0.7_5ff7758a73b8679c887167f1827cd06009d8ea41.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\incremental-runtime-classes\anzhi\debug\instant-run.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="530f1d35199b3584f896b798fc0d90bbc5339817">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\instant-run_e5d51c30131447e1f2f67b0cb94adaf3bed85a94.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\umeng_social_shareboard.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="7261b9972c16ee5c34c2a88309f702946dcd1a8f">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\umeng_social_shareboard_bf7bed6d26821949491eaf8deb94c535a203ef76.jar" />
+    </item>
+    <item
+        jar="C:\Users\DELL\Desktop\Jia16App-Android\app\src\main\libs\android-support-v4.jar"
+        jumboMode="true"
+        revision="21.0.1"
+        sha1="605c447c20ca216b5556af9f215af5d4bba1b117">
+        <dex dex="C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\pre-dexed\anzhi\debug\android-support-v4_8867a48b151d37ac714a6a51daff1380b4f14a8d.jar" />
+    </item>
+
+</items>

@@ -8,12 +8,12 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shape_oval_solid_red.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\umeng_socialize_back_icon.png",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\umeng_socialize_back_icon.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_home_transfer.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shape_home_transfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\umeng_socialize_back_icon.png",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\umeng_socialize_back_icon.png"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\indicator_bg_top.xml",
@@ -48,20 +48,20 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\progress_horizontal.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\my_welfare_boder.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\my_welfare_boder.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_dialog_update_right_button.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_dialog_update_right_button.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\checkbox_style.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\checkbox_style.xml"
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\my_welfare_boder.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\my_welfare_boder.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\btn_disabled.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\btn_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\checkbox_style.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\checkbox_style.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_recommend_state_ok.xml",
@@ -104,12 +104,12 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\feed_back_boder_check.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_dialog_left_button.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_dialog_left_button.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_oval_solid_main.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shape_oval_solid_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_dialog_left_button.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_dialog_left_button.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\update_dialog_bg.xml",
@@ -124,36 +124,36 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\anim_loading_progress_round.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shap_invest_center.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shap_invest_center.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_oval_total_red.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shape_oval_total_red.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shap_invest_center.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shap_invest_center.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_pwd_show_hint.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_pwd_show_hint.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\white_round_shape_bg.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\white_round_shape_bg.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_check_box_bg_short.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_check_box_bg_short.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\white_round_shape_bg.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\white_round_shape_bg.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\common_item_white_sele.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\common_item_white_sele.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\color_cursor.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\color_cursor.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shap_invest_right_check.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shap_invest_right_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\color_cursor.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\color_cursor.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_oval_red.xml",
@@ -216,12 +216,12 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\icon_switch_selector.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\feed_back_boder.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\feed_back_boder.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_dialog_force_update_button.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_dialog_force_update_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\feed_back_boder.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\feed_back_boder.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\btn_orange_normal.xml",
@@ -232,12 +232,12 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\btn_orange_pressed.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\btn_gray_small.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\btn_gray_small.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\vertify_code_shap.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\vertify_code_shap.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\btn_gray_small.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\btn_gray_small.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_edit_text_white_bg.xml",
@@ -264,11 +264,11 @@
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\btn_orange_small.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_dialog_right_button.xml",
-        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_dialog_right_button.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\shape_transfer_money.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\shape_transfer_money.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\build\\intermediates\\res\\merged\\anzhi\\debug\\drawable\\selector_dialog_right_button.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\app\\src\\main\\res\\drawable\\selector_dialog_right_button.xml"
     }
 ]

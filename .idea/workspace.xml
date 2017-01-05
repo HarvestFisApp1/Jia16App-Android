@@ -55,24 +55,222 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2a7f3bc-c3cb-49e2-b18c-0047570ede22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/umeng_socialize_menu_default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/umeng_socialize_qq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/umeng_socialize_wechat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/umeng_socialize_wxcircle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/umeng_socialize_back_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/umeng_socialize_btn_bg.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/umeng_auth.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/umeng_socialize_oauth_dialog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/base/BaseApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jia16/base/BaseApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/fragment/MoreFragmnet.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jia16/fragment/MoreFragmnet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/more/helpercenter/HelperCenterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jia16/more/helpercenter/HelperCenterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/anzhi/debug/coldswap.marker" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/handmark/pulltorefresh/library/R$drawable$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/handmark/pulltorefresh/library/R$id$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/handmark/pulltorefresh/library/R$layout$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$drawable$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$id$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$layout$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$mipmap$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$string$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$style$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/R$styleable$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/activity/MainActivity$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/activity/WebViewActivity$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/activity/WelcomeActivity$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/MyTotalAconutActivity$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/dealrun/AllDealFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/dealrun/ProceedDealFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/investstate/ApplyForFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/investstate/HoldForFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/investstate/ReturnMoneyFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/assets/investstate/TransferForFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$10$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$2$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$2$2$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$2$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$3$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$4$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$5$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$6$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$7$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$8$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$9$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$HomeAdapter$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/HomeFragment$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/InvestFragment$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/MoreFragmnet$MoreAdapter$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/fragment/MoreFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$1$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$1$2$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$1$3$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$2$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$2$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$3$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/home/HomeItemFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/invest/EcpectYearFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/invest/InvestDateFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/invest/InvestMoneyFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/invest/InvestProgressFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/invitefriends/ActiviRuleFragment$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/invitefriends/InviteFragment$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/invitefriends/RecommendDetailFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/mywelfare/ExpiredFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/mywelfare/MyWelfareActivity$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/mywelfare/UnUserdFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/more/mywelfare/UserdFragmnet$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/BaseListFragment$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/LoadingPager$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/AllDealHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/ApplyForHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/DealProgressHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/HoldForHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/HomeHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/InvestYearHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/RecommendHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/ReturnMoneyHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/TicketHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/pulltorefreshview/holder/TransferOkHolder$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/share/AuthActivity$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/util/AlertUtil$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/util/DMAlertUtil$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/4000/5/enhanced/com/jia16/view/LoadingDialog$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/activity/ModifyDealPwdActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/activity/ModifyForgetPwdActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/activity/ModifyPhoneActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/activity/ModifyPhoneNumActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/jia16/activity/ModifyRememberPwdActivity.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileAnzhiDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileAnzhiDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileAnzhiDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileAnzhiDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileAnzhiDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileAnzhiDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/base/BaseApplication$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/base/BaseApplication$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/base/BaseApplication.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/base/BaseApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$MoreAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet$MoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/fragment/MoreFragmnet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/home/HomeItemFragmnet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/anzhi/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/anzhi/debug/instant-run-bootstrap.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/anzhi/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/anzhi/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/base/BaseApplication$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/base/BaseApplication$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/base/BaseApplication.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/base/BaseApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$MoreAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet$MoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/fragment/MoreFragmnet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/home/HomeItemFragmnet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/more/helpercenter/HelperCenterActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/anzhi/debug/com/jia16/pulltorefreshview/holder/TransferMoneyHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_QQ_Full_ff2569399e2bb0c712379b0a0802f63da0c029d9.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_QQ_Full_ff2569399e2bb0c712379b0a0802f63da0c029d9.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_QQ_Simplify_42d8480dfa4ad1c03332e5aeb0dfa5cf23c119a3.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_QQ_Simplify_42d8480dfa4ad1c03332e5aeb0dfa5cf23c119a3.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_WeChat_Simplify_89289c49ebf654ed0d075358dcc08899c316c06f.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_WeChat_Simplify_89289c49ebf654ed0d075358dcc08899c316c06f.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_WeiXin_Full_9929ec97f342215cfd757c7ef99b9b7cd16676af.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/SocialSDK_WeiXin_Full_9929ec97f342215cfd757c7ef99b9b7cd16676af.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/analytics-6.0.7_5ff7758a73b8679c887167f1827cd06009d8ea41.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/analytics-6.0.7_5ff7758a73b8679c887167f1827cd06009d8ea41.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/android-support-v4_8867a48b151d37ac714a6a51daff1380b4f14a8d.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/android-support-v4_8867a48b151d37ac714a6a51daff1380b4f14a8d.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/gson-2.6.2_792a4a023b3151d7e2d63131039cb9ac449ba6a5.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/gson-2.6.2_792a4a023b3151d7e2d63131039cb9ac449ba6a5.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/hellocharts-library-1.5.8_9ce93f5b1df0b1c29d1b4dd8c42c930b6a35f591.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/hellocharts-library-1.5.8_9ce93f5b1df0b1c29d1b4dd8c42c930b6a35f591.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/instant-run-bootstrap_17b7441bfb967739c378ba6c600c632610659ff4.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/instant-run-bootstrap_17b7441bfb967739c378ba6c600c632610659ff4.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/instant-run_e5d51c30131447e1f2f67b0cb94adaf3bed85a94.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/instant-run_e5d51c30131447e1f2f67b0cb94adaf3bed85a94.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/libammsdk_42dae5ce950f0dbd48212110a8924f935f523068.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/libammsdk_42dae5ce950f0dbd48212110a8924f935f523068.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/libapshare_437331fdd68e1c098d7cb9a1180a17d4b7181432.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/libapshare_437331fdd68e1c098d7cb9a1180a17d4b7181432.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/libddshare_81e3d22846a601fd9f97fbfc630dfe4510812536.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/libddshare_81e3d22846a601fd9f97fbfc630dfe4510812536.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/main_05c3258c31640d19af5261ddd15d05a3fd8548fe.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/main_05c3258c31640d19af5261ddd15d05a3fd8548fe.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/mta-sdk-1.6.2_a3844e6d27d7efb4d5bde774338dfeeb2e8d465e.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/mta-sdk-1.6.2_a3844e6d27d7efb4d5bde774338dfeeb2e8d465e.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/open_sdk_r5756_lite_3b35577524efa99a6976f022f5b9245d57f93b23.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/open_sdk_r5756_lite_3b35577524efa99a6976f022f5b9245d57f93b23.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_shareboard_widget_e6cfe3bea6f1a95cfc78447fad922a726fa3fc09.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_shareboard_widget_e6cfe3bea6f1a95cfc78447fad922a726fa3fc09.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_api_dbda418c7c521a3f9d613ea7aaeb489d52887866.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_api_dbda418c7c521a3f9d613ea7aaeb489d52887866.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_net_8e6fbd1d4e5e3e4a663e24f942d58e34a80cb6cc.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_net_8e6fbd1d4e5e3e4a663e24f942d58e34a80cb6cc.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_shareboard_bf7bed6d26821949491eaf8deb94c535a203ef76.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_shareboard_bf7bed6d26821949491eaf8deb94c535a203ef76.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_tool_6e56e9fc0ce32f4a603ca3d019af1b61c581cf30.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/umeng_social_tool_6e56e9fc0ce32f4a603ca3d019af1b61c581cf30.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/universal-image-loader-1.9.4-with-sources_88f717dd33ef59c9ce435f865f745351a0eb55ab.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/universal-image-loader-1.9.4-with-sources_88f717dd33ef59c9ce435f865f745351a0eb55ab.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/utdid4all-1.0.4_19bc48c5581a875839cd2ce1d452988a7ec6d4ce.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/anzhi/debug/utdid4all-1.0.4_19bc48c5581a875839cd2ce1d452988a7ec6d4ce.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-anzhi-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-anzhi-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-anzhi-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-anzhi-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/anzhi/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/anzhi/debug/folders/1000/1f/main/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/base/BaseApplication$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/base/BaseApplication$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/base/BaseApplication.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/base/BaseApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$MoreAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet$MoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/fragment/MoreFragmnet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/home/HomeItemFragmnet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/more/helpercenter/HelperCenterActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/more/helpercenter/HelperCenterActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/more/helpercenter/HelperCenterActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/more/helpercenter/HelperCenterActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/more/helpercenter/HelperCenterActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/more/helpercenter/HelperCenterActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/pulltorefreshview/holder/TransferMoneyHolder$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/pulltorefreshview/holder/TransferMoneyHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/anzhi/debug/folders/1/5/main/com/jia16/pulltorefreshview/holder/TransferMoneyHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-anzhi-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-anzhi-debug-unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-anzhi-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-anzhi-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PullToRefreshLib/PullToRefreshLib.iml" afterPath="$PROJECT_DIR$/PullToRefreshLib/PullToRefreshLib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/drawable.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/mipmap-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/anzhi/debug/single/mipmap-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/bundles/anzhi/debug/instant-run/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/bundles/anzhi/debug/instant-run/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAnzhiDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAnzhiDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/anzhi/debug/manifest.crc" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/anzhi/debug/manifest.crc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/anzhi/debug/reload-changes.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/anzhi/debug/reload-changes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/anzhi/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/anzhi/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/anzhi/debug/drawable/umeng_socialize_btn_bg.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/anzhi/debug/drawable/umeng_socialize_btn_bg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/anzhi/debug/layout/umeng_auth.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/anzhi/debug/layout/umeng_auth.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/anzhi/debug/layout/umeng_socialize_oauth_dialog.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/anzhi/debug/layout/umeng_socialize_oauth_dialog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/anzhi/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/restart-dex/anzhi/debug/build-info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-anzhi-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-anzhi-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/volley/volley.iml" afterPath="$PROJECT_DIR$/volley/volley.iml" />
     </list>
     <ignored path="Jia16App-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,12 +291,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9526515">
+            <state vertical-scroll-proportion="0.0">
               <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModifyForgetPwdActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/activity/account/ModifyForgetPwdActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.9784173">
+              <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -21925,7 +22135,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="10329631904856" />
+        <entry key="$PROJECT_DIR$" value="10340952231941" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -22545,7 +22755,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/jia16/pulltorefreshview/adapter/TransferMoneyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/shape_transfer_money.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jia16/bean/TransferMoney.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jia16/fragment/InvestFragment.java" />
@@ -22596,6 +22805,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/jia16/activity/account/ModifyForgetPwdActivity.java" />
       </list>
     </option>
   </component>
@@ -23066,40 +23276,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jia16App-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jia16App-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jia16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -23491,7 +23667,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -23500,6 +23676,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6683761" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -23520,7 +23697,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -23543,33 +23719,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/pulltorefreshview/holder/ApplyForHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37769786">
-          <caret line="25" column="77" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/pulltorefreshview/holder/HoldForHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2877698">
-          <caret line="33" column="79" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_return_money_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/pulltorefreshview/holder/ReturnMoneyHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64748204">
@@ -24104,14 +24253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/home/HomeItemFragmnet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.928571">
-          <caret line="264" column="30" selection-start-line="264" selection-start-column="30" selection-end-line="264" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/base/BaseApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1306818">
@@ -24182,11 +24323,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/home/HomeItemFragmnet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04496403">
+          <caret line="264" column="30" selection-start-line="264" selection-start-column="30" selection-end-line="264" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/activity/account/ModifyPhoneNumActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3147482">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9526515">
+        <state vertical-scroll-proportion="0.0">
           <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jia16/activity/account/ModifyForgetPwdActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9784173">
+          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
