@@ -1,2 +1,6 @@
 /.gradle
 /.idea
+/build
+/*.iml
+/volley/build
+/volley/volley.iml
