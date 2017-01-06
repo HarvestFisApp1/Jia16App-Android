@@ -4,27 +4,27 @@
     api-level="19"
     density="xhdpi"
     format="7"
-    timestamp="208337184471880"
+    timestamp="285375990781640"
     token="-3800234433826733295" >
 
     <task
         name="javac"
-        duration="2566" />
+        duration="3100" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="5409" />
+        duration="191" />
     <task
         name="verifier"
-        duration="2984" />
+        duration="23" />
 
     <artifact
         location="C:\Users\DELL\Desktop\Jia16App-Android\app\build\outputs\apk\app-anzhi-debug.apk"
         type="MAIN" />
 
-    <build timestamp="208337184471880" >
+    <build timestamp="285375990781640" >
         <artifact
             location="C:\Users\DELL\Desktop\Jia16App-Android\app\build\outputs\apk\app-anzhi-debug.apk"
             type="MAIN" />

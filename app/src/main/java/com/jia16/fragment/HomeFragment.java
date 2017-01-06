@@ -354,12 +354,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         }
                         break ;
 
-
                 }
                 return false;
             }
         });
-
     }
 
 
@@ -394,7 +392,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             //将小圆点添加到线性布局中
             mllOvalWhite.addView(point);
         }
-
     }
 
     //给viewpager设置数据适配器
@@ -718,6 +715,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             } else {//表示目前还没有登录,那么就隐藏主界面我的福利的数量的布局
                 mTvWelfareNumber.setVisibility(View.INVISIBLE);
             }
+
+
+            //重新可见时，发送广播到HomeItemFragment界面，刷新界面
+            Intent intent=new Intent();
+            intent.setAction("home_item_refresh");
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            getActivity().sendBroadcast(intent);
 
         }
         super.onHiddenChanged(hidden);

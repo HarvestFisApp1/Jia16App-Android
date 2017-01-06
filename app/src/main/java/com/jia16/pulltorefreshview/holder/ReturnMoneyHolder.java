@@ -46,11 +46,12 @@ public class ReturnMoneyHolder extends BaseHolder<Returnmoney> {
         double amount = (double) appinfo.getAmount().getAmount();
         mTvInvestMoney.setText(AmountUtil.addComma(AmountUtil.DT.format(amount)));
         //年化收益率
-        double annualRate = appinfo.getSubject().getInstalmentPolicy().getAnnualRate();
-        NumberFormat num = NumberFormat.getPercentInstance();
-        String rates = num.format(annualRate);
-        Lg.e("年化收益率........",rates);
-        mTvPrincipalInterest.setText(rates);
+        double annualRate = appinfo.getSubject().getInstalmentPolicy().getAnnualRate()*100;
+//        NumberFormat num = NumberFormat.getPercentInstance();
+//        String rates = num.format(annualRate);
+//        Lg.e("年化收益率........",rates);
+        String annualrate = AmountUtil.addComma(AmountUtil.DT.format(annualRate));
+        mTvPrincipalInterest.setText(annualrate+"%");
 
         //本息收入
         double amount1 = appinfo.getAccountReceivable().getAmount();

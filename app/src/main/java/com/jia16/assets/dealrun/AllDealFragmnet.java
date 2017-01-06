@@ -52,6 +52,7 @@ public class AllDealFragmnet extends BaseListFragment<AllDeal> {
 
     @Override
     public Object requestData() {
+
         //检查如果是下拉刷新，就清空集合
         checkPullFromStart();
 
@@ -68,6 +69,7 @@ public class AllDealFragmnet extends BaseListFragment<AllDeal> {
     }
 
     private int page;
+
     /**
      * 获取全部交易的流水
      */
@@ -93,7 +95,7 @@ public class AllDealFragmnet extends BaseListFragment<AllDeal> {
                         String items = response.optString("items");
                         Lg.e("......items.....", items);
 
-                        if(page<2){
+                        if (page < 2) {
                             //发送广播，传递数据，更新交易流水数量
                             Intent intent = new Intent();
                             intent.setAction("all_deal_investment");
@@ -119,7 +121,7 @@ public class AllDealFragmnet extends BaseListFragment<AllDeal> {
                             //如果集合中有数据，那么就隐藏头布局
                             //将头布局的高度重新设置
                             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mNoDesc.getLayoutParams();
-                            params.height=0;
+                            params.height = 0;
                             mNoDesc.setLayoutParams(params);
                         }
 
@@ -127,11 +129,11 @@ public class AllDealFragmnet extends BaseListFragment<AllDeal> {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                            AlertUtil.showOneBtnDialog(getActivity(), "获取数据失败", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                }
-                            });
+                AlertUtil.showOneBtnDialog(getActivity(), "获取数据失败", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                    }
+                });
             }
         }) {
             @Override

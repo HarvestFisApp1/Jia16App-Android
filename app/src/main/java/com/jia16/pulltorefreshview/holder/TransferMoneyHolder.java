@@ -13,6 +13,7 @@ import com.jia16.R;
 import com.jia16.assets.MyTotalAconutActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.TransferMoney;
+import com.jia16.invest.MyNeedInvestActivity;
 import com.jia16.util.AmountUtil;
 
 public class TransferMoneyHolder extends BaseHolder<TransferMoney> {
@@ -38,7 +39,7 @@ public class TransferMoneyHolder extends BaseHolder<TransferMoney> {
     }
 
     //绑定数据的操作
-    public void bindData(TransferMoney appinfo) {
+    public void bindData(final TransferMoney appinfo) {
         //标的名称
         mAssetsTitle.setText(appinfo.getTitle());
 
@@ -68,8 +69,10 @@ public class TransferMoneyHolder extends BaseHolder<TransferMoney> {
         mllTransferContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(BaseApplication.getInstance(), MyTotalAconutActivity.class);
+                Intent intent=new Intent(BaseApplication.getInstance(), MyNeedInvestActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("title",appinfo.getTitle());
+                intent.putExtra("rightTitle","转让变现");
                 BaseApplication.getInstance().startActivity(intent);
             }
         });

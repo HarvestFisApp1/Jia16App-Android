@@ -119,6 +119,7 @@
         <activity android:name="com.jia16.assets.dealrun.CashRunActivity" />
         <activity android:name="com.jia16.assets.MyTotalAconutActivity" />
         <activity android:name="com.jia16.more.ActivityCenterActivity" />
+        <activity android:name="com.jia16.invest.MyNeedInvestActivity" />
 
         <!-- 微信分享的 -->
         <activity
@@ -152,7 +153,6 @@
             android:name="com.google.android.maps"
             android:required="false" />
         <uses-library android:name="android.test.runner" />
->>>>>>> Stashed changes
     </application>
 
 </manifest>

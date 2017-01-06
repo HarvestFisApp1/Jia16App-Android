@@ -314,6 +314,19 @@
         <item name="android:textColor">@color/text_color_dark_gray</item>
         <item name="android:paddingLeft">15dp</item>
     </style>
+    <style name="invest_left_desc">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_black_9</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="invest_right_data">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_color_dark_gray</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
     <style name="invite_friend">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

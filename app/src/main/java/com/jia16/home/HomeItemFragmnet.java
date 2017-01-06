@@ -1,7 +1,11 @@
 package com.jia16.home;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -88,6 +92,7 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
     private TextView mTvYearEarn4;
     private TextView mTvHomeGeginMoney;
     private TextView mTvTransferDate;
+    private BroadcastReceiver receiver;
 
 
     @Override
@@ -117,7 +122,31 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
 
         getHomeItem();
 
+        registerReceiver();
+
     }
+
+    private void registerReceiver() {
+        IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction("home_item_refresh");
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        if(receiver==null){
+            receiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            //重新请求数据
+                            getHomeItem();
+                        }
+                    },0);
+                }
+            };
+        }
+        getActivity().registerReceiver(receiver,intentFilter);
+    }
+
 
     /**
      * 初始化
@@ -178,7 +207,7 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
 
                         //新手专享
                         String newUser = response.optString("newUser");
-                        Lg.e("新手专享。。。。。。。。。。。。。。",newUser);
+                        //Lg.e("新手专享。。。。。。。。。。。。。。",newUser);
                         ArrayList<HomeItem> infos1 = (ArrayList<HomeItem>) JsonUtil.parseJsonToList(newUser, new TypeToken<List<HomeItem>>() {
                         }.getType());
                         mTvAssetsTitle1.setText(infos1.get(0).getTitle());
@@ -203,7 +232,7 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
 
                         //固定收益
                         String fixedIncome = response.optString("fixedIncome");
-                        Lg.e("。。。。。固定收益。。。。。。。。。",fixedIncome);
+                        //Lg.e("。。。。。固定收益。。。。。。。。。",fixedIncome);
                         ArrayList<FixedEarn> infos2 = (ArrayList<FixedEarn>) JsonUtil.parseJsonToList(fixedIncome, new TypeToken<List<FixedEarn>>() {
                         }.getType());
                         mTvAssetsTitle2.setText(infos2.get(0).getTitle());
@@ -233,7 +262,7 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
 
                         //个体网贷
                         String personalLoan = response.optString("personalLoan");
-                        Lg.e("。。。。。固定收益。。。。。。。。。",fixedIncome);
+                        //Lg.e("。。。。。固定收益。。。。。。。。。",fixedIncome);
                         ArrayList<FixedEarn> infos3 = (ArrayList<FixedEarn>) JsonUtil.parseJsonToList(personalLoan, new TypeToken<List<FixedEarn>>() {
                         }.getType());
                         mTvAssetsTitle3.setText(infos3.get(0).getTitle());
@@ -264,7 +293,7 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
 
                         //转让专区
                         String transfer = response.optString("transfer");
-                        Lg.e("。。。。。转让专区。。。。。。。。。",transfer);
+                        //Lg.e("。。。。。转让专区。。。。。。。。。",transfer);
                         ArrayList<TransferMoney> infos4 = (ArrayList<TransferMoney>) JsonUtil.parseJsonToList(transfer, new TypeToken<List<TransferMoney>>() {
                         }.getType());
                         mTvAssetsTitle4.setText(infos4.get(0).getTitle());
@@ -354,19 +383,9 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
         }
     }
 
-
     @Override
-    public void onPause() {
-
-        getHomeItem();
-
-        super.onPause();
+    public void onDestroy() {
+        getActivity().unregisterReceiver(receiver);
+        super.onDestroy();
     }
-
-    @Override
-    public void onResume() {
-
-        super.onResume();
-    }
-
 }

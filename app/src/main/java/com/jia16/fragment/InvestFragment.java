@@ -16,13 +16,12 @@ import android.widget.TextView;
 import com.jia16.R;
 import com.jia16.base.BaseApplication;
 import com.jia16.base.BaseFragment;
-import com.jia16.invest.EcpectYearFragmnet;
-import com.jia16.invest.InvestDateFragmnet;
-import com.jia16.invest.InvestMoneyFragmnet;
-import com.jia16.invest.InvestProgressFragmnet;
-import com.jia16.invest.TransFerRealizationFragmnet;
+import com.jia16.invest.iteminvest.EcpectYearFragmnet;
+import com.jia16.invest.iteminvest.InvestDateFragmnet;
+import com.jia16.invest.iteminvest.InvestMoneyFragmnet;
+import com.jia16.invest.iteminvest.InvestProgressFragmnet;
+import com.jia16.invest.iteminvest.TransFerRealizationFragmnet;
 import com.jia16.more.helpercenter.MyInvestMentFragmentAdapter;
-import com.jia16.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;

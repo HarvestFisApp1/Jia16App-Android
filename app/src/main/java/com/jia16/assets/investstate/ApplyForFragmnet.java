@@ -148,17 +148,4 @@ public class ApplyForFragmnet extends BaseListFragment<ApplyFor> {
         listView.addHeaderView(inflate);
     }
 
-    @Override
-    public void onResume() {
-
-        //检查如果是下拉刷新，就清空集合
-        checkPullFromStart();
-
-        list.clear();
-
-        //请求数据，获取申请中的数据
-        postApplyDatas();
-
-        super.onResume();
-    }
 }

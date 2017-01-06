@@ -754,37 +754,39 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
     }
 
 
-    /**
-     * 当界面重新可见的时候，那么就重新请求数据，刷新界面
-     */
+
     @Override
-    public void onResume() {
-        //判断当前网络是否可用
-        if (Util.isNetworkAvailable(getActivity())) {
-            mllMyContent.setVisibility(View.VISIBLE);
-            noNetWorkLayout.setVisibility(View.INVISIBLE);
-            if (BaseApplication.getInstance().isLogined()) {
-                userInfo = BaseApplication.getInstance().getUserInfo();
+    public void onHiddenChanged(boolean hidden) {
+        if(hidden){
+
+        }else {
+            //判断当前网络是否可用
+            if (Util.isNetworkAvailable(getActivity())) {
+                mllMyContent.setVisibility(View.VISIBLE);
+                noNetWorkLayout.setVisibility(View.INVISIBLE);
+                if (BaseApplication.getInstance().isLogined()) {
+                    userInfo = BaseApplication.getInstance().getUserInfo();
+                }
+            } else {
+                mllMyContent.setVisibility(View.INVISIBLE);
+                noNetWorkLayout.setVisibility(View.VISIBLE);
             }
-        } else {
-            mllMyContent.setVisibility(View.INVISIBLE);
-            noNetWorkLayout.setVisibility(View.VISIBLE);
+
+            //获取未使用的代金券的总金额
+            postUnuserdAmount();
+
+            //显示申请中，持有中等的数量
+            postInvertmentCount();
+
+
+            //获取用户投资的id
+            getInvestmentId();
+
+            //绑定数据
+            initData();
+
+            initViewPager();
         }
-
-        //获取未使用的代金券的总金额
-        postUnuserdAmount();
-
-        //显示申请中，持有中等的数量
-        postInvertmentCount();
-
-
-        //获取用户投资的id
-        getInvestmentId();
-
-        //绑定数据
-        initData();
-
-        initViewPager();
-        super.onResume();
+        super.onHiddenChanged(hidden);
     }
 }

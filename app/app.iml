@@ -42,6 +42,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/anzhiDebug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/anzhiDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/anzhiDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/anzhi/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/anzhi/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/anzhi/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/anzhi/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/anzhi/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/anzhi/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testAnzhiDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testAnzhiDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testAnzhiDebug/assets" type="java-test-resource" />
@@ -50,12 +56,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testAnzhiDebug/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testAnzhiDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testAnzhiDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/anzhi/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/anzhi/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/anzhi/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/anzhi/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/anzhi/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/anzhi/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/anzhi/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/anzhi/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/anzhi/assets" type="java-resource" />
