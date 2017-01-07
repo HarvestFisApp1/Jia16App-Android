@@ -20,6 +20,7 @@ import com.jia16.pulltorefreshview.BaseListFragment;
 import com.jia16.pulltorefreshview.adapter.BasicAdapter;
 import com.jia16.pulltorefreshview.adapter.DealProgressAdapter;
 import com.jia16.util.AlertUtil;
+import com.jia16.util.DensityUtil;
 import com.jia16.util.JsonUtil;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
@@ -120,6 +121,11 @@ public class ProceedDealFragmnet extends BaseListFragment<DealProcess> {
                             //将头布局的高度重新设置
                             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mNoDesc.getLayoutParams();
                             params.height = 0;
+                            mNoDesc.setLayoutParams(params);
+                        }else {
+                            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mNoDesc.getLayoutParams();
+                            int height = DensityUtil.dip2px(getActivity(), 50);
+                            params.height=height;
                             mNoDesc.setLayoutParams(params);
                         }
 

@@ -1,8 +1,0 @@
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\activity\GesturePwdActivity$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\assets\MyTotalAconutActivity$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\more\mywelfare\MyWelfareActivity$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\fragment\InvestFragment$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\fragment\HomeFragment$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\R$id$override.class
-CHANGED,C:\Users\DELL\Desktop\Jia16App-Android\app\build\intermediates\transforms\instantRun\anzhi\debug\folders\4000\5\enhanced\com\jia16\activity\RegisterActivity$override.class

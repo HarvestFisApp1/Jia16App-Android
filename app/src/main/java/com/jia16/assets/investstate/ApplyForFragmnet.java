@@ -19,6 +19,7 @@ import com.jia16.pulltorefreshview.BaseListFragment;
 import com.jia16.pulltorefreshview.adapter.ApplyForAdapter;
 import com.jia16.pulltorefreshview.adapter.BasicAdapter;
 import com.jia16.util.AlertUtil;
+import com.jia16.util.DensityUtil;
 import com.jia16.util.JsonUtil;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
@@ -103,7 +104,8 @@ public class ApplyForFragmnet extends BaseListFragment<ApplyFor> {
                             mNoDesc.setLayoutParams(params);
                         }else {
                             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mNoDesc.getLayoutParams();
-                            params.height=50;
+                            int height = DensityUtil.dip2px(getActivity(), 50);
+                            params.height=height;
                             mNoDesc.setLayoutParams(params);
                         }
                     }

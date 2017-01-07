@@ -3,6 +3,7 @@ package com.jia16.more;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -52,9 +53,22 @@ public class ActivityCenterActivity extends BaseActivity {
         });
 
         mIvImage1 = (ImageView) findViewById(R.id.iv_image1);
+        //动态设置imageView1的高度
+        int imageWidth1 = getWindowManager().getDefaultDisplay().getWidth();
+        ViewGroup.LayoutParams Params1 = mIvImage1.getLayoutParams();
+        float imageHeight1 = (float) (imageWidth1/2.5);
+        Params1.height=(int) imageHeight1;
+        mIvImage1.setLayoutParams(Params1);
         ImageLoader.getInstance().displayImage(DMConstant.H5Url.MORE_ACTIVITY,mIvImage1, ImageLoadOptions.fadeIn_options);
 
+
         mIvImage2 = (ImageView) findViewById(R.id.iv_image2);
+        //动态设置imageView2的高度
+        int imageWidth2 = getWindowManager().getDefaultDisplay().getWidth();
+        ViewGroup.LayoutParams Params2 = mIvImage2.getLayoutParams();
+        float imageHeight2 = (float) (imageWidth2/2.5);
+        Params2.height=(int) imageHeight2;
+        mIvImage2.setLayoutParams(Params2);
         ImageLoader.getInstance().displayImage(DMConstant.H5Url.MORE_ACTIVITY_TRANSFER,mIvImage2, ImageLoadOptions.fadeIn_options);
 
         mllDesc1 = (LinearLayout) findViewById(R.id.ll_desc1);

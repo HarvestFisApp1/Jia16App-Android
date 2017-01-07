@@ -11,7 +11,7 @@
 
         <LinearLayout
             android:id="@+id/ll_desc1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingLeft="10dp"
@@ -22,7 +22,8 @@
                 <ImageView
                     android:id="@+id/iv_image1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
 
                 <TextView
                     style="@style/asset_invest_name"
@@ -35,7 +36,7 @@
 
         <LinearLayout
             android:id="@+id/ll_desc2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="10dp"
@@ -46,7 +47,8 @@
                 <ImageView
                     android:id="@+id/iv_image2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
 
                 <TextView
                     style="@style/asset_invest_name"

@@ -66,5 +66,7 @@
     <color name="umeng_text_color">#575A5C</color>
     <color name="umeng_divide">#C3C6C9</color>
 
+    <color name="invest_account_devider">#E65C00</color>
+
 
 </resources>

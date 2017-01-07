@@ -25,6 +25,7 @@ import com.jia16.pulltorefreshview.adapter.BasicAdapter;
 import com.jia16.pulltorefreshview.adapter.ReturnMoneyAdapter;
 import com.jia16.util.AlertUtil;
 import com.jia16.util.AmountUtil;
+import com.jia16.util.DensityUtil;
 import com.jia16.util.JsonUtil;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
@@ -138,7 +139,8 @@ public class ReturnMoneyFragmnet extends BaseListFragment<Returnmoney> {
                             mTvNoData.setLayoutParams(params);
                         }else {
                             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mTvNoData.getLayoutParams();
-                            params.height=38;
+                            int height = DensityUtil.dip2px(getActivity(), 50);
+                            params.height=height;
                             mTvNoData.setLayoutParams(params);
                         }
                     }
