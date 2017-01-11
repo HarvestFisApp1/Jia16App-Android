@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.jia16.R;
+import com.jia16.assets.ApplyTransferActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.HoldFor;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.Constants;
+import com.jia16.util.Lg;
 import com.jia16.util.TimeUtils;
 
 public class HoldForHolder extends BaseHolder<HoldFor> {
@@ -77,6 +79,10 @@ public class HoldForHolder extends BaseHolder<HoldFor> {
         final int centractId = appinfo.getContract().getId();
         //获取投资id
         final int investsId = appinfo.getId();
+
+        //获取subject，申请转让的id
+        final int subjectId = appinfo.getSubject().getId();
+
         //获取用户的p2psessionid
         final String p2psessionid = BaseApplication.getInstance().sharedPreferences.getString("p2psessionid", "");
         //查看合同按钮
@@ -93,6 +99,18 @@ public class HoldForHolder extends BaseHolder<HoldFor> {
             }
         });
 
-        //转让按钮
+
+        //申请转让按钮
+        mBtTransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(BaseApplication.getInstance(), ApplyTransferActivity.class);
+                intent.putExtra("usersID",usersID); //传递用户id
+                intent.putExtra("subjectId",subjectId);//传递subject，申请转让的id
+                intent.putExtra("investsId",investsId);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                BaseApplication.getInstance().startActivity(intent);
+            }
+        });
     }
 }

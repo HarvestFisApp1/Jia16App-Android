@@ -138,7 +138,7 @@ public class TransferOkFragmnet extends BaseListFragment<TransferOk> {
      */
     public void setRefreshMode() {
         //1.设置下拉刷新的listview的模式,设置为只能加载更多
-        refreshListView.setMode(PullToRefreshBase.Mode.PULL_FROM_END);//默认为既可以下拉，也可以下拉
+        refreshListView.setMode(PullToRefreshBase.Mode.BOTH);//默认为既可以下拉，也可以下拉
     }
 
     /**

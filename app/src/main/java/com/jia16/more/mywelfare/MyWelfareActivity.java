@@ -1,7 +1,9 @@
 package com.jia16.more.mywelfare;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -28,7 +30,9 @@ import com.jia16.base.BaseActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.more.helpercenter.MyInvestMentFragmentAdapter;
 import com.jia16.util.AlertUtil;
+import com.jia16.util.DensityUtil;
 import com.jia16.util.Lg;
+import com.jia16.util.PopupWindowUtils;
 import com.jia16.util.UrlHelper;
 
 import org.json.JSONException;
@@ -154,8 +158,27 @@ public class MyWelfareActivity extends BaseActivity {
         mBtnUseRule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // 一个自定义的布局，作为显示的内容
+                View contentView = LayoutInflater.from(MyWelfareActivity.this).inflate(
+                        R.layout.pop_window, null);
                 //弹出使用规则的弹框
-                showPopupWindow(view);
+                popupWindow = PopupWindowUtils.showPopupWindow(contentView,38);
+
+                ImageView mIvButton = (ImageView) contentView.findViewById(R.id.iv_button);
+
+                mIvButton.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        if (popupWindow != null && popupWindow.isShowing()) {
+                            popupWindow.dismiss();
+                            popupWindow =null;
+                        }
+                    }
+                });
+                //显示popupWindow弹窗
+                popupWindow.showAsDropDown(contentView);
             }
         });
 
@@ -327,84 +350,4 @@ public class MyWelfareActivity extends BaseActivity {
         BaseApplication.getRequestQueue().add(jsonObjectRequest);
     }
 
-
-    /**
-     * 显示使用规则的弹窗
-     */
-    private void showPopupWindow(View view) {
-
-        // 一个自定义的布局，作为显示的内容
-        View contentView = LayoutInflater.from(MyWelfareActivity.this).inflate(
-                R.layout.pop_window, null);
-        // 设置按钮的点击事件
-        Button button = (Button) contentView.findViewById(R.id.button1);
-
-
-        popupWindow = new PopupWindow(contentView,
-               ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT, true);
-
-
-        popupWindow.setTouchable(true);
-        popupWindow.setFocusable(false);
-        popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        popupWindow.setOutsideTouchable(false);
-
-
-        //设置弹窗打开时，背景父窗体的透明度
-        WindowManager.LayoutParams params=MyWelfareActivity.this.getWindow().getAttributes();
-        params.alpha=0.3f;
-        MyWelfareActivity.this.getWindow().setAttributes(params);
-
-        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                return false;
-                // 这里如果返回true的话，touch事件将被拦截
-                // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
-            }
-        });
-
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (popupWindow != null && popupWindow.isShowing()) {
-                    popupWindow.dismiss();
-                    popupWindow=null;
-
-                    //设置弹窗关闭时，背景父窗体的透明度
-                    WindowManager.LayoutParams params=MyWelfareActivity.this.getWindow().getAttributes();
-                    params.alpha=1f;
-                    MyWelfareActivity.this.getWindow().setAttributes(params);
-                }
-            }
-        });
-
-        // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
-        // 我觉得这里是API的一个bug
-        popupWindow.setBackgroundDrawable(getResources().getDrawable(
-                R.drawable.common_item_white_sele));
-        //设置popupWindow显示的位置
-        popupWindow.showAtLocation(contentView, Gravity.CENTER, 0,0);
-
-        // 设置好参数之后再show
-        popupWindow.showAsDropDown(view);
-
-    }
-
-
-//    @Override
-//    public void onBackPressed() {
-//        if(is_home_welfare){
-//            Intent intent1=new Intent(MyWelfareActivity.this, MainActivity.class);
-//            intent1.putExtra("index",3);
-//            startActivity(intent1);
-//            finish();
-//        }else {
-//            finish();
-//        }
-//        super.onBackPressed();
-//    }
 }

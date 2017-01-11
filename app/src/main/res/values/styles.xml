@@ -180,5 +180,17 @@
         <item name="android:textColor">@color/text_color_dark_gray</item>
         <item name="android:gravity">center_vertical</item>
     </style>
+
+    <!--我的资产-转让标的信息的RadioButton的样式-->
+    <style name="assets_transfer_rb">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/feed_back_selector</item>
+        <item name="android:background">@drawable/shape_fransfer_rise_drop</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>
 

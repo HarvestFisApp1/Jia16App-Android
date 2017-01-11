@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 @SuppressLint("SimpleDateFormat")
 public class TimeUtils {
@@ -37,6 +38,7 @@ public class TimeUtils {
      * 长整型数字转日期, 返回字符串形式的日期
      */
     public static String getTime(long timeMillis, SimpleDateFormat simpleDateFormat) {
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT+8"));
         return simpleDateFormat.format(new Date(timeMillis));
     }
 

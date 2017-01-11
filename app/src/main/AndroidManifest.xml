@@ -143,6 +143,9 @@
 
         <activity android:name=".more.ActivityCenterActivity"/>
         <activity android:name=".invest.MyNeedInvestActivity"/>
+        <activity android:name=".assets.ApplyTransferActivity"/>
+        <activity android:name=".assets.ApplyTransferNextActivity"/>
+        <activity android:name=".assets.ApplyTransferAffirmActivity"/>
 
 
 

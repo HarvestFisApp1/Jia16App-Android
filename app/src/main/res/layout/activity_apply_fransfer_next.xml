@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/devider_color_gray"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/invite_friend"
+                    android:text="转让本金" />
+
+                <TextView
+                    android:id="@+id/tv_transfere_principal"
+                    style="@style/invite_friend"
+                    android:text="0.00"
+                    android:textColor="@color/progress_di" />
+
+                <TextView
+                    style="@style/invite_friend"
+                    android:text="+ 应得收益" />
+
+                <TextView
+                    android:id="@+id/tv_due_earn"
+                    style="@style/invite_friend"
+                    android:text="0.00"
+                    android:textColor="@color/progress_di" />
+
+                <TextView
+                    style="@style/invite_friend"
+                    android:text="元=" />
+
+                <TextView
+                    android:id="@+id/tv_sum_amount"
+                    style="@style/invite_friend"
+                    android:text="0.00"
+                    android:textColor="@color/progress_di" />
+
+                <TextView
+                    style="@style/invite_friend"
+                    android:text="元" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/invest_right_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="涨/降价(元)" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_check1"
+                            style="@style/assets_transfer_rb"
+                            android:checked="true"
+                            android:text="涨" />
+
+                        <RadioButton
+                            android:id="@+id/rb_check2"
+                            style="@style/assets_transfer_rb"
+                            android:text="降" />
+
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/invest_right_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="15dp"
+                        android:text="价格" />
+
+                    <EditText
+                        android:id="@+id/et_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="请输入金额"
+                        android:inputType="number|numberDecimal"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/text_color_dark_gray"
+                        android:textColorHint="@color/text_black_9"
+                        android:textCursorDrawable="@null"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        style="@style/invest_right_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingRight="38dp"
+                        android:paddingTop="15dp"
+                        android:text="元" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/devider_color_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/invest_right_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="转让挂牌期限" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_date_check1"
+                            style="@style/assets_transfer_rb"
+                            android:checked="true"
+                            android:text="1" />
+
+                        <RadioButton
+                            android:id="@+id/rb_date_check2"
+                            style="@style/assets_transfer_rb"
+                            android:text="2" />
+
+                        <RadioButton
+                            android:id="@+id/rb_date_check3"
+                            style="@style/assets_transfer_rb"
+                            android:text="3" />
+
+                        <RadioButton
+                            android:id="@+id/rb_date_check4"
+                            style="@style/assets_transfer_rb"
+                            android:text="4" />
+
+                        <RadioButton
+                            android:id="@+id/rb_date_check5"
+                            style="@style/assets_transfer_rb"
+                            android:text="5" />
+                    </RadioGroup>
+
+                    <TextView
+                        style="@style/invest_right_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="天" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/invest_right_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="8dp"
+                    android:text="选择转让申请挂牌的天数(含申请当天)"
+                    android:textColor="@color/text_black_9" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/devider_color_gray" />
+
+
+            <!--转让价格-->
+            <LinearLayout style="@style/helper_center_linearlayout">
+
+                <TextView
+                    style="@style/invest_left_desc"
+                    android:layout_width="150dp"
+                    android:text="转让价格" />
+
+                <TextView
+                    android:id="@+id/tv_transfer_amount"
+                    style="@style/invest_right_data"
+                    android:layout_width="match_parent"
+                    android:text="0.00元" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray" />
+
+
+            <!--挂牌收益率-->
+            <LinearLayout style="@style/helper_center_linearlayout">
+
+                <TextView
+                    style="@style/invest_left_desc"
+                    android:layout_width="150dp"
+                    android:text="挂牌收益率" />
+
+                <TextView
+                    android:id="@+id/tv_transfer_earn"
+                    style="@style/invest_right_data"
+                    android:layout_width="match_parent"
+                    android:text="0.0%" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray" />
+
+
+            <!--手续费-->
+            <LinearLayout style="@style/helper_center_linearlayout">
+
+                <TextView
+                    style="@style/invest_left_desc"
+                    android:layout_width="150dp"
+                    android:text="手续费" />
+
+                <TextView
+                    android:id="@+id/tv_transfer_charge"
+                    style="@style/invest_right_data"
+                    android:layout_width="match_parent"
+                    android:text="0元" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray" />
+
+            <!--实际到款金额-->
+            <LinearLayout style="@style/helper_center_linearlayout">
+
+                <TextView
+                    style="@style/invest_left_desc"
+                    android:layout_width="150dp"
+                    android:text="实际到款金额" />
+
+                <TextView
+                    android:id="@+id/tv_practical_amount"
+                    style="@style/invest_right_data"
+                    android:layout_width="match_parent"
+                    android:text="0.00元" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/devider_color_gray" />
+
+            <!--转让生效至-->
+            <LinearLayout style="@style/helper_center_linearlayout">
+
+                <TextView
+                    style="@style/invest_left_desc"
+                    android:layout_width="150dp"
+                    android:text="转让生效至" />
+
+                <TextView
+                    android:id="@+id/tv_transfer_date"
+                    style="@style/invest_right_data"
+                    android:layout_width="match_parent"
+                    android:text="0000-00-00" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/devider_color_gray" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@color/devider_color_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_caculate_mode"
+                    style="@style/invest_right_data"
+                    android:paddingLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="78dp"
+                    android:drawablePadding="8dp"
+                    android:drawableLeft="@drawable/invest_icon2"
+                    android:gravity="center_vertical"
+                    android:text="计算方式" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/bt_transfer_next"
+                        style="@style/btn_orsnge_big"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:text="下一步" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

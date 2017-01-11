@@ -307,6 +307,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
+                        //当手指按下时，那么就停止轮播
+                        handler.removeMessages(0);
+
                         flage = 0 ;
                         break ;
                     case MotionEvent.ACTION_MOVE:
@@ -352,8 +355,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                                 getActivity().startActivity(intent);
                             }
                         }
+                        //在手指滑动完图片后，能够让轮播图继续自动滚动
+                        handler.sendEmptyMessageDelayed(0, 5000);
                         break ;
-
                 }
                 return false;
             }
@@ -363,7 +367,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     //初始化数据的方法
     private void initDate() {
-        Lg.e("infos........size", infos.size());
+        //Lg.e("infos........size", infos.size());
         mViewpagerList = new ArrayList<ImageView>();
         for (int i = 0; i < infos.size(); i++) {
             ImageView iv = new ImageView(getActivity());
@@ -740,6 +744,25 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         });
     }
 
+
+
+//    /**
+//     * 让轮播图viewpager滚动起来
+//     */
+//    public void startRoll() {
+//        // 滚动viewpager
+//        if (myAdapter == null) {
+//            // 1.第一次初始化适配器
+//            myAdapter = new MyAdapter();
+//            viewpager.setAdapter(myAdapter);
+//            viewpager.setCurrentItem(currentPosition);
+//        } else {// 8.第二次，只需要通知适配器数据发生了变化，要刷新Ui
+//            myAdapter.notifyDataSetChanged();
+//        }
+//        // 2.发送一个延时的消息，3秒后执行runnableTask类里run方法里的操作
+//        // ★（为什么执行的是runnableTask，而不是handleMessage呢？这里涉及到handler消息机制源码解析）
+//        handler.postDelayed(runnableTask, 3000);
+//    }
 
 }
 

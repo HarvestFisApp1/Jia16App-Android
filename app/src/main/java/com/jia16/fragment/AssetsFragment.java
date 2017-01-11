@@ -1,6 +1,9 @@
 package com.jia16.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -10,8 +13,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -33,9 +39,11 @@ import com.jia16.base.BaseFragment;
 import com.jia16.bean.Investment;
 import com.jia16.bean.UserInfo;
 import com.jia16.more.helpercenter.MyInvestMentFragmentAdapter;
+import com.jia16.util.AlertUtil;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.JsonUtil;
 import com.jia16.util.Lg;
+import com.jia16.util.PopupWindowUtils;
 import com.jia16.util.TimeUtils;
 import com.jia16.util.UrlHelper;
 import com.jia16.util.Util;
@@ -117,6 +125,15 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
     private double mAcout;//总资产
     private String availableAmount;
 
+    private BroadcastReceiver receiverTransferFor;//转让中的界面发送过来的广播
+
+    /**
+     * 转让中界面传递过来的数据
+     */
+    private PopupWindow popupWindow;
+    private int transferId;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -170,6 +187,133 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
 
         //绑定数据
         initData();
+
+        //转让中的界面发送过来的广播
+        registerReceiverTransferFor();
+
+    }
+
+    /**
+     * 转让中的界面发送过来的广播
+     */
+    private void registerReceiverTransferFor() {
+        IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction("show_transfer_popupWindow");
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        receiverTransferFor = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, final Intent intent) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // 一个自定义的布局，作为显示的内容
+                        View contentView = LayoutInflater.from(getActivity()).inflate(
+                                R.layout.cancel_transfer_popwindow, null);
+                        //弹出使用规则的弹框
+                        popupWindow = PopupWindowUtils.showPopupWindow(contentView,60);
+
+                        //取消按钮
+                        ImageView mIvButton = (ImageView) contentView.findViewById(R.id.iv_button);
+
+                        //确认按钮
+                        Button mBtAffirmTransfer = (Button) contentView.findViewById(R.id.bt_affirm_transfer);
+
+                        mIvButton.setOnClickListener(new View.OnClickListener() {
+
+                            @Override
+                            public void onClick(View v) {
+                                if (popupWindow != null && popupWindow.isShowing()) {
+                                    popupWindow.dismiss();
+                                    popupWindow =null;
+                                }
+                            }
+                        });
+
+                        //获取广播传递过来的该转让标的id
+                        transferId = intent.getIntExtra("transferId", 0);
+
+                        //确认撤销转让
+                        mBtAffirmTransfer.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                if (popupWindow != null && popupWindow.isShowing()) {
+                                    popupWindow.dismiss();
+                                    popupWindow =null;
+                                }
+                                //请求接口，撤销转让标的
+                                postCancelTransfer();
+                            }
+                        });
+
+                        //显示popupWindow弹窗
+                        popupWindow.showAsDropDown(contentView);
+                    }
+                },0);
+            }
+        };
+        getActivity().registerReceiver(receiverTransferFor,intentFilter);
+
+    }
+
+    /**
+     * 请求接口，撤销转让标的
+     */
+    private void postCancelTransfer() {
+
+        showLoadingDialog();
+
+        long currentTimeMillis = System.currentTimeMillis();
+
+        userId = userInfo.getId();
+        String url = "/api/users/"+userId+"/subjects/"+transferId+"/pass";
+        url = UrlHelper.getUrl(url);
+
+        JSONObject jsonObject=new JSONObject();
+        try {
+            jsonObject.put("timestamp",currentTimeMillis);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        dimissLoadingDialog();
+
+                       //撤销转让成功
+                        Lg.e("撤销转让成功",".........撤销转让成功.....");
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                dimissLoadingDialog();
+                AlertUtil.showOneBtnDialog(getActivity(), "撤销转让失败", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("CSRF-TOKEN", BaseApplication.getInstance().sharedPreferences.getString("_csrf", ""));
+                headers.put("Cookie", BaseApplication.getInstance().sharedPreferences.getString("Cookie", ""));
+                return headers;
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+        };
+        BaseApplication.getRequestQueue().add(jsonObjectRequest);
 
     }
 
@@ -421,6 +565,9 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
             mTvAssetsUsername.setText(userInfo.getUsername());
         }
     }
+
+
+
 
     /**
      * 获取投资id
@@ -789,4 +936,11 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
         }
         super.onHiddenChanged(hidden);
     }
+
+    @Override
+    public void onDestroy() {
+        getActivity().unregisterReceiver(receiverTransferFor);
+        super.onDestroy();
+    }
+
 }

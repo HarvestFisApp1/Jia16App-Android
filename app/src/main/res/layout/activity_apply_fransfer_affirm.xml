@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:background="@color/devider_color_gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title_layout"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+
+    <!--转让标的-->
+    <LinearLayout style="@style/helper_center_linearlayout">
+
+        <TextView
+            style="@style/invest_left_desc"
+            android:layout_width="150dp"
+            android:text="转让标的" />
+
+        <TextView
+            android:id="@+id/tv_transfer_name"
+            style="@style/invest_right_data"
+            android:layout_width="match_parent"
+            android:text="---" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/devider_color_gray" />
+
+
+    <!--转让价格-->
+    <LinearLayout style="@style/helper_center_linearlayout">
+
+        <TextView
+            style="@style/invest_left_desc"
+            android:layout_width="150dp"
+            android:text="转让价格" />
+
+        <TextView
+            android:id="@+id/tv_transfer_price"
+            style="@style/invest_right_data"
+            android:layout_width="match_parent"
+            android:text="0.00元" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/devider_color_gray" />
+
+
+    <!--预计到账金额-->
+    <LinearLayout style="@style/helper_center_linearlayout">
+
+        <TextView
+            style="@style/invest_left_desc"
+            android:layout_width="150dp"
+            android:text="预计到账金额" />
+
+        <TextView
+            android:id="@+id/tv_practical_amount"
+            style="@style/invest_right_data"
+            android:layout_width="match_parent"
+            android:text="0.00元" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/devider_color_gray" />
+
+    <!--转让期限-->
+    <LinearLayout style="@style/helper_center_linearlayout">
+
+        <TextView
+            style="@style/invest_left_desc"
+            android:layout_width="150dp"
+            android:text="转让期限" />
+
+        <TextView
+            android:id="@+id/tv_transfer_date"
+            style="@style/invest_right_data"
+            android:layout_width="match_parent"
+            android:text="0天" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devider_color_gray" />
+
+    <TextView
+        style="@style/invest_right_data"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:text="转让成功后,第2日放款"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/bt_affirm_transfer"
+            style="@style/btn_orsnge_big"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="确认转让" />
+    </LinearLayout>
+</LinearLayout>
