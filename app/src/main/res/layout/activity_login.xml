@@ -64,8 +64,8 @@
 
 
         <ImageView
-            android:layout_width="21dp"
-            android:layout_height="28dp"
+            android:layout_width="15dp"
+            android:layout_height="21dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -78,6 +78,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
+            android:gravity="center_vertical"
             android:hint="请输入您的手机号或用户名"
             android:inputType="text"
             android:cursorVisible="true"
@@ -98,8 +99,8 @@
 
 
         <ImageView
-            android:layout_width="21dp"
-            android:layout_height="28dp"
+            android:layout_width="15dp"
+            android:layout_height="21dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -113,6 +114,7 @@
             android:background="@null"
             android:cursorVisible="true"
             android:textCursorDrawable="@null"
+            android:gravity="center_vertical"
             android:hint="请输入您的登录密码"
             android:inputType="textPassword"
             android:textColor="@color/main_text_color"

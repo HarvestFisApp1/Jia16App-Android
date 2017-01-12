@@ -403,15 +403,15 @@ public class TransferMoney {
         private int passDays;
         private int graceDays;
         private int valueDays;
-        private int overduePenaltyRate;
-        private int transferFeeRate;
+        private double overduePenaltyRate;
+        private double transferFeeRate;
         private Object payOffDaysLimit;
         private Object overdueAdvanceDays;
         private Object prepaymentPenaltyDays;
         private Object prepayPendingInstalmentsCount;
         private int transferableStartDays;
         private int transferableEndDays;
-        private int investProfitFeeRate;
+        private double investProfitFeeRate;
         private String investProfitFeeBeneficiaryParty;
         private String financialAssetsHeldTerminationDate;
         private int redDays;
@@ -464,19 +464,19 @@ public class TransferMoney {
             this.valueDays = valueDays;
         }
 
-        public int getOverduePenaltyRate() {
+        public double getOverduePenaltyRate() {
             return overduePenaltyRate;
         }
 
-        public void setOverduePenaltyRate(int overduePenaltyRate) {
+        public void setOverduePenaltyRate(double overduePenaltyRate) {
             this.overduePenaltyRate = overduePenaltyRate;
         }
 
-        public int getTransferFeeRate() {
+        public double getTransferFeeRate() {
             return transferFeeRate;
         }
 
-        public void setTransferFeeRate(int transferFeeRate) {
+        public void setTransferFeeRate(double transferFeeRate) {
             this.transferFeeRate = transferFeeRate;
         }
 
@@ -528,11 +528,11 @@ public class TransferMoney {
             this.transferableEndDays = transferableEndDays;
         }
 
-        public int getInvestProfitFeeRate() {
+        public double getInvestProfitFeeRate() {
             return investProfitFeeRate;
         }
 
-        public void setInvestProfitFeeRate(int investProfitFeeRate) {
+        public void setInvestProfitFeeRate(double investProfitFeeRate) {
             this.investProfitFeeRate = investProfitFeeRate;
         }
 

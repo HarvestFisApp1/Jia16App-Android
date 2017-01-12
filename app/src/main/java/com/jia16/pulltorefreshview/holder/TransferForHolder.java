@@ -67,7 +67,7 @@ public class TransferForHolder extends BaseHolder<TransferFor> {
             @Override
             public void onClick(View view) {
 
-                //发送广播，到我的资产界面（assetsFragmnet),显示PopupWindow弹窗，提示是否是撤销转让
+                //发送广播，到我的资产界面（assetsFragmnet),显示PopupWindow弹窗，提示是否撤销转让
                 Intent intent=new Intent();
                 intent.setAction("show_transfer_popupWindow");
                 intent.addCategory(Intent.CATEGORY_DEFAULT);

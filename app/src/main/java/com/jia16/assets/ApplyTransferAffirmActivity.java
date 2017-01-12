@@ -106,7 +106,6 @@ public class ApplyTransferAffirmActivity extends BaseActivity {
         mBtAffirmTransfer = (Button) findViewById(R.id.bt_affirm_transfer);
         mBtAffirmTransfer.setOnClickListener(this);
 
-
     }
 
 
@@ -172,12 +171,14 @@ public class ApplyTransferAffirmActivity extends BaseActivity {
                 //转让成功后，那么
                 ToastUtil.getInstant().show(ApplyTransferAffirmActivity.this,"恭喜您，转让申请已经提交");
 
+                //发送广播，到我的资产界面，重新请求数据，选中转让中
+                Intent intent=new Intent();
+                intent.setAction("transfer_apply_success_refresh_interface");
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                sendBroadcast(intent);
+
                 //关闭当前界面
                 finish();
-
-                //回到我的资产界面，并且需要选中转让中的界面
-
-
 
             }
         }, new Response.ErrorListener() {

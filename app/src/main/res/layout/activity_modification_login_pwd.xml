@@ -22,8 +22,8 @@
         android:layout_gravity="center_vertical">
 
         <ImageView
-            android:layout_width="21dp"
-            android:layout_height="28dp"
+            android:layout_width="15dp"
+            android:layout_height="21dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:src="@mipmap/login_pwd" />
@@ -65,8 +65,8 @@
         android:layout_gravity="center_vertical">
 
         <ImageView
-            android:layout_width="21dp"
-            android:layout_height="28dp"
+            android:layout_width="15dp"
+            android:layout_height="21dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:src="@mipmap/login_pwd" />

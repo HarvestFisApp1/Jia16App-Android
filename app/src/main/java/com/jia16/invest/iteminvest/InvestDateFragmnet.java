@@ -245,7 +245,7 @@ public class InvestDateFragmnet extends BaseListFragment<InvestConstant> {
                             //描述
                             mTvEarnDesc.setText(inf.get(0).getTagName());
                             //进度条
-                            mRbProgress.setMax(inf.get(0).getTotalAmount());//设置进度条的最大值
+                            mRbProgress.setMax((int) inf.get(0).getTotalAmount());//设置进度条的最大值
                             mRbProgress.setProgress((int) inf.get(0).getInOrderInvest());//设置当前进度
                         }
 

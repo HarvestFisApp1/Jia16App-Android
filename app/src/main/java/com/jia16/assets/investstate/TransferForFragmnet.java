@@ -1,5 +1,10 @@
 package com.jia16.assets.investstate;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -39,6 +44,7 @@ public class TransferForFragmnet extends BaseListFragment<TransferFor> {
     private UserInfo userInfo;
     private int userId;
     private TextView mNoDesc;
+    private BroadcastReceiver refreshReceiver;
 
     @Override
     public BasicAdapter<TransferFor> getAdapter() {
@@ -57,6 +63,46 @@ public class TransferForFragmnet extends BaseListFragment<TransferFor> {
         postTransferDatas();
 
         return list;
+    }
+
+    @Override
+    public void onResume() {
+
+        //检查如果是下拉刷新，就清空集合
+        checkPullFromStart();
+
+        list.clear();
+
+        //请求数据，获取持有中的数据
+        postTransferDatas();
+
+        //我的资产界面(assetsFragment)发送过来的广播，重新请求数据，展示
+        registerRefreshRecerver();
+
+        super.onResume();
+    }
+
+
+    /**
+     * 我的资产界面(assetsFragment)发送过来的广播，重新请求数据，展示
+     */
+    private void registerRefreshRecerver() {
+        IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction("transfer_for_success_refresh");
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        refreshReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //重新请求转让中的数据
+                        postTransferDatas();
+                    }
+                },0);
+            }
+        };
+        getActivity().registerReceiver(refreshReceiver,intentFilter);
     }
 
 
@@ -151,4 +197,10 @@ public class TransferForFragmnet extends BaseListFragment<TransferFor> {
         listView.addHeaderView(inflate);
     }
 
+
+    @Override
+    public void onDestroy() {
+        getActivity().unregisterReceiver(refreshReceiver);
+        super.onDestroy();
+    }
 }

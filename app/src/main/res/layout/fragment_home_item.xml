@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/devider_color_gray"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <!--新手专区-->
@@ -22,13 +22,14 @@
                 style="@style/home_invest_name"
                 android:text="新手专区"
                 android:drawablePadding="5dp"
+                android:background="@color/devider_color_gray"
                 android:drawableLeft="@drawable/shape_home_newuser"
                 android:gravity="center_vertical"/>
 
             <LinearLayout
+                android:id="@+id/ll_newuser_content"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:background="@color/white"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -167,10 +168,12 @@
                 style="@style/home_invest_name"
                 android:text="固定收益"
                 android:drawablePadding="5dp"
+                android:background="@color/devider_color_gray"
                 android:drawableLeft="@drawable/shape_home_fixedincome"
                 android:gravity="center_vertical"/>
 
             <LinearLayout
+                android:id="@+id/ll_earn_content"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:background="@color/white"
@@ -303,7 +306,7 @@
 
 
 
-        <!--个人网贷-->
+        <!--个体网贷-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -312,12 +315,14 @@
             <TextView
                 android:layout_height="38dp"
                 style="@style/home_invest_name"
-                android:text="个人网贷"
+                android:text="个体网贷"
                 android:drawablePadding="5dp"
+                android:background="@color/devider_color_gray"
                 android:drawableLeft="@drawable/shape_home_personalloan"
                 android:gravity="center_vertical"/>
 
             <LinearLayout
+                android:id="@+id/ll_unity_content"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:background="@color/white"
@@ -459,10 +464,12 @@
                 style="@style/home_invest_name"
                 android:text="转让专区"
                 android:drawablePadding="5dp"
+                android:background="@color/devider_color_gray"
                 android:drawableLeft="@drawable/shape_home_transfer"
                 android:gravity="center_vertical"/>
 
             <LinearLayout
+                android:id="@+id/ll_fransfer_content"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="@color/white"
@@ -587,6 +594,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="38dp"/>
+            android:layout_height="38dp"
+            android:background="@color/devider_color_gray"/>
     </LinearLayout>
 </ScrollView>

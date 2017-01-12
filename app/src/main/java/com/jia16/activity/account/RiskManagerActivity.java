@@ -146,6 +146,7 @@ public class RiskManagerActivity extends BaseActivity {
     private Button mBtRiskFinish;
     private String riskCapacityLevelText;
     private Button mBtnRiskRestart;
+    private ImageView mIvImageFinish;
 
 
     /**
@@ -155,6 +156,7 @@ public class RiskManagerActivity extends BaseActivity {
     private TextView mTvRiskRestarted;
     private TextView mTvRestarted;
     private Button mBtRiskRestarted;
+    private ImageView mIvImageed;
     private String risktext;
     private String riskcode;
     private String riskCapacityLevelCode;
@@ -326,6 +328,7 @@ public class RiskManagerActivity extends BaseActivity {
         //重新评测的按钮，当评测完成后就显示，否则就隐藏
         mBtnRiskRestart = (Button) findViewById(R.id.btn_risk_restart);
         mBtnRiskRestart.setOnClickListener(this);
+        mIvImageFinish = (ImageView) findViewById(R.id.iv_image_finish);
 
 
         //如果用户已经风险评测过，那么当用户再次点击风险评测时显示的界面
@@ -334,6 +337,8 @@ public class RiskManagerActivity extends BaseActivity {
         mTvRestarted = (TextView) findViewById(R.id.tv_restarted);
         mBtRiskRestarted = (Button) findViewById(R.id.bt_risk_restarted);
         mBtRiskRestarted.setOnClickListener(this);
+        mIvImageed = (ImageView) findViewById(R.id.iv_image);
+
 
         UserInfo.RiskCapacityBean riskCapacity = userInfo.getRiskCapacity();
         if (riskCapacity != null) {
@@ -344,11 +349,17 @@ public class RiskManagerActivity extends BaseActivity {
             mTvRiskRestarted.setText("您的投资风格为:"+risktext);
 
             if(riskcode.equals(desc1)){
+                //保守型
                 mTvRestarted.setText("较为适合与投资低风险理财产品");
+                mIvImageed.setImageResource(R.drawable.conservative);
             }else if(riskcode.equals(desc2)){
+                //稳健型
                 mTvRestarted.setText("较为适合与投资中等风险理财产品");
+                mIvImageed.setImageResource(R.drawable.steadiness);
             }else if(riskcode.equals(desc3)){
+                //激进型
                 mTvRestarted.setText("较为适合与投资高风险理财产品");
+                mIvImageed.setImageResource(R.drawable.radical);
             }
 
         }else {
@@ -794,10 +805,13 @@ public class RiskManagerActivity extends BaseActivity {
                 riskCapacityLevelCode = riskCapacity.getRiskCapacityLevelCode();
                if(riskCapacityLevelCode.equals(desc1)){
                    mTvFinish.setText("较为适合与投资低风险理财产品");
+                   mIvImageFinish.setImageResource(R.drawable.conservative);
                }else if(riskCapacityLevelCode.equals(desc2)){
                    mTvFinish.setText("较为适合与投资中等风险理财产品");
+                   mIvImageFinish.setImageResource(R.drawable.steadiness);
                }else if(riskCapacityLevelCode.equals(desc3)){
                    mTvFinish.setText("较为适合与投资高风险理财产品");
+                   mIvImageFinish.setImageResource(R.drawable.radical);
                }
 
             }

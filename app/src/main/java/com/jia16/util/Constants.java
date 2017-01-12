@@ -19,7 +19,9 @@ public class Constants {
     //public static final String HOME_PAGE = "http://114.55.156.253/";
     //线上测试
     //public static final String HOME_PAGE = "http://114.55.156.253/";
+
     public static final String HOME_PAGE = "https://app.jia16.com/";
+
     //vpn
 //    public static final String HOME_PAGE = "http://10.139.98.226/";
 

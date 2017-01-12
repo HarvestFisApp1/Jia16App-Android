@@ -125,14 +125,14 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
     private double mAcout;//总资产
     private String availableAmount;
 
-    private BroadcastReceiver receiverTransferFor;//转让中的界面发送过来的广播
+    private BroadcastReceiver receiverTransferFor;//转让中的界面（TransferForHolder）发送过来的广播
 
     /**
      * 转让中界面传递过来的数据
      */
     private PopupWindow popupWindow;
     private int transferId;
-
+    private BroadcastReceiver receiverRefreshTransferFor;//（ApplyTransferAffirmActivity）界面发送过来的广播
 
 
     @Override
@@ -188,16 +188,60 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
         //绑定数据
         initData();
 
-        //转让中的界面发送过来的广播
+        //转让中的界面（TransferForHolder）发送过来的广播
         registerReceiverTransferFor();
 
+        //（ApplyTransferAffirmActivity）界面发送过来的广播
+        registerReceiverRefresh();
+
+    }
+
+    /**
+     * （ApplyTransferAffirmActivity）界面发送过来的广播
+     */
+    private void registerReceiverRefresh() {
+        IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction("transfer_apply_success_refresh_interface");
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        receiverRefreshTransferFor = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, final Intent intent) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //重新请求数据
+                        //获取未使用的代金券的总金额
+                        postUnuserdAmount();
+
+                        //显示申请中，持有中等的数量
+                        postInvertmentCount();
+
+                        //获取用户投资的id
+                        getInvestmentId();
+
+
+
+                        //然后发送广播到（TransferForFragmnet（））刷新数据
+                        Intent intent1=new Intent();
+                        intent1.setAction("transfer_for_success_refresh");
+                        intent1.addCategory(Intent.CATEGORY_DEFAULT);
+                        getActivity().sendBroadcast(intent1);
+
+                        //选中--转让中--
+                        mHelperViewPager.setCurrentItem(3);
+
+                    }
+                },0);
+            }
+        };
+        getActivity().registerReceiver(receiverRefreshTransferFor,intentFilter);
     }
 
     /**
      * 转让中的界面发送过来的广播
      */
     private void registerReceiverTransferFor() {
-        IntentFilter intentFilter=new IntentFilter();
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("show_transfer_popupWindow");
         intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
         receiverTransferFor = new BroadcastReceiver() {
@@ -209,8 +253,8 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                         // 一个自定义的布局，作为显示的内容
                         View contentView = LayoutInflater.from(getActivity()).inflate(
                                 R.layout.cancel_transfer_popwindow, null);
-                        //弹出使用规则的弹框
-                        popupWindow = PopupWindowUtils.showPopupWindow(contentView,60);
+                        //调用工具类，弹出弹框
+                        popupWindow = PopupWindowUtils.showPopupWindow(contentView, 60);
 
                         //取消按钮
                         ImageView mIvButton = (ImageView) contentView.findViewById(R.id.iv_button);
@@ -224,7 +268,7 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                             public void onClick(View v) {
                                 if (popupWindow != null && popupWindow.isShowing()) {
                                     popupWindow.dismiss();
-                                    popupWindow =null;
+                                    popupWindow = null;
                                 }
                             }
                         });
@@ -239,7 +283,7 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
 
                                 if (popupWindow != null && popupWindow.isShowing()) {
                                     popupWindow.dismiss();
-                                    popupWindow =null;
+                                    popupWindow = null;
                                 }
                                 //请求接口，撤销转让标的
                                 postCancelTransfer();
@@ -249,10 +293,10 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                         //显示popupWindow弹窗
                         popupWindow.showAsDropDown(contentView);
                     }
-                },0);
+                }, 0);
             }
         };
-        getActivity().registerReceiver(receiverTransferFor,intentFilter);
+        getActivity().registerReceiver(receiverTransferFor, intentFilter);
 
     }
 
@@ -266,12 +310,12 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
         long currentTimeMillis = System.currentTimeMillis();
 
         userId = userInfo.getId();
-        String url = "/api/users/"+userId+"/subjects/"+transferId+"/pass";
+        String url = "/api/users/" + userId + "/subjects/" + transferId + "/pass";
         url = UrlHelper.getUrl(url);
 
-        JSONObject jsonObject=new JSONObject();
+        JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("timestamp",currentTimeMillis);
+            jsonObject.put("timestamp", currentTimeMillis);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -283,8 +327,20 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
 
                         dimissLoadingDialog();
 
-                       //撤销转让成功
-                        Lg.e("撤销转让成功",".........撤销转让成功.....");
+                        //撤销转让成功
+                        Lg.e("撤销转让成功", ".........撤销转让成功.....");
+
+                        //撤销转让成功后，重新请求数据，刷新界面，然后选中--持有中的fragment
+
+                        //重新请求数据
+                        //显示申请中，持有中等的数量
+                        postInvertmentCount();
+
+                        //获取用户投资的id
+                        getInvestmentId();
+
+                        //选中--持有中的fragment
+                        mHelperViewPager.setCurrentItem(1);
 
 
                     }
@@ -518,14 +574,14 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                 break;
 
             case R.id.ll_my_acount://账户详情--总资产
-                intent=new Intent(getActivity(),MyTotalAconutActivity.class);
+                intent = new Intent(getActivity(), MyTotalAconutActivity.class);
                 //数据类型都是Double类型
-                intent.putExtra("mtotal_acount",mAcout);//总资产
-                intent.putExtra("available_acount",availableamount);//可用资产
-                intent.putExtra("invest_acount",amount2);//投资中
-                intent.putExtra("freeze_acount",freeza);//冻结资金
+                intent.putExtra("mtotal_acount", mAcout);//总资产
+                intent.putExtra("available_acount", availableamount);//可用资产
+                intent.putExtra("invest_acount", amount2);//投资中
+                intent.putExtra("freeze_acount", freeza);//冻结资金
                 startActivity(intent);
-            break;
+                break;
 
             case R.id.noNetworkLayout:
                 getActivity().findViewById(R.id.net_error_content).setVisibility(View.GONE);
@@ -534,7 +590,7 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                     public void run() {
                         getActivity().findViewById(R.id.net_error_content).setVisibility(View.VISIBLE);
                     }
-                },300);
+                }, 300);
                 //重新请求网络，获取数据
                 //获取未使用的代金券的总金额
                 postUnuserdAmount();
@@ -567,14 +623,12 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
     }
 
 
-
-
     /**
      * 获取投资id
      */
     private void getInvestmentId() {
         long currentTimeInLong = TimeUtils.getCurrentTimeInLong();
-        String url = "/api/users/current?_="+currentTimeInLong;
+        String url = "/api/users/current?_=" + currentTimeInLong;
         url = UrlHelper.getUrl(url);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -713,7 +767,7 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                         String transferred = response.optString("TRANSFERRED");
                         mTvTransferrend.setText(transferred);
 
-                       Lg.e("设置申请中的数量....",applying+"...."+pending+"..."+done+"..."+transferring+".."+transferred);
+                        Lg.e("设置申请中的数量....", applying + "...." + pending + "..." + done + "..." + transferring + ".." + transferred);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -815,17 +869,17 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                             amount2 = Double.parseDouble(AssetsFragment.this.amount);
 
                             //获取预期应得收益
-                            JSONObject jsons=new JSONObject(pendingProfit);
+                            JSONObject jsons = new JSONObject(pendingProfit);
                             String amountpending = jsons.getString("amount");
                             double pendingAmount = Double.parseDouble(amountpending);
 
                             //获取成功发送广播到持有中的fragment中更新界面
-                            Intent intents=new Intent();
+                            Intent intents = new Intent();
                             intents.setAction("hold_for_amount");
                             intents.addCategory(Intent.CATEGORY_DEFAULT);
                             //传递数据，当前持有中，预期应得收益
-                            intents.putExtra("current_hold",amount2);
-                            intents.putExtra("get_enraing",pendingAmount);
+                            intents.putExtra("current_hold", amount2);
+                            intents.putExtra("get_enraing", pendingAmount);
                             getActivity().sendBroadcast(intents);
 
 
@@ -847,15 +901,14 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                             //获取累计收益的金额
                             String amount1 = object.getString("amount");
                             double settledamount = Double.parseDouble(amount1);
-                            mTvSettledProfit.setText("+"+AmountUtil.addComma(AmountUtil.DT.format(settledamount)));
+                            mTvSettledProfit.setText("+" + AmountUtil.addComma(AmountUtil.DT.format(settledamount)));
 
                             //发送广播，到已回款界面(已赚取收益)，更新ui数据
-                            Intent intent=new Intent();
+                            Intent intent = new Intent();
                             intent.setAction("earn_earnings");
                             intent.addCategory(Intent.CATEGORY_DEFAULT);
-                            intent.putExtra("earn_earnings",settledamount);
+                            intent.putExtra("earn_earnings", settledamount);
                             getActivity().sendBroadcast(intent);
-
 
 
                             //所有的数据加载成功后，取消正在加载
@@ -901,12 +954,11 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
     }
 
 
-
     @Override
     public void onHiddenChanged(boolean hidden) {
-        if(hidden){
+        if (hidden) {
 
-        }else {
+        } else {
             //判断当前网络是否可用
             if (Util.isNetworkAvailable(getActivity())) {
                 mllMyContent.setVisibility(View.VISIBLE);
@@ -940,6 +992,7 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onDestroy() {
         getActivity().unregisterReceiver(receiverTransferFor);
+        //getActivity().unregisterReceiver(receiverRefreshTransferFor);
         super.onDestroy();
     }
 

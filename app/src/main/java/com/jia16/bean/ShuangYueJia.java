@@ -38,16 +38,16 @@ public class ShuangYueJia {
      */
 
     private double stepInvAmount;
-    private int useVoucherAmount;
-    private int investUsableAmount;
+    private double useVoucherAmount;
+    private double investUsableAmount;
     private String productDescription;
     private int voucherQuota;
     private String numInstal;
     private int id;
     private String title;
     private String exitTime;
-    private int minInvAmount;
-    private int totalAmount;
+    private double minInvAmount;
+    private double totalAmount;
     private int delFlg;
     private int lockPeriod;
     private long updateAt;
@@ -74,19 +74,19 @@ public class ShuangYueJia {
         this.stepInvAmount = stepInvAmount;
     }
 
-    public int getUseVoucherAmount() {
+    public double getUseVoucherAmount() {
         return useVoucherAmount;
     }
 
-    public void setUseVoucherAmount(int useVoucherAmount) {
+    public void setUseVoucherAmount(double useVoucherAmount) {
         this.useVoucherAmount = useVoucherAmount;
     }
 
-    public int getInvestUsableAmount() {
+    public double getInvestUsableAmount() {
         return investUsableAmount;
     }
 
-    public void setInvestUsableAmount(int investUsableAmount) {
+    public void setInvestUsableAmount(double investUsableAmount) {
         this.investUsableAmount = investUsableAmount;
     }
 
@@ -138,19 +138,19 @@ public class ShuangYueJia {
         this.exitTime = exitTime;
     }
 
-    public int getMinInvAmount() {
+    public double getMinInvAmount() {
         return minInvAmount;
     }
 
-    public void setMinInvAmount(int minInvAmount) {
+    public void setMinInvAmount(double minInvAmount) {
         this.minInvAmount = minInvAmount;
     }
 
-    public int getTotalAmount() {
+    public double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
+    public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
 

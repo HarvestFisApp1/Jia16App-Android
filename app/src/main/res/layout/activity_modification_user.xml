@@ -24,7 +24,7 @@
         android:background="@color/white"
         android:paddingLeft="15dp"
         android:textSize="15dp"
-        android:text="214527fdshf"/>
+        android:text=""/>
 
     <TextView
         android:layout_width="match_parent"
