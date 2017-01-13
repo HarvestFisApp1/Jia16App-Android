@@ -190,7 +190,7 @@ public class ApplyTransferAffirmActivity extends BaseActivity {
                 AlertUtil.showOneBtnDialog(ApplyTransferAffirmActivity.this, "转让失败", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        finish();
                     }
                 });
             }

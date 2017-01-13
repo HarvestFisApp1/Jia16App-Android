@@ -219,7 +219,7 @@ public class AssetsFragment extends BaseFragment implements View.OnClickListener
                         //获取用户投资的id
                         getInvestmentId();
 
-
+                        initViewPager();
 
                         //然后发送广播到（TransferForFragmnet（））刷新数据
                         Intent intent1=new Intent();

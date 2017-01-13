@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ import com.jia16.base.BaseActivity;
 import com.jia16.util.AlertUtil;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.Lg;
+import com.jia16.util.PopupWindowUtils;
 import com.jia16.util.TimeUtils;
 import com.jia16.util.ToastUtil;
 
@@ -68,6 +71,7 @@ public class ApplyTransferNextActivity extends BaseActivity {
     private String editTextss;//获取editText输入框中输入的涨或者降价的金额
     private double sumAmount;//获取总的金额=本金+收益
     private double practicalAmount;//实际到账金额=转让价格-手续费
+    private PopupWindow popupWindow;
 
 
     @Override
@@ -343,6 +347,27 @@ public class ApplyTransferNextActivity extends BaseActivity {
 
             case R.id.tv_caculate_mode://计算方式
 
+                //弹出弹框，显示计算方式
+                // 一个自定义的布局，作为显示的内容
+                View contentView = LayoutInflater.from(ApplyTransferNextActivity.this).inflate(
+                        R.layout.calculate_popwindow, null);
+                //弹出使用规则的弹框
+                popupWindow = PopupWindowUtils.showPopupWindow(contentView,38);
+
+                ImageView mIvButton = (ImageView) contentView.findViewById(R.id.iv_button);
+
+                mIvButton.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        if (popupWindow != null && popupWindow.isShowing()) {
+                            popupWindow.dismiss();
+                            popupWindow =null;
+                        }
+                    }
+                });
+                //显示popupWindow弹窗
+                popupWindow.showAsDropDown(contentView);
 
             break;
 

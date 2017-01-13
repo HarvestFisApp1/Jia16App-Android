@@ -29,8 +29,8 @@ public class PopupWindowUtils {
 
         popupWindow.setTouchable(true);
         popupWindow.setFocusable(false);
-        // 实例化一个ColorDrawable颜色为半透明
-        ColorDrawable dw = new ColorDrawable(Color.parseColor("#e0000000"));
+        // 实例化一个ColorDrawable颜色为半透明//#19e64dff  #c0000000
+            ColorDrawable dw = new ColorDrawable(Color.parseColor("#88000000"));
         popupWindow.setBackgroundDrawable(dw);
         popupWindow.setOutsideTouchable(false);
 

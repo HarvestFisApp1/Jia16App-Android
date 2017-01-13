@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/white"
+            android:text="代金券使用规则"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/iv_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/cross_close"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="代金券是嘉石榴对广大会员的优惠和回馈,为使更多的会员享受到这种优惠,请您仔细阅读以下规则:"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/text_color_dark_gray"
+            android:text="1)代金券仅供嘉石榴注册的用户在线投资时使用;"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
