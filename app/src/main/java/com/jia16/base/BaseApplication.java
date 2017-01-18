@@ -28,6 +28,9 @@ import java.util.List;
  */
 public class BaseApplication extends Application {
 
+    public boolean isEarn=true;//我要投资界面--
+
+    public boolean isMoney=true;//更多界面--我的福利--
 
     public String urlData;//卓金服H5页面唤醒嘉石榴app获取参数,存储变量的成员变量
 

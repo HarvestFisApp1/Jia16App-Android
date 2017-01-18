@@ -114,7 +114,11 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
     }
 
 
-
+    @Override
+    public void onResume() {
+        isEarn=BaseApplication.getInstance().isEarn;
+        super.onResume();
+    }
 
     /**
      * 代金券按照金额排序的广播
@@ -130,7 +134,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            isEarn = intent.getBooleanExtra("isEarn", true);
+                            //isEarn = intent.getBooleanExtra("isEarn", true);
                             list.clear();
                             //获取代金券的数据
                             postUnuserdDatas1();
@@ -158,7 +162,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            isEarn = intent.getBooleanExtra("isEarn", false);
+                            //isEarn = intent.getBooleanExtra("isEarn", false);
                             list.clear();
                             //获取代金券的数据
                             postUnuserdDatas2();

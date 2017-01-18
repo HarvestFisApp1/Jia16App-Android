@@ -4,13 +4,16 @@ package com.jia16.pulltorefreshview.holder;
  * 主界面的holder
  */
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jia16.R;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.InvestConstant;
+import com.jia16.invest.MyNeedInvestActivity;
 import com.jia16.util.AmountUtil;
 import com.jia16.view.RoundProgressBar;
 
@@ -24,6 +27,7 @@ public class InvestYearHolder extends BaseHolder<InvestConstant> {
     private TextView mTvInvestDate;//投资期限
     private RoundProgressBar mRbProgress;//进度条
     private TextView mTvEarnDesc;//投资收益描述
+    private LinearLayout mllItem;
     //RoundProgressBar progressBar=new RoundProgressBar(BaseApplication.getInstance());
 
 
@@ -38,11 +42,13 @@ public class InvestYearHolder extends BaseHolder<InvestConstant> {
         mTvInvestDate = (TextView) view.findViewById(R.id.tv_invest_date);
         mRbProgress = (RoundProgressBar) view.findViewById(R.id.rb_progress);
         mTvEarnDesc = (TextView) view.findViewById(R.id.tv_earn_desc);
+        //每个条目的线性布局
+        mllItem = (LinearLayout) view.findViewById(R.id.ll_item);
         return view;
     }
 
     //绑定数据的操作
-    public void bindData(InvestConstant appinfo) {
+    public void bindData(final InvestConstant appinfo) {
         //标的名称
         mAssetsTitle.setText(appinfo.getTitle());
 
@@ -82,7 +88,7 @@ public class InvestYearHolder extends BaseHolder<InvestConstant> {
 
 
         //年化收益
-        double annuals = appinfo.getInstalmentPolicy().getAnnualRate();
+        final double annuals = appinfo.getInstalmentPolicy().getAnnualRate();
         String annualRate = AmountUtil.addComma(AmountUtil.DT.format(annuals * 100));
         mTvYearEarn.setText(annualRate+"%");
 
@@ -93,12 +99,25 @@ public class InvestYearHolder extends BaseHolder<InvestConstant> {
         mTvInvestDate.setText("期限 "+count+"天");
 
         //进度条
-        mRbProgress.setMax(appinfo.getAmount().getAmount());//设置进度条的最大值
-        mRbProgress.setProgress(appinfo.getCurrentInvestmentAmount().getAmount());//设置当前进度
+        mRbProgress.setMax((int) appinfo.getAmount().getAmount());//设置进度条的最大值
+        mRbProgress.setProgress((int) appinfo.getCurrentInvestmentAmount().getAmount());//设置当前进度
 
 
         //投资收益描述
         String tagName = appinfo.getConfig().getTagName();
         mTvEarnDesc.setText(tagName);
+
+        mllItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(BaseApplication.getInstance(), MyNeedInvestActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("rightTitle","固定收益");
+                intent.putExtra("investId",appinfo.getId());//传递投资标的id
+                intent.putExtra("useredId",appinfo.getUser().getId());//传递user 的id
+                intent.putExtra("remainAmount",appinfo.getRemainingAmount().getAmount());//剩余投资金额
+                BaseApplication.getInstance().startActivity(intent);
+            }
+        });
     }
 }

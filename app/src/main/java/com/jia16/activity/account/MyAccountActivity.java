@@ -594,6 +594,8 @@ public class MyAccountActivity extends BaseActivity {
                                 finish();
 
 
+                                //清除我要投资界面保存的RadioButton的状态，设置为默认状态
+                                BaseApplication.getInstance().isEarn=true;
 
                             }
                         }, new Response.ErrorListener() {

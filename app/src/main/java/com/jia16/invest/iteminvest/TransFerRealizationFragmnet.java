@@ -78,6 +78,7 @@ public class TransFerRealizationFragmnet extends BaseListFragment<TransferMoney>
     }
 
 
+
     /**
      * 我要投资界面发送过来的广播
      */

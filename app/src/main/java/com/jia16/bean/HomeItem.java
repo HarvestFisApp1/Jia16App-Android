@@ -216,14 +216,14 @@ public class HomeItem {
     }
 
     public static class RemainingAmountBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -237,14 +237,14 @@ public class HomeItem {
     }
 
     public static class CurrentInvestmentAmountBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -258,14 +258,14 @@ public class HomeItem {
     }
 
     public static class AmountBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -323,14 +323,14 @@ public class HomeItem {
         }
 
         public static class StepInvestmentAmountBean {
-            private int amount;
+            private double amount;
             private String currency;
 
-            public int getAmount() {
+            public double getAmount() {
                 return amount;
             }
 
-            public void setAmount(int amount) {
+            public void setAmount(double amount) {
                 this.amount = amount;
             }
 
@@ -344,14 +344,14 @@ public class HomeItem {
         }
 
         public static class MinimumInvestmentAmountBean {
-            private int amount;
+            private double amount;
             private String currency;
 
-            public int getAmount() {
+            public double getAmount() {
                 return amount;
             }
 
-            public void setAmount(int amount) {
+            public void setAmount(double amount) {
                 this.amount = amount;
             }
 
@@ -365,14 +365,14 @@ public class HomeItem {
         }
 
         public static class MaximumInvestmentAmountBean {
-            private int amount;
+            private double amount;
             private String currency;
 
-            public int getAmount() {
+            public double getAmount() {
                 return amount;
             }
 
-            public void setAmount(int amount) {
+            public void setAmount(double amount) {
                 this.amount = amount;
             }
 

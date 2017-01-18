@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -243,8 +242,8 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
                             mTvBeginMoney1.setText("起投 " + infos1.get(0).getInvestmentPolicy().getMinimumInvestmentAmount().getAmount() + "元");
                             mTvInvestDate1.setText("期限 " + infos1.get(0).getInstalmentPolicy().getInterval().getCount() + "天");
                             //进度条
-                            mRbProgress1.setMax(infos1.get(0).getAmount().getAmount());//设置进度条的最大值
-                            mRbProgress1.setProgress(infos1.get(0).getCurrentInvestmentAmount().getAmount());//设置当前进度
+                            mRbProgress1.setMax((int) infos1.get(0).getAmount().getAmount());//设置进度条的最大值
+                            mRbProgress1.setProgress((int) infos1.get(0).getCurrentInvestmentAmount().getAmount());//设置当前进度
                             mTvEarnDesc1.setText(infos1.get(0).getConfig().getTagName());
 
                             //如果有（新手专享）数据，那么就显示
@@ -282,8 +281,8 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
                             mTvBeginMoney2.setText("起投 " + infos2.get(0).getInvestmentPolicy().getMinimumInvestmentAmount().getAmount() + "元");
                             mTvInvestDate2.setText("期限 " + infos2.get(0).getInstalmentPolicy().getInterval().getCount() + "天");
                             //进度条
-                            mRbProgress2.setMax(infos2.get(0).getAmount().getAmount());//设置进度条的最大值
-                            mRbProgress2.setProgress(infos2.get(0).getCurrentInvestmentAmount().getAmount());//设置当前进度
+                            mRbProgress2.setMax((int) infos2.get(0).getAmount().getAmount());//设置进度条的最大值
+                            mRbProgress2.setProgress((int) infos2.get(0).getCurrentInvestmentAmount().getAmount());//设置当前进度
                             mTvEarnDesc2.setText(infos2.get(0).getConfig().getTagName());
 
                             //表示有（固定收益）的数据,那么就显示布局
@@ -321,8 +320,8 @@ public class HomeItemFragmnet extends BaseFragment implements View.OnClickListen
                             mTvBeginMoney3.setText("起投 " + infos3.get(0).getInvestmentPolicy().getMinimumInvestmentAmount().getAmount() + "元");
                             mTvInvestDate3.setText("期限 " + infos3.get(0).getInstalmentPolicy().getInterval().getCount() + "天");
                             //进度条
-                            mRbProgress3.setMax(infos3.get(0).getAmount().getAmount());//设置进度条的最大值
-                            mRbProgress3.setProgress(infos3.get(0).getCurrentInvestmentAmount().getAmount());//设置当前进度
+                            mRbProgress3.setMax((int) infos3.get(0).getAmount().getAmount());//设置进度条的最大值
+                            mRbProgress3.setProgress((int) infos3.get(0).getCurrentInvestmentAmount().getAmount());//设置当前进度
                             mTvEarnDesc3.setText(infos3.get(0).getConfig().getTagName());
 
                             //表示有（个体网贷）的数据,那么就隐藏布局

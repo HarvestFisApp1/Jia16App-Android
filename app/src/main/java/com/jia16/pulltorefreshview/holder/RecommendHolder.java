@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.jia16.R;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.Recommends;
+import com.jia16.util.AmountUtil;
 
 
 public class RecommendHolder extends BaseHolder<Recommends> {
@@ -39,7 +40,7 @@ public class RecommendHolder extends BaseHolder<Recommends> {
         //推荐好友姓名
         mTvRecommendName.setText(appinfo.getRecommendedRealName());
         //好友投资金额
-        int amount = appinfo.getRecommendedTotalInvest().getAmount();
+        double amount = appinfo.getRecommendedTotalInvest().getAmount();
         if(amount==0){
             //表示奖励还没有下发，那么就隐藏好友投资金额的布局
             mTvInviteMoney.setVisibility(View.INVISIBLE);
@@ -56,12 +57,13 @@ public class RecommendHolder extends BaseHolder<Recommends> {
         mTvFriendPhone.setText(appinfo.getRecommendedPhone());
 
         //提成金额
-        int deductMoney = appinfo.getParentCashCommission().getAmount();
+        double deductMoney = appinfo.getParentCashCommission().getAmount();
         if(deductMoney==0){
             //表示奖励还没有下发，那么就隐藏提成金额布局
             mTvDeduct.setVisibility(View.INVISIBLE);
         }else {
-            mTvDeduct.setText(deductMoney+".00元");
+            //mTvDeduct.setText(deductMoney+".00元");
+            mTvDeduct.setText(AmountUtil.addComma(AmountUtil.DT.format(deductMoney))+"元");
         }
 
 
@@ -78,12 +80,13 @@ public class RecommendHolder extends BaseHolder<Recommends> {
         }
 
         //现金奖励金额
-        int amount1 = appinfo.getParentCashReward().getAmount();
+        double amount1 = appinfo.getParentCashReward().getAmount();
         if(amount1==0){
             //表示奖励还没有下发，那么就隐藏现金奖励金额布局
             mTvAwardMoney.setVisibility(View.INVISIBLE);
         }else {
-            mTvAwardMoney.setText(amount1+".00元");
+            //mTvAwardMoney.setText(amount1+".00元");
+            mTvAwardMoney.setText(AmountUtil.addComma(AmountUtil.DT.format(amount1))+"元");
         }
 
     }

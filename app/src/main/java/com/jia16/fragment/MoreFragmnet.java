@@ -70,12 +70,12 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
     private GridView mGvView;
 
     //gridview的名称
-    String[] names = new String[]{"消息中心", "邀请好友", "我的福利", "活动中心", "帮助中心", "我要反馈",
-            "联系我们", "关于嘉石榴",""};
+    String[] names = new String[]{"我的账户","消息中心",  "我的福利", "活动中心","邀请好友",
+             "我要反馈", "联系我们", "关于嘉石榴","帮助中心"};
     //gridview的图标
-    int[] icons = new int[]{R.drawable.news, R.drawable.friends, R.drawable.reward,
-            R.drawable.activity, R.drawable.help, R.drawable.back
-            , R.drawable.call, R.drawable.about,0};
+    int[] icons = new int[]{R.mipmap.myaccount,R.drawable.news, R.drawable.reward,R.drawable.activity,
+            R.drawable.friends,  R.drawable.back,
+            R.drawable.call, R.drawable.about,R.drawable.help};
     private TextView mTitleText;
 
     /**
@@ -132,7 +132,7 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
         mBtnBack.setVisibility(View.GONE);
         //设置标题
         mTitleText = (TextView) mPatentView.findViewById(R.id.title_text);
-        mTitleText.setText("更多");
+        mTitleText.setText("用户中心");
 
 
         //如果用户还没有登录，那么就显示（请登录后查看个人账户）
@@ -161,22 +161,20 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent;
                 switch (position){
-                    case 0://消息中心
+                    case 0://我的账户
+                        if (!BaseApplication.getInstance().isLogined()) {
+                            //表示没有登录，那么就跳转到登录界面
+                            intent = new Intent(getActivity(), LoginActivity.class);
+                            startActivityForResult(intent, AccountRequestCode);
+                        } else {
+                            //表示已经登录，那么就跳转到我的账户界面
+                            intent = new Intent(getActivity(), MyAccountActivity.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 1://消息中心
                         intent=new Intent(getActivity(),AdvicesCenterActivity.class);
                         startActivity(intent);
-                    break;
-
-                    case 1://邀请好友
-                        //打开邀请好友前检查用户是否登录，如果没有，那么久跳转到登录界面
-                        if(BaseApplication.getInstance().isLogined()){
-                            intent=new Intent(getActivity(),InviteFriendsActivity.class);
-                            intent.putExtra("userId",userInfo.getId());
-                            startActivity(intent);
-                        }else {
-                            intent=new Intent(getActivity(),LoginActivity.class);
-                            intent.putExtra("isInviteFriend",true);
-                            startActivityForResult(intent,INVITEFRIEND);
-                        }
                     break;
 
                     case 2://我的福利
@@ -200,11 +198,18 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
 
                     break;
 
-
-                    case 4://帮助中心
-                        intent=new Intent(getActivity(),HelperCenterActivity.class);
-                        startActivity(intent);
-                    break;
+                    case 4://邀请好友
+                        //打开邀请好友前检查用户是否登录，如果没有，那么久跳转到登录界面
+                        if(BaseApplication.getInstance().isLogined()){
+                            intent=new Intent(getActivity(),InviteFriendsActivity.class);
+                            intent.putExtra("userId",userInfo.getId());
+                            startActivity(intent);
+                        }else {
+                            intent=new Intent(getActivity(),LoginActivity.class);
+                            intent.putExtra("isInviteFriend",true);
+                            startActivityForResult(intent,INVITEFRIEND);
+                        }
+                        break;
 
                     case 5://意见反馈
                         intent=new Intent(getActivity(), FeedBackActivity.class);
@@ -222,6 +227,11 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
                         intent=new Intent(getActivity(), AboutMeActivity.class);
                         startActivity(intent);
                     break;
+
+                    case 8://帮助中心
+                        intent=new Intent(getActivity(),HelperCenterActivity.class);
+                        startActivity(intent);
+                        break;
 
                     default:
                         break;
@@ -397,13 +407,13 @@ public class MoreFragmnet extends BaseFragment implements View.OnClickListener {
             View views = View.inflate(getActivity(), R.layout.item_morefragment, null);
             ImageView mIvImage = (ImageView) views.findViewById(R.id.iv_image);
             TextView mIvDescItem = (TextView) views.findViewById(R.id.iv_desc_item);
-            if(position!=8){
+            // if(position!=8){
                 mIvImage.setImageResource(icons[position]);
                 mIvDescItem.setText(names[position]);
-            }else {
-                mIvImage.setVisibility(View.INVISIBLE);
-                mIvDescItem.setText(names[position]);
-            }
+//            }else {
+//                mIvImage.setVisibility(View.INVISIBLE);
+//                mIvDescItem.setText(names[position]);
+//            }
             return views;
         }
     }

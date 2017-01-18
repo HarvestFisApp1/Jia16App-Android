@@ -136,14 +136,14 @@ public class Recommends {
     }
 
     public static class RecommendedTotalInvestBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -158,14 +158,14 @@ public class Recommends {
     }
 
     public static class ParentCashCommissionBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -180,14 +180,14 @@ public class Recommends {
     }
 
     public static class ParentCashRewardBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 

@@ -23,6 +23,7 @@ import com.jia16.bean.Ticket;
 import com.jia16.bean.UserInfo;
 import com.jia16.pulltorefreshview.BaseListFragment;
 import com.jia16.pulltorefreshview.adapter.BasicAdapter;
+import com.jia16.pulltorefreshview.adapter.ExpiredTicketAdapter;
 import com.jia16.pulltorefreshview.adapter.TicketAdapter;
 import com.jia16.util.AlertUtil;
 import com.jia16.util.Constants;
@@ -53,7 +54,7 @@ public class ExpiredFragmnet extends BaseListFragment<Ticket> {
 
     @Override
     public BasicAdapter<Ticket> getAdapter() {
-        return new TicketAdapter(list);
+        return new ExpiredTicketAdapter(list);
     }
 
     @Override
@@ -82,6 +83,12 @@ public class ExpiredFragmnet extends BaseListFragment<Ticket> {
         return list;
     }
 
+    @Override
+    public void onResume() {
+        isMoney = BaseApplication.getInstance().isMoney;
+        super.onResume();
+    }
+
     /**
      * 代金券按照金额排序的广播
      */
@@ -96,7 +103,7 @@ public class ExpiredFragmnet extends BaseListFragment<Ticket> {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            isMoney = intent.getBooleanExtra("isMoney", false);
+                            //isMoney = intent.getBooleanExtra("isMoney", false);
 
                             list.clear();
                             //获取代金券的数据
@@ -125,7 +132,7 @@ public class ExpiredFragmnet extends BaseListFragment<Ticket> {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            isMoney = intent.getBooleanExtra("isMoney", true);
+                            //isMoney = intent.getBooleanExtra("isMoney", true);
                             list.clear();
                             //获取代金券的数据
                             postUnuserdDatas2();

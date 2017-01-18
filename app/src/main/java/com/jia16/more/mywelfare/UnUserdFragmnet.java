@@ -84,6 +84,13 @@ public class UnUserdFragmnet extends BaseListFragment<Ticket> {
         return list;
     }
 
+    @Override
+    public void onResume() {
+        isMoney = BaseApplication.getInstance().isMoney;
+        super.onResume();
+    }
+
+
     /**
      * 代金券按照金额排序的广播
      */
@@ -98,7 +105,7 @@ public class UnUserdFragmnet extends BaseListFragment<Ticket> {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            isMoney = intent.getBooleanExtra("isMoney", false);
+                            //isMoney = intent.getBooleanExtra("isMoney", false);
                             list.clear();
                             //获取代金券的数据
                             postUnuserdDatas1();
@@ -125,7 +132,7 @@ public class UnUserdFragmnet extends BaseListFragment<Ticket> {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            isMoney = intent.getBooleanExtra("isMoney", true);
+                            //isMoney = intent.getBooleanExtra("isMoney", true);
                             list.clear();
                             //获取代金券的数据
                             postUnuserdDatas2();

@@ -64,8 +64,9 @@
                 style="@style/asset_invest_desc"
                 android:text="预计起息日"/>
             <TextView
+                android:id="@+id/tv_start_interest_date"
                 style="@style/asset_invest_desc"
-                android:text="2017-01-01"/>
+                android:text="0000-00-00"/>
 
         </LinearLayout>
 
@@ -80,8 +81,9 @@
                 style="@style/asset_invest_desc"
                 android:text="预计到期日"/>
             <TextView
+                android:id="@+id/tv_expire_date"
                 style="@style/asset_invest_desc"
-                android:text="2017-01-01"/>
+                android:text="0000-00-00"/>
 
         </LinearLayout>
 
@@ -96,8 +98,9 @@
                 style="@style/asset_invest_desc"
                 android:text="预计兑付日"/>
             <TextView
+                android:id="@+id/tv_cash_date"
                 style="@style/asset_invest_desc"
-                android:text="不晚于2017-01-01"/>
+                android:text="不晚于0000-00-00"/>
 
         </LinearLayout>
     </LinearLayout>

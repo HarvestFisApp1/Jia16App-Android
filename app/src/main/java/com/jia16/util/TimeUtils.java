@@ -2,6 +2,7 @@ package com.jia16.util;
 
 import android.annotation.SuppressLint;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -130,6 +131,27 @@ public class TimeUtils {
     public static String getDataTime(String format) {
         SimpleDateFormat df = new SimpleDateFormat(format);
         return df.format(new Date());
+    }
+
+
+    /**
+     * 获取指定时间的毫秒值 如2017-02-02
+     */
+
+    public static long getAssignDate(String dates){
+
+        //先把字符串转成Date类型
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //此处会抛异常
+        Date date = null;
+        try {
+            date = sdf.parse(dates);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        //获取毫秒数
+        long longDate = date.getTime();
+        return longDate;
     }
 }
 

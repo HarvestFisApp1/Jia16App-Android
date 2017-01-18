@@ -138,7 +138,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void run() {
                 //获取首页bunner图片
-                homeBunner = getHomeBunner();
+                 homeBunner = getHomeBunner();
 
                 Lg.e("homeBunner......", homeBunner);
 
@@ -367,36 +367,42 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     //初始化数据的方法
     private void initDate() {
-        //Lg.e("infos........size", infos.size());
+        Lg.e("infos........size", infos.size());
         mViewpagerList = new ArrayList<ImageView>();
-        for (int i = 0; i < infos.size(); i++) {
-            ImageView iv = new ImageView(getActivity());
+        if(infos.size()!=0){
+            for (int i = 0; i < infos.size(); i++) {
+                ImageView iv = new ImageView(getActivity());
 //            //iv.setBackgroundResource(mImageId[i]);
 //            iv.setBackgroundResource();
 //            mViewpagerList.add(iv);
-            ImageLoader.getInstance().displayImage(infos.get(i).getType(), iv, ImageLoadOptions.fadeIn_options);
+                ImageLoader.getInstance().displayImage(infos.get(i).getType(), iv, ImageLoadOptions.fadeIn_options);
 
-            mViewpagerList.add(iv);
+                mViewpagerList.add(iv);
 
-            //初始化小圆点
-            ImageView point = new ImageView(getActivity());
-            //小原点是一个shape图形
-            point.setImageResource(R.drawable.shape_oval_home_bunner);
-            //初始化布局参数，宽和高包裹内容，父控件是谁，就是谁声明的布局参数
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            if (i > 0) {
-                //从二个小圆点开始设置左边距
-                //传递10dp，通过不同的设备来计算得到px值
-                int dp = DensityUtil.dip2px(getActivity(), 3);
-                params.leftMargin = dp;
+                //初始化小圆点
+                ImageView point = new ImageView(getActivity());
+                //小原点是一个shape图形
+                point.setImageResource(R.drawable.shape_oval_home_bunner);
+                //初始化布局参数，宽和高包裹内容，父控件是谁，就是谁声明的布局参数
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                if (i > 0) {
+                    //从二个小圆点开始设置左边距
+                    //传递10dp，通过不同的设备来计算得到px值
+                    int dp = DensityUtil.dip2px(getActivity(), 3);
+                    params.leftMargin = dp;
+                }
+                //设置布局参数
+                point.setLayoutParams(params);
+                //将小圆点添加到线性布局中
+                mllOvalWhite.addView(point);
             }
-            //设置布局参数
-            point.setLayoutParams(params);
-            //将小圆点添加到线性布局中
-            mllOvalWhite.addView(point);
         }
+
     }
+
+
+
 
     //给viewpager设置数据适配器
     class HomeAdapter extends PagerAdapter {
@@ -513,6 +519,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     /**
      * 请求接口获取首页bunner图片
      */
+
     private String jsonStr = "";
 
     public String getHomeBunner() {

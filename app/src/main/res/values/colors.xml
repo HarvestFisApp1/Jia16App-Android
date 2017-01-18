@@ -68,4 +68,6 @@
 
     <color name="invest_account_devider">#E65C00</color>
     <color name="modify_deal_pwd">#406dbf</color>
+    
+    <color name="invest_object_state">#E65C00</color>
 </resources>

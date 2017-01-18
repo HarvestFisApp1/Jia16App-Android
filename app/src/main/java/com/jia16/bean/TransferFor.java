@@ -304,14 +304,14 @@ public class TransferFor {
     }
 
     public static class CurrentInvestmentAmountBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -325,14 +325,14 @@ public class TransferFor {
     }
 
     public static class AmountBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 
@@ -367,14 +367,14 @@ public class TransferFor {
     }
 
     public static class TransferFeeBean {
-        private int amount;
+        private double amount;
         private String currency;
 
-        public int getAmount() {
+        public double getAmount() {
             return amount;
         }
 
-        public void setAmount(int amount) {
+        public void setAmount(double amount) {
             this.amount = amount;
         }
 

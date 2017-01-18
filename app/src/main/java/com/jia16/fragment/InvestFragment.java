@@ -93,6 +93,14 @@ public class InvestFragment extends BaseFragment implements View.OnClickListener
         View mPatentView = getView();
         initView(mPatentView);
 
+        if(BaseApplication.getInstance().isEarn){
+            mrbCheck1.setChecked(true);
+            mrbCheck2.setChecked(false);
+        }else {
+            mrbCheck1.setChecked(false);
+            mrbCheck2.setChecked(true);
+        }
+
     }
 
     private void initView(View view) {
@@ -158,11 +166,13 @@ public class InvestFragment extends BaseFragment implements View.OnClickListener
                 mrbCheck3.setChecked(false);
                 mllInvestMethod.setVisibility(View.VISIBLE);
 
+                BaseApplication.getInstance().isEarn=true;
+
                 //发送广播，请求按固定收益排序的数据
                 Intent intent=new Intent();
                 intent.setAction("invest_fixation_earn");
                 intent.addCategory(Intent.CATEGORY_DEFAULT);
-                intent.putExtra("isEarn",true);
+                //intent.putExtra("isEarn",true);
                 getActivity().sendBroadcast(intent);
 
                 //隐藏和显示相应的viewpager
@@ -180,11 +190,12 @@ public class InvestFragment extends BaseFragment implements View.OnClickListener
                 mllInvestMethod.setVisibility(View.VISIBLE);
 
 
+                BaseApplication.getInstance().isEarn=false;
                 //发送广播，请求按个体网贷排序的数据
                 Intent intent=new Intent();
                 intent.setAction("invest_personage_loan");
                 intent.addCategory(Intent.CATEGORY_DEFAULT);
-                intent.putExtra("isEarn",false);
+                //intent.putExtra("isEarn",false);
                 getActivity().sendBroadcast(intent);
 
 

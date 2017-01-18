@@ -84,10 +84,20 @@ public class MyWelfareActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_welfare);
 
+
+
         //初始化布局
         initView();
         //绑定数据
         initData();
+
+        if(BaseApplication.getInstance().isMoney){
+            mRbCheck1.setChecked(true);
+            mRbCheck2.setChecked(false);
+        }else {
+            mRbCheck1.setChecked(false);
+            mRbCheck2.setChecked(true);
+        }
     }
 
     /**
@@ -186,10 +196,13 @@ public class MyWelfareActivity extends BaseActivity {
         mRbCheck1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                BaseApplication.getInstance().isMoney=true;
+
                 Intent intent=new Intent();
                 intent.setAction("welfare_number_sort");
                 intent.addCategory(Intent.CATEGORY_DEFAULT);
-                intent.putExtra("isMoney",true);
+                //intent.putExtra("isMoney",true);
                 sendBroadcast(intent);
             }
         });
@@ -197,10 +210,13 @@ public class MyWelfareActivity extends BaseActivity {
         mRbCheck2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                BaseApplication.getInstance().isMoney=false;
+
                 Intent intent=new Intent();
                 intent.setAction("welfare_term_validity");
                 intent.addCategory(Intent.CATEGORY_DEFAULT);
-                intent.putExtra("isMoney",false);
+                //intent.putExtra("isMoney",false);
                 sendBroadcast(intent);
             }
         });
@@ -283,6 +299,7 @@ public class MyWelfareActivity extends BaseActivity {
      * 请求接口获取我的福利数量
      */
     public void getMyWelfare() {
+        showLoadingDialog();
         String url="/api/users/"+userId+"/vouchers-count";
         url= UrlHelper.getUrl(url);
 
@@ -292,6 +309,9 @@ public class MyWelfareActivity extends BaseActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
+                        dimissLoadingDialog();
+
                         JSONObject jsonObj=response;
                         Lg.e("获取数据成功",jsonObj.toString());
                         if(jsonObj!=null){
@@ -308,6 +328,9 @@ public class MyWelfareActivity extends BaseActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
+                dimissLoadingDialog();
+
                 try {
                     String errorMsg=new String(error.networkResponse.data);
                     JSONObject json=new JSONObject(errorMsg);

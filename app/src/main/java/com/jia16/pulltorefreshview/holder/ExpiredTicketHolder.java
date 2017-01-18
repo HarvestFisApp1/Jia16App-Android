@@ -14,7 +14,7 @@ import com.jia16.R;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.Ticket;
 
-public class TicketHolder extends BaseHolder<Ticket> {
+public class ExpiredTicketHolder extends BaseHolder<Ticket> {
 
     private TextView mTvTicketDate;//优惠券的有效期
     private TextView mTvTicketNumber;//优惠券的金额
@@ -22,7 +22,7 @@ public class TicketHolder extends BaseHolder<Ticket> {
 
     //初始化holderView
     public View initHolderView() {
-        View view=View.inflate(BaseApplication.getInstance(), R.layout.item_ticket_item,null);
+        View view=View.inflate(BaseApplication.getInstance(), R.layout.item_ticket_item_expired,null);
 
         mTvTicketDate = (TextView) view.findViewById(R.id.tv_ticket_date);
         mTvTicketNumber = (TextView) view.findViewById(R.id.tv_Ticket_number);

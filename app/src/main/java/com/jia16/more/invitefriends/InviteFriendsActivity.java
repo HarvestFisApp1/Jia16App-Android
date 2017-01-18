@@ -101,9 +101,6 @@ public class InviteFriendsActivity extends BaseActivity {
                 .addButton("umeng_sharebutton_custom", "umeng_sharebutton_custom", "umeng_socialize_menu_default", "umeng_socialize_menu_default")
                 .setShareboardclickCallback(shareBoardlistener);
 
-
-
-
         //初始化布局
         initView();
         //绑定数据
