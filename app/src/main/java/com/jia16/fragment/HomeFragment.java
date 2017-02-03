@@ -367,7 +367,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     //初始化数据的方法
     private void initDate() {
-        Lg.e("infos........size", infos.size());
+        //Lg.e("infos........size", infos.size());
         mViewpagerList = new ArrayList<ImageView>();
         if(infos.size()!=0){
             for (int i = 0; i < infos.size(); i++) {

@@ -23,12 +23,10 @@ import com.jia16.R;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.InvestConstant;
 import com.jia16.bean.ShuangYueJia;
-import com.jia16.bean.Ticket;
 import com.jia16.bean.UserInfo;
 import com.jia16.pulltorefreshview.BaseListFragment;
 import com.jia16.pulltorefreshview.adapter.BasicAdapter;
 import com.jia16.pulltorefreshview.adapter.InvestYearAdapter;
-import com.jia16.util.AlertUtil;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.DensityUtil;
 import com.jia16.util.JsonUtil;
@@ -37,14 +35,12 @@ import com.jia16.util.TimeUtils;
 import com.jia16.util.UrlHelper;
 import com.jia16.view.RoundProgressBar;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 我要投资界面--预期年化
@@ -55,7 +51,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
     private int userId;
     private BroadcastReceiver receiver1;
     private BroadcastReceiver receiver2;
-    private boolean isEarn=true;
+    private boolean isEarn;
     private long currentTimeInLong;
 
     /**
@@ -84,6 +80,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
             }
         },0);
 
+        isEarn=BaseApplication.getInstance().isEarn;
 
         if(BaseApplication.getInstance().isLogined()){
             userInfo = BaseApplication.getInstance().getUserInfo();
@@ -98,16 +95,16 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
 
 
         if(isEarn){
-            //获取代金券的数据
+            //获取投资的数据（按固定收益排序）
             postUnuserdDatas1();
         }else {
-            //代金券按照有效期限排序
+            //获取投资的数据（按个人网贷排序）
             postUnuserdDatas2();
         }
 
-        //代金券按照金额排序的广播
+        //获取投资的数据（按固定收益排序）
         registerReceiver1();
-        //代金券按照有效期限排序的广播
+        //获取投资的数据（按个人网贷排序）
         registerReceiver2();
 
         return list;
@@ -116,7 +113,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
 
     @Override
     public void onResume() {
-        isEarn=BaseApplication.getInstance().isEarn;
+        //isEarn=BaseApplication.getInstance().isEarn;
         super.onResume();
     }
 
@@ -177,7 +174,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
 
 
     /**
-     * 获取代金券的数据，然后展示数据
+     * 获取投资的数据（按固定收益排序）
      */
     private void postUnuserdDatas1() {
 
@@ -289,7 +286,7 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
 
 
     /**
-     * 获取代金券的数据，然后展示数据
+     * 获取投资的数据（按个人网贷排序）
      */
     private void postUnuserdDatas2() {
         String url = "";
@@ -412,6 +409,8 @@ public class EcpectYearFragmnet extends BaseListFragment<InvestConstant> {
         },0);
 
         list.clear();
+
+        isEarn=BaseApplication.getInstance().isEarn;
 
         if(isEarn){
             //获取代金券的数据

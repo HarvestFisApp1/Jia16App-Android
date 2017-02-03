@@ -10,10 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jia16.R;
-import com.jia16.assets.MyTotalAconutActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.TransferMoney;
-import com.jia16.invest.MyNeedInvestActivity;
+import com.jia16.invest.TransferMoneyDetailActivity;
 import com.jia16.util.AmountUtil;
 
 public class TransferMoneyHolder extends BaseHolder<TransferMoney> {
@@ -69,7 +68,7 @@ public class TransferMoneyHolder extends BaseHolder<TransferMoney> {
         mllTransferContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(BaseApplication.getInstance(), MyNeedInvestActivity.class);
+                Intent intent=new Intent(BaseApplication.getInstance(), TransferMoneyDetailActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("title",appinfo.getTitle());
                 intent.putExtra("rightTitle","转让变现");

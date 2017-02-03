@@ -1,10 +1,12 @@
 package com.jia16.invest;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -18,16 +20,12 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.jia16.R;
 import com.jia16.activity.LoginActivity;
 import com.jia16.base.BaseActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.InvestUserId;
-import com.jia16.bean.Returnmoney;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.JsonUtil;
 import com.jia16.util.Lg;
@@ -39,8 +37,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,9 +44,9 @@ import java.util.Map;
 
 
 /**
- * 我要投资界面，----投资详情
+ * 我要投资界面，--固定收益--投资详情页面
  */
-public class MyNeedInvestActivity extends BaseActivity {
+public class FirmEarnDetailActivity extends BaseActivity {
 
     private static final int INVESTLOGIN = 1001;
     /**
@@ -97,10 +93,34 @@ public class MyNeedInvestActivity extends BaseActivity {
 
     private LinearLayout mllVoucher;//代金券抵扣的线性布局
     private TextView mTvVoucher;//显示代金券的使用规则
-    private ImageView mIvVoucherArrow;//展开显示代金券的使用规则的箭头按钮
+    private LinearLayout mllAddVoucher;//隐藏或显示（展示代金券规则的线性布局）
+
 
 
     private PopupWindow popupWindow;
+
+    /**
+     * 项目信息
+     */
+    private TextView mTvTransferName;//转让方名称
+    private TextView mTvTransferIntroduce;//转让方简介
+    private TextView mTvAssetsDesc;//金融资产描述
+    private LinearLayout mllProjectInformation;//整个项目信息的线性布局
+    private LinearLayout mllShowProjectInformation;//项目信息的线性布局，点击控制显示或隐藏项目信息
+
+
+    /**
+     * 其他信息
+     */
+    private TextView mTvPrijectLight; //项目亮点
+    private TextView mTvShiftDate;//预计转入生效日期
+    private TextView mTvInvestPeriod;//投资期间
+    private TextView mTvRemoneyDate;//预计回款期
+    private LinearLayout mllShowOtherInformation;//其他信息的线性布局，点击控制显示或隐藏项目信息
+    private LinearLayout mllOtherContent;//其他信息的内容
+    private TextView mTvProductTransfer;//产品转让
+    private LinearLayout mllShowProductTransfer;//产品转让的线性布局
+
 
 
     @Override
@@ -114,15 +134,9 @@ public class MyNeedInvestActivity extends BaseActivity {
         useredId = intent.getIntExtra("useredId", 0);
         remainAmount = intent.getDoubleExtra("remainAmount", 0);
 
-        showLoadingDialog();
-        //请求接口，获取投资标的详情的数据
-        postInvestdetail();
-
         //初始化数据
         initViews();
 
-        //绑定数据
-        initDate();
 
         if (BaseApplication.getInstance().isLogined()) {
             //表示已经登录，那么就去请求接口显示（可用余额）
@@ -133,6 +147,12 @@ public class MyNeedInvestActivity extends BaseActivity {
             mTvAllInvest.setText("请登录");
         }
 
+        showLoadingDialog();
+        //请求接口，获取投资标的详情的数据
+        postInvestdetail();
+
+        //绑定数据
+        initDate();
     }
 
     /**
@@ -278,9 +298,49 @@ public class MyNeedInvestActivity extends BaseActivity {
         mTvAllInvest = (TextView) findViewById(R.id.tv_all_invest);
 
         //代金券抵扣的线性布局
-        mllVoucher = (LinearLayout) findViewById(R.id.ll_voucher);
+        mllVoucher = (LinearLayout) findViewById(R.id.collapse_value);
+
         mTvVoucher = (TextView) findViewById(R.id.tv_voucher);
-        mIvVoucherArrow = (ImageView) findViewById(R.id.iv_voucher_arrow);
+        //隐藏或显示（展示代金券规则的线性布局）
+        mllAddVoucher = (LinearLayout) findViewById(R.id.ll_add_voucher);
+
+
+
+        /**
+         * 项目信息
+         */
+        //转让方名称
+        mTvTransferName = (TextView) findViewById(R.id.tv_transfer_name);
+        //转让方简介
+        mTvTransferIntroduce = (TextView) findViewById(R.id.tv_transfer_introduce);
+        //金融资产描述
+        mTvAssetsDesc = (TextView) findViewById(R.id.tv_assets_desc);
+        //整个项目信息的线性布局
+        mllProjectInformation = (LinearLayout) findViewById(R.id.ll_project_information);
+        //项目信息的线性布局，点击控制显示或隐藏项目信息
+        mllShowProjectInformation = (LinearLayout) findViewById(R.id.ll_show_project_information);
+        mllShowProjectInformation.setOnClickListener(this);
+
+        /**
+         * 其他信息
+         */
+        //项目亮点
+        mTvPrijectLight = (TextView) findViewById(R.id.tv_priject_light);
+        //预计转入生效日期
+        mTvShiftDate = (TextView) findViewById(R.id.tv_shift_date);
+        //投资期间
+        mTvInvestPeriod = (TextView) findViewById(R.id.tv_invest_period);
+        //预计回款期
+        mTvRemoneyDate = (TextView) findViewById(R.id.tv_remoney_date);
+        //其他信息的线性布局，点击控制显示或隐藏项目信息
+        mllShowOtherInformation = (LinearLayout) findViewById(R.id.ll_show_other_information);
+        mllShowOtherInformation.setOnClickListener(this);
+        //其他信息的内容
+        mllOtherContent = (LinearLayout) findViewById(R.id.ll_other_content);
+        //产品转让
+        mTvProductTransfer = (TextView) findViewById(R.id.tv_product_transfer);
+        //产品转让的线性布局
+        mllShowProductTransfer = (LinearLayout) findViewById(R.id.ll_show_product_transfer);
 
     }
 
@@ -386,7 +446,7 @@ public class MyNeedInvestActivity extends BaseActivity {
                     String voucherPolicy = response.optString("voucherPolicy");
                     Lg.e("...voucherPolicy....",voucherPolicy);
                     if(!voucherPolicy.equals("null")){
-                        //表示该标可以使用代金券
+                        //表示该标可以使用代金券，显示代金券抵扣的线性布局
                         mllVoucher.setVisibility(View.VISIBLE);
 
                         JSONObject voucherPolicyJson = new JSONObject(voucherPolicy);
@@ -400,12 +460,56 @@ public class MyNeedInvestActivity extends BaseActivity {
 
                                 String invest = obj1.getString("invest");
                                 JSONObject investJson = new JSONObject(invest);
-                                String amount = investJson.getString("amount");
-                                Lg.e("......amount......",amount);
+                                String investAmount = investJson.getString("amount");
+                                Lg.e("......investAmount......",investAmount);
+
+                                String voucher = obj1.getString("voucher");
+                                JSONObject voucherJson = new JSONObject(voucher);
+                                String voucherAmount = voucherJson.getString("amount");
+                                Lg.e("......voucherAmount......",voucherAmount);
+
+                                //动态的新建一个textview
+                                final TextView textView=new TextView(FirmEarnDetailActivity.this);
+                                textView.setTextSize(15);
+                                textView.setTextColor(Color.parseColor("#333333"));
+                                textView.setGravity(Gravity.CENTER_HORIZONTAL);
+                                textView.setPadding(0,5,0,5);
+                                textView.setText("投资达到"+investAmount+"元可使用"+voucherAmount+"元代金券");
+
+                                //动态的将textview添加到线性布局中
+                                mllAddVoucher.addView(textView);
 
                             }
+                            //ViewGroup.LayoutParams layoutParams = mllAddVoucher.getLayoutParams();
+//                            final RelativeLayout mexpan = (RelativeLayout) findViewById(R.id.expand_value);
+//                            mexpan.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//                                @Override
+//                                public void onGlobalLayout() {
+//                                    ViewGroup.LayoutParams layoutParams = mexpan.getLayoutParams();
+//                                    layoutParams.height=100;
+//                                    mexpan.setLayoutParams(layoutParams);
+//
+//                                }
+//                            });
+
+
+                            //代金券抵扣的线性布局需要展示第一条数据
+                            JSONObject obj1 =  array.getJSONObject(0);
+                            String invest1 = obj1.getString("invest");
+                            JSONObject invest1Json = new JSONObject(invest1);
+                            String investAmount1 = invest1Json.getString("amount");
+                            Lg.e("......investAmount1......",investAmount1);
+
+                            String voucher1 = obj1.getString("voucher");
+                            JSONObject voucher1Json = new JSONObject(voucher1);
+                            String voucherAmount1 = voucher1Json.getString("amount");
+                            Lg.e("......voucherAmount1......",voucherAmount1);
+                            mTvVoucher.setText("满"+investAmount1+"元可抵"+voucherAmount1+"元");
+
+
 
                         }else {
+                            //表示没有规律，代金券金额
 
                         }
 
@@ -415,8 +519,55 @@ public class MyNeedInvestActivity extends BaseActivity {
                         mllVoucher.setVisibility(View.GONE);
                     }
 
+                    /**
+                     * 项目信息
+                     */
+                    String loaneeInformation = response.optString("loaneeInformation");
+                    JSONObject loaneeInformationJson = new JSONObject(loaneeInformation);
+                    String organizationName = loaneeInformationJson.getString("organizationName");
+                    mTvTransferName.setText(organizationName);
 
-                    //Lg.e("........cashTime.........", cashTime);
+                    //转让方简介
+                    String organizationProfile = loaneeInformationJson.getString("organizationProfile");
+                    mTvTransferIntroduce.setText(organizationProfile);
+
+                    //金融资产描述
+                    String usage = loaneeInformationJson.getString("usage");
+                    mTvAssetsDesc.setText(usage);
+
+                    /**
+                     * 其他信息
+                     */
+                    //项目亮点
+                    String highlight = loaneeInformationJson.getString("highlight");
+                    mTvPrijectLight.setText(highlight);
+
+                    //预计转入生效日期
+                    String predicateValueDate = loaneeInformationJson.getString("predicateValueDate");
+                    mTvShiftDate.setText(predicateValueDate);
+
+                    //预计投资期间
+                    JSONArray arrayed = loaneeInformationJson.getJSONArray("_customizedFields");
+                    for(int i = 0; i < arrayed.length(); i++) {
+                        Lg.e("...................",arrayed);
+                        JSONObject objed = arrayed.getJSONObject(i);
+
+                        String titleed = objed.getString("title");
+                        if(titleed.equals("预计投资期间")){
+                            String contented = objed.getString("content");
+                            mTvInvestPeriod.setText(contented);
+                        }else if(titleed.equals("预计回款期")){
+                            String contenteds = objed.getString("content");
+                            mTvRemoneyDate.setText(contenteds);
+                        }else if(titleed.equals("产品转让")){
+                            String contentteds = objed.getString("content");
+                            mTvProductTransfer.setText(contentteds);
+                            mllShowProductTransfer.setVisibility(View.VISIBLE);
+                        }else if(!titleed.equals("产品转让")){
+                            mllShowProductTransfer.setVisibility(View.GONE);
+                        }
+
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -442,6 +593,8 @@ public class MyNeedInvestActivity extends BaseActivity {
         BaseApplication.getRequestQueue().add(jsonObjectRequest);
     }
 
+    private boolean isProjectInformationShow = false;//默认项目信息的状态
+    private boolean isOtherInformation = false;//默认其他信息的状态
 
     @Override
     public void onClick(View view) {
@@ -450,7 +603,7 @@ public class MyNeedInvestActivity extends BaseActivity {
             case R.id.tv_repayment_rule://还款方式
                 //弹出弹框，显示还款方式
                 // 一个自定义的布局，作为显示的内容
-                View contentView = LayoutInflater.from(MyNeedInvestActivity.this).inflate(
+                View contentView = LayoutInflater.from(FirmEarnDetailActivity.this).inflate(
                         R.layout.repayment_rule_popwindow, null);
                 //弹出使用规则的弹框
                 popupWindow = PopupWindowUtils.showPopupWindow(contentView, 38);
@@ -473,7 +626,7 @@ public class MyNeedInvestActivity extends BaseActivity {
 
             case R.id.ll_woucher_user_rule://代金券使用规则的线性布局，弹出框
                 // 一个自定义的布局，作为显示的内容
-                View contentViews = LayoutInflater.from(MyNeedInvestActivity.this).inflate(
+                View contentViews = LayoutInflater.from(FirmEarnDetailActivity.this).inflate(
                         R.layout.pop_window, null);
                 //弹出使用规则的弹框
                 popupWindow = PopupWindowUtils.showPopupWindow(contentViews, 38);
@@ -496,9 +649,35 @@ public class MyNeedInvestActivity extends BaseActivity {
                 break;
 
             case R.id.ll_select_voucher://请选择代金券的线性布局
-                intent = new Intent(MyNeedInvestActivity.this, SelectVoucherActivity.class);
+                intent = new Intent(FirmEarnDetailActivity.this, SelectVoucherActivity.class);
                 startActivity(intent);
                 break;
+
+            case R.id.ll_show_project_information://隐藏或显示（展示代金券规则的线性布局）
+                if(isProjectInformationShow){
+                    //表示需要显示项目信息
+                    mllProjectInformation.setVisibility(View.VISIBLE);
+
+                }else {
+                    //表示需要隐藏项目信息
+                    mllProjectInformation.setVisibility(View.GONE);
+                }
+                //更新显示状态
+                isProjectInformationShow = !isProjectInformationShow;
+
+            break;
+
+            case R.id.ll_show_other_information://其他信息的线性布局，点击控制显示或隐藏项目信息
+                if(isOtherInformation){
+                    //表示需要显示其他信息
+                    mllOtherContent.setVisibility(View.VISIBLE);
+                }else {
+                    //表示需要隐藏其他信息
+                    mllOtherContent.setVisibility(View.GONE);
+                }
+                //更新显示状态
+                isOtherInformation = !isOtherInformation;
+            break;
 
             default:
                 break;
@@ -567,12 +746,15 @@ public class MyNeedInvestActivity extends BaseActivity {
                     mEtInvestAmount.setSelection(mEtInvestAmount.getText().length());
                 } else {
                     //表示还没有登录，点击跳转到登录界面
-                    Intent intent = new Intent(MyNeedInvestActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(FirmEarnDetailActivity.this, LoginActivity.class);
                     startActivityForResult(intent, INVESTLOGIN);
                 }
             }
         });
+
     }
+
+    private boolean isDown=false;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

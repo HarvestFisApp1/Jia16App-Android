@@ -27,7 +27,6 @@ import com.jia16.bean.UserInfo;
 import com.jia16.pulltorefreshview.BaseListFragment;
 import com.jia16.pulltorefreshview.adapter.BasicAdapter;
 import com.jia16.pulltorefreshview.adapter.InvestYearAdapter;
-import com.jia16.util.AlertUtil;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.DensityUtil;
 import com.jia16.util.JsonUtil;
@@ -36,7 +35,6 @@ import com.jia16.util.TimeUtils;
 import com.jia16.util.UrlHelper;
 import com.jia16.view.RoundProgressBar;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -54,7 +52,7 @@ public class InvestMoneyFragmnet extends BaseListFragment<InvestConstant> {
     private int userId;
     private BroadcastReceiver receiver1;
     private BroadcastReceiver receiver2;
-    private boolean isEarn=true;
+    private boolean isEarn;
     private long currentTimeInLong;
 
 
@@ -91,6 +89,7 @@ public class InvestMoneyFragmnet extends BaseListFragment<InvestConstant> {
             }
         }
 
+        isEarn=BaseApplication.getInstance().isEarn;
 
         //检查如果是下拉刷新，就清空集合
         checkPullFromStart();
@@ -116,7 +115,7 @@ public class InvestMoneyFragmnet extends BaseListFragment<InvestConstant> {
 
     @Override
     public void onResume() {
-        isEarn=BaseApplication.getInstance().isEarn;
+//        isEarn=BaseApplication.getInstance().isEarn;
         super.onResume();
     }
 
@@ -402,6 +401,8 @@ public class InvestMoneyFragmnet extends BaseListFragment<InvestConstant> {
         },0);
 
         list.clear();
+
+        isEarn=BaseApplication.getInstance().isEarn;
 
         if(isEarn){
             //获取代金券的数据

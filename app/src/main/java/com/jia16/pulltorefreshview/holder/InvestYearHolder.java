@@ -1,7 +1,7 @@
 package com.jia16.pulltorefreshview.holder;
 
 /**
- * 主界面的holder
+ * 我要投资界面--固定收益（个体网贷）的holder
  */
 
 import android.content.Intent;
@@ -11,9 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jia16.R;
+import com.jia16.activity.account.MyAccountActivity;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.InvestConstant;
-import com.jia16.invest.MyNeedInvestActivity;
+import com.jia16.invest.FirmEarnDetailActivity;
+import com.jia16.invest.UnityLoanDetailActivity;
 import com.jia16.util.AmountUtil;
 import com.jia16.view.RoundProgressBar;
 
@@ -106,18 +108,35 @@ public class InvestYearHolder extends BaseHolder<InvestConstant> {
         //投资收益描述
         String tagName = appinfo.getConfig().getTagName();
         mTvEarnDesc.setText(tagName);
-
-        mllItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(BaseApplication.getInstance(), MyNeedInvestActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("rightTitle","固定收益");
-                intent.putExtra("investId",appinfo.getId());//传递投资标的id
-                intent.putExtra("useredId",appinfo.getUser().getId());//传递user 的id
-                intent.putExtra("remainAmount",appinfo.getRemainingAmount().getAmount());//剩余投资金额
-                BaseApplication.getInstance().startActivity(intent);
-            }
-        });
+        boolean isEarn = BaseApplication.getInstance().isEarn;
+        if(isEarn){
+            //表示现在是在固定收益，那么久跳转到固定收益的详情页面
+            mllItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(BaseApplication.getInstance(), FirmEarnDetailActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("rightTitle","固定收益");
+                    intent.putExtra("investId",appinfo.getId());//传递投资标的id
+                    intent.putExtra("useredId",appinfo.getUser().getId());//传递user 的id
+                    intent.putExtra("remainAmount",appinfo.getRemainingAmount().getAmount());//剩余投资金额
+                    BaseApplication.getInstance().startActivity(intent);
+                }
+            });
+        }else {
+            //表示现在是在个体网贷,那么久跳转到个体网贷的详情页面
+            mllItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(BaseApplication.getInstance(), UnityLoanDetailActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("rightTitle","个体网贷");
+                    intent.putExtra("investId",appinfo.getId());//传递投资标的id
+                    intent.putExtra("useredId",appinfo.getUser().getId());//传递user 的id
+                    intent.putExtra("remainAmount",appinfo.getRemainingAmount().getAmount());//剩余投资金额
+                    BaseApplication.getInstance().startActivity(intent);
+                }
+            });
+        }
     }
 }

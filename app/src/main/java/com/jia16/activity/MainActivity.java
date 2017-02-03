@@ -194,6 +194,8 @@ public class MainActivity extends BaseActivity {
                 @Override
                 public void onLeftClick(AlertDialog dlg) {
                     AppManager.getAppManager().AppExit(MainActivity.this);
+                    //清除我要投资界面的数据
+                    BaseApplication.getInstance().isEarn=true;
                 }
 
                 @Override

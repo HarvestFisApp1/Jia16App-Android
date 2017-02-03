@@ -43,7 +43,8 @@ public class RecommendHolder extends BaseHolder<Recommends> {
         double amount = appinfo.getRecommendedTotalInvest().getAmount();
         if(amount==0){
             //表示奖励还没有下发，那么就隐藏好友投资金额的布局
-            mTvInviteMoney.setVisibility(View.INVISIBLE);
+            //mTvInviteMoney.setVisibility(View.INVISIBLE);
+            mTvInviteMoney.setText("--");
         }else if(1000<=amount && amount<=10000){
             mTvInviteMoney.setText("1000元-10000元");
         }else if(10001<=amount && amount<=50000){
@@ -58,13 +59,7 @@ public class RecommendHolder extends BaseHolder<Recommends> {
 
         //提成金额
         double deductMoney = appinfo.getParentCashCommission().getAmount();
-        if(deductMoney==0){
-            //表示奖励还没有下发，那么就隐藏提成金额布局
-            mTvDeduct.setVisibility(View.INVISIBLE);
-        }else {
-            //mTvDeduct.setText(deductMoney+".00元");
-            mTvDeduct.setText(AmountUtil.addComma(AmountUtil.DT.format(deductMoney))+"元");
-        }
+        mTvDeduct.setText(AmountUtil.addComma(AmountUtil.DT.format(deductMoney))+"元");
 
 
         //现金奖励发放状态
@@ -75,19 +70,16 @@ public class RecommendHolder extends BaseHolder<Recommends> {
             //设置背景颜色
             mTvAwardState.setBackgroundResource(R.drawable.shape_recommend_state_ok);
         }else {
-            mTvAwardState.setTextColor(BaseApplication.getInstance().getResources().getColor(R.color.recommend_friends));
-            mTvAwardState.setBackgroundResource(R.drawable.shape_recommend_state);
+            //mTvAwardState.setTextColor(BaseApplication.getInstance().getResources().getColor(R.color.recommend_friends));
+            //mTvAwardState.setBackgroundResource(R.drawable.shape_recommend_state);
+            //那么就更换边框背景颜色,更改字体颜色
+            mTvAwardState.setTextColor(BaseApplication.getInstance().getResources().getColor(R.color.main_color));
+            mTvAwardState.setBackgroundResource(R.drawable.shape_recommend_state_ok);
         }
 
         //现金奖励金额
         double amount1 = appinfo.getParentCashReward().getAmount();
-        if(amount1==0){
-            //表示奖励还没有下发，那么就隐藏现金奖励金额布局
-            mTvAwardMoney.setVisibility(View.INVISIBLE);
-        }else {
-            //mTvAwardMoney.setText(amount1+".00元");
-            mTvAwardMoney.setText(AmountUtil.addComma(AmountUtil.DT.format(amount1))+"元");
-        }
+        mTvAwardMoney.setText(AmountUtil.addComma(AmountUtil.DT.format(amount1))+"元");
 
     }
 }

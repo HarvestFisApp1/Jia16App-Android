@@ -23,13 +23,10 @@ import com.jia16.R;
 import com.jia16.base.BaseApplication;
 import com.jia16.bean.InvestConstant;
 import com.jia16.bean.ShuangYueJia;
-import com.jia16.bean.Ticket;
 import com.jia16.bean.UserInfo;
 import com.jia16.pulltorefreshview.BaseListFragment;
 import com.jia16.pulltorefreshview.adapter.BasicAdapter;
 import com.jia16.pulltorefreshview.adapter.InvestYearAdapter;
-import com.jia16.pulltorefreshview.adapter.TicketAdapter;
-import com.jia16.util.AlertUtil;
 import com.jia16.util.AmountUtil;
 import com.jia16.util.DensityUtil;
 import com.jia16.util.JsonUtil;
@@ -38,7 +35,6 @@ import com.jia16.util.TimeUtils;
 import com.jia16.util.UrlHelper;
 import com.jia16.view.RoundProgressBar;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -56,7 +52,7 @@ public class InvestProgressFragmnet extends BaseListFragment<InvestConstant> {
     private int userId;
     private BroadcastReceiver receiver1;
     private BroadcastReceiver receiver2;
-    private boolean isEarn=true;
+    private boolean isEarn;
     private long currentTimeInLong;
 
     /**
@@ -93,10 +89,10 @@ public class InvestProgressFragmnet extends BaseListFragment<InvestConstant> {
             }
         }
 
-
         //检查如果是下拉刷新，就清空集合
         checkPullFromStart();
 
+        isEarn=BaseApplication.getInstance().isEarn;
 
         if(isEarn){
             //获取代金券的数据
@@ -118,7 +114,7 @@ public class InvestProgressFragmnet extends BaseListFragment<InvestConstant> {
 
     @Override
     public void onResume() {
-        isEarn=BaseApplication.getInstance().isEarn;
+//        isEarn=BaseApplication.getInstance().isEarn;
         super.onResume();
     }
 
@@ -406,6 +402,8 @@ public class InvestProgressFragmnet extends BaseListFragment<InvestConstant> {
         },0);
 
         list.clear();
+
+        isEarn=BaseApplication.getInstance().isEarn;
 
         if(isEarn){
             //获取代金券的数据

@@ -192,5 +192,28 @@
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
     </style>
+
+
+    <!--个体网贷详情的房产信息等等的线性布局-->
+    <style name="unity_detail_linearlayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingTop">3dp</item>
+    </style>
+
+
+    <!--个体网贷详情的房产信息等等的textview布局-->
+    <style name="unity_detail_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/text_color_dark_gray</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
 </resources>
 

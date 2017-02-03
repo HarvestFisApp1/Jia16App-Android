@@ -265,39 +265,39 @@
 
                 <!--&lt;!&ndash;代金券抵扣&ndash;&gt;-->
                 <!--<LinearLayout-->
-                    <!--android:id="@+id/collapse_value"-->
-                    <!--style="@style/helper_center_linearlayout"-->
-                    <!--android:orientation="horizontal">-->
+                <!--android:id="@+id/collapse_value"-->
+                <!--style="@style/helper_center_linearlayout"-->
+                <!--android:orientation="horizontal">-->
 
-                    <!--<TextView-->
-                        <!--style="@style/invest_left_desc"-->
-                        <!--android:layout_width="0dp"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:text="代金券抵扣" />-->
+                <!--<TextView-->
+                <!--style="@style/invest_left_desc"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="代金券抵扣" />-->
 
-                    <!--<TextView-->
-                        <!--android:id="@+id/tv_voucher"-->
-                        <!--style="@style/invest_right_data"-->
-                        <!--android:layout_width="0dp"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:paddingLeft="15dp"-->
-                        <!--android:text="-&#45;&#45;&#45;&#45;&#45;&#45;" />-->
+                <!--<TextView-->
+                <!--android:id="@+id/tv_voucher"-->
+                <!--style="@style/invest_right_data"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:paddingLeft="15dp"-->
+                <!--android:text="-&#45;&#45;&#45;&#45;&#45;&#45;" />-->
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/icon_value"-->
-                        <!--android:layout_width="25dp"-->
-                        <!--android:layout_height="25dp"-->
-                        <!--android:layout_marginRight="15dp"-->
-                        <!--android:src="@drawable/arrow_down" />-->
+                <!--<ImageView-->
+                <!--android:id="@+id/icon_value"-->
+                <!--android:layout_width="25dp"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:layout_marginRight="15dp"-->
+                <!--android:src="@drawable/arrow_down" />-->
                 <!--</LinearLayout>-->
 
                 <!--&lt;!&ndash;点击代金券抵扣的箭头，展示代金券使用规则的布局&ndash;&gt;-->
                 <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_add_voucher"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:background="@color/white">-->
+                <!--android:id="@+id/ll_add_voucher"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:background="@color/white">-->
 
                 <!--</LinearLayout>-->
 
@@ -419,7 +419,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="8dp"
-                            android:text="1.00全投"
+                            android:text="0.00全投"
                             android:textColor="@color/main_color"
                             android:textSize="13dp" />
                     </LinearLayout>
@@ -508,29 +508,30 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                      <LinearLayout
-                          android:id="@+id/ll_show_project_information"
-                          android:layout_width="match_parent"
-                          android:layout_height="50dp"
-                          android:gravity="center_vertical"
-                          android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/ll_show_project_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                          <TextView
-                              style="@style/invest_left_desc"
-                              android:layout_width="0dp"
-                              android:layout_weight="1"
-                              android:text="项目信息"
-                              android:textColor="@color/text_news" />
+                        <TextView
+                            style="@style/invest_left_desc"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="项目信息"
+                            android:textColor="@color/text_news" />
 
 
-                          <ImageView
-                              android:layout_width="20dp"
-                              android:layout_height="20dp"
-                              android:src="@drawable/update_detail_down"
-                              android:layout_marginRight="15dp"/>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/update_detail_down"
+                            android:layout_marginRight="15dp"/>
 
-                      </LinearLayout>
+                    </LinearLayout>
 
+                    <!--项目信息总的内容-->
                     <LinearLayout
                         android:id="@+id/ll_project_information"
                         android:layout_width="match_parent"
@@ -542,71 +543,227 @@
                             style="@style/invest_left_desc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="转让方信息"
-                            android:textColor="@color/text_news" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="3dp"
-                            android:background="@color/devider_color_gray"/>
+                            android:text="项目描述"
+                            android:textColor="@color/black" />
 
                         <TextView
-                            style="@style/invest_left_desc"
-                            android:layout_width="match_parent"
-                            android:text="转让方名称"
-                            android:textColor="@color/text_news" />
-
-                        <TextView
-                            android:id="@+id/tv_transfer_name"
+                            android:id="@+id/tv_desc_information"
                             style="@style/invest_left_desc"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
                             android:text="----"
+                            android:paddingRight="15dp"
                             android:textColor="@color/text_color_dark_gray" />
 
+                        <!--房产信息的总的布局-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/invest_left_desc"
+                                android:layout_width="match_parent"
+                                android:text="房产信息"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black" />
+
+                            <!--房产位置-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="房产位置:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_house_location"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--建筑面积-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="建筑面积:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_build_area"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--规划用途-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="规划用途:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_prject_user"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--评估价值-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="评估价值:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_assess_value"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!--债务人描述总的布局-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/invest_left_desc"
+                                android:layout_width="match_parent"
+                                android:text="债务人描述"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/black" />
+
+                            <!--姓名-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="姓名:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_name"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--性别-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="性别:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_sex"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--年龄-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="年龄:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_age"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--婚姻状况-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="婚姻状况:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_marriage_state"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+                            <!--所在城市-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="所在城市:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_location_city"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+
+
+                            <!--借款用途-->
+                            <LinearLayout
+                                style="@style/unity_detail_linearlayout">
+
+                                <TextView
+                                    style="@style/unity_detail_textview"
+                                    android:text="借款用途:"/>
+
+                                <TextView
+                                    android:id="@+id/tv_borrow"
+                                    style="@style/unity_detail_textview"
+                                    android:text="---"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--还款保障-->
                         <TextView
                             style="@style/invest_left_desc"
                             android:layout_width="match_parent"
-                            android:text="转让方简介"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="还款保障"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tv_repayment_safeguard"
+                            style="@style/invest_left_desc"
+                            android:layout_width="match_parent"
+                            android:text="--"
+                            android:paddingRight="15dp"
+                            android:layout_height="wrap_content"
                             android:textColor="@color/text_news" />
 
+
+                        <!--项目的风险措施-->
                         <TextView
-                            android:id="@+id/tv_transfer_introduce"
                             style="@style/invest_left_desc"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="10dp"
                             android:layout_width="match_parent"
-                            android:text="----"
-                            android:textColor="@color/text_color_dark_gray" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="项目的风险措施"
+                            android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tv_project_risk"
                             style="@style/invest_left_desc"
                             android:layout_width="match_parent"
-                            android:text="金融资产描述"
+                            android:text="--"
+                            android:paddingRight="15dp"
+                            android:layout_marginBottom="8dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="3dp"
                             android:textColor="@color/text_news" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="3dp"
-                            android:background="@color/devider_color_gray"/>
-
-                        <TextView
-                            android:id="@+id/tv_assets_desc"
-                            style="@style/invest_left_desc"
-                            android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
-                            android:text="----"
-                            android:paddingTop="8dp"
-                            android:paddingBottom="15dp"
-                            android:textColor="@color/text_color_dark_gray" />
 
                     </LinearLayout>
 
@@ -639,6 +796,7 @@
 
                     </LinearLayout>
 
+                    <!--其他信息总的内容-->
                     <LinearLayout
                         android:id="@+id/ll_other_content"
                         android:layout_width="match_parent"
@@ -652,15 +810,6 @@
                             android:text="项目亮点"
                             android:textColor="@color/text_news" />
 
-
-                        <TextView
-                            android:id="@+id/tv_priject_light"
-                            style="@style/invest_left_desc"
-                            android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
-                            android:text="----"
-                            android:paddingBottom="8dp"
-                            android:textColor="@color/text_color_dark_gray" />
 
                         <View
                             android:layout_width="match_parent"
@@ -764,9 +913,9 @@
                                 style="@style/invest_left_desc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text=""
+                                android:text="产品到期后3个工作日内"
                                 android:layout_marginBottom="10dp"
-                                android:textColor="@color/text_news" />
+                                android:textColor="@color/black" />
 
                         </LinearLayout>
 
@@ -811,7 +960,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="73dp"
                     android:background="@color/devider_color_gray" />
-
 
 
             </LinearLayout>

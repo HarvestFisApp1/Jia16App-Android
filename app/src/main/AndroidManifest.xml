@@ -142,11 +142,13 @@
         <activity android:name=".assets.MyTotalAconutActivity"/>
 
         <activity android:name=".more.ActivityCenterActivity"/>
-        <activity android:name=".invest.MyNeedInvestActivity"/>
+        <activity android:name=".invest.FirmEarnDetailActivity"/>
         <activity android:name=".assets.ApplyTransferActivity"/>
         <activity android:name=".assets.ApplyTransferNextActivity"/>
         <activity android:name=".assets.ApplyTransferAffirmActivity"/>
         <activity android:name=".invest.SelectVoucherActivity"/>
+        <activity android:name=".invest.TransferMoneyDetailActivity"/>
+        <activity android:name=".invest.UnityLoanDetailActivity"/>
 
 
 
