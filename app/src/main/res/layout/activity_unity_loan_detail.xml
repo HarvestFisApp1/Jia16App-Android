@@ -557,6 +557,7 @@
 
                         <!--房产信息的总的布局-->
                         <LinearLayout
+                            android:id="@+id/ll_house_information"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -628,9 +629,11 @@
 
                         <!--债务人描述总的布局-->
                         <LinearLayout
+                            android:id="@+id/ll_debtor_desc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <TextView
                                 style="@style/invest_left_desc"
                                 android:layout_width="match_parent"
@@ -945,9 +948,10 @@
                                 style="@style/invest_left_desc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text=""
+                                android:text="投资本产品持有满15天后可转让，产品到期前10天不可转让。*因转让定价，投资人意愿等原因，产品可能存在无法及时转出地情况，请投资人关注。"
                                 android:layout_marginBottom="10dp"
-                                android:textColor="@color/text_news" />
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black" />
 
                         </LinearLayout>
                     </LinearLayout>

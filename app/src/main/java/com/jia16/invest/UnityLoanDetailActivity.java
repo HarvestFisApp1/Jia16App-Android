@@ -106,12 +106,14 @@ public class UnityLoanDetailActivity extends BaseActivity {
     private TextView mTvBuildArea;//建筑面积
     private TextView mTvPrijectUser;//规划用途
     private TextView mTvAssessValue;//评估价值
+    private LinearLayout mllHouseInformation;//房产信息总的布局
     private TextView mTvName;//姓名
     private TextView mTvSex;//性别
     private TextView mTvAge;//年龄
     private TextView mTvMarriageState;//婚姻状态
     private TextView mTvLoationCity;//所在城市
     private TextView mTvBrrow;//借款用途
+    private LinearLayout mllDebtorDesc;//债务人描述的总的布局
     private TextView mTvRepaymentSafeguard;//还款保障
     private TextView mTvProjectRisk;//项目的风控措施
     private LinearLayout mllProjectInformation;//整个项目信息的线性布局
@@ -326,6 +328,9 @@ public class UnityLoanDetailActivity extends BaseActivity {
         mTvPrijectUser = (TextView) findViewById(R.id.tv_prject_user);
         //评估价值
         mTvAssessValue = (TextView) findViewById(R.id.tv_assess_value);
+        //房产信息总的布局
+        mllHouseInformation = (LinearLayout) findViewById(R.id.ll_house_information);
+
         //姓名
         mTvName = (TextView) findViewById(R.id.tv_name);
         //性别
@@ -338,6 +343,9 @@ public class UnityLoanDetailActivity extends BaseActivity {
         mTvLoationCity = (TextView) findViewById(R.id.tv_location_city);
         //借款用途
         mTvBrrow = (TextView) findViewById(R.id.tv_borrow);
+        //债务人描述的总的布局
+        mllDebtorDesc = (LinearLayout) findViewById(R.id.ll_debtor_desc);
+
         //还款保障
         mTvRepaymentSafeguard = (TextView) findViewById(R.id.tv_repayment_safeguard);
         //项目的风控措施
@@ -538,14 +546,26 @@ public class UnityLoanDetailActivity extends BaseActivity {
                     String subjectDesc = loaneeInformationJson.getString("subjectDesc");
                     mTvDescInformation.setText(subjectDesc);
 
-                    //房产位置
-                    String housePropertyPosition = loaneeInformationJson.getString("housePropertyPosition");
-                    if(TextUtils.isEmpty(housePropertyPosition)){
-                        //表示为空，没有信息
-                        mTvHouseLocation.setText("无");
+                    if(loaneeInformationJson.has("housePropertyPosition")){
+                        //表示有房产信息，那就需要显示房产信息布局
+                        mllHouseInformation.setVisibility(View.VISIBLE);
+                        //表示有债务人描述一栏，那么就显示
+                        mllDebtorDesc.setVisibility(View.VISIBLE);
+                        //房产位置
+                        String housePropertyPosition = loaneeInformationJson.getString("housePropertyPosition");
+                        if(TextUtils.isEmpty(housePropertyPosition)){
+                            //表示为空，没有信息
+                            mTvHouseLocation.setText("无");
+                        }else {
+                            mTvHouseLocation.setText(housePropertyPosition);
+                        }
                     }else {
-                        mTvHouseLocation.setText(housePropertyPosition);
+                        //表示没有房产信息，那就需要隐藏房产信息布局
+                        mllHouseInformation.setVisibility(View.GONE);
+                        //表示有债务人描述一栏，那么就显示
+                        mllDebtorDesc.setVisibility(View.GONE);
                     }
+
 
 
                     //建筑面积
@@ -574,19 +594,20 @@ public class UnityLoanDetailActivity extends BaseActivity {
                     }
 
 
-                    //姓名
-                    String debtorName = loaneeInformationJson.getString("debtorName");
-                    if(TextUtils.isEmpty(debtorName)){
-                        mTvName.setText("无");
-                    }else {
-                        String subName = debtorName.substring(0, 1);
-                        String endName = "";
-                        for (int i = 0; i < debtorName.length() - 1; i++) {
-                            endName += "*";
+                        //姓名
+                        String debtorName = loaneeInformationJson.getString("debtorName");
+                        if(TextUtils.isEmpty(debtorName)){
+                            mTvName.setText("无");
+                        }else {
+                            String subName = debtorName.substring(0, 1);
+                            String endName = "";
+                            for (int i = 0; i < debtorName.length() - 1; i++) {
+                                endName += "*";
+                            }
+                            endName = subName + endName;
+                            mTvName.setText(endName);
                         }
-                        endName = subName + endName;
-                        mTvName.setText(endName);
-                    }
+
 
 
                     //性别
@@ -660,26 +681,31 @@ public class UnityLoanDetailActivity extends BaseActivity {
 
 
                     JSONArray arrayed = loaneeInformationJson.getJSONArray("_customizedFields");
-                    for (int i = 0; i < arrayed.length(); i++) {
-                        Lg.e("...................", arrayed);
-                        JSONObject objed = arrayed.getJSONObject(i);
+                    if(arrayed.length()!=0){
+                        for (int i = 0; i < arrayed.length(); i++) {
+                            Lg.e("...................", arrayed);
+                            JSONObject objed = arrayed.getJSONObject(i);
 
-                        String titleed = objed.getString("title");
-                        if (titleed.equals("预计投资期间")) {
-                            String contented = objed.getString("content");
-                            mTvInvestPeriod.setText(contented);
-                        } else if (titleed.equals("预计回款期")) {
-                            String contenteds = objed.getString("content");
-                            mTvRemoneyDate.setText(contenteds);
-                        } else if (titleed.equals("产品转让")) {
-                            String contentteds = objed.getString("content");
-                            mTvProductTransfer.setText(contentteds);
-                            mllShowProductTransfer.setVisibility(View.VISIBLE);
-                        } else if (!titleed.equals("产品转让")) {
-                            mllShowProductTransfer.setVisibility(View.GONE);
+                            String titleed = objed.getString("title");
+                            if (titleed.equals("预计投资期间")) {
+                                String contented = objed.getString("content");
+                                mTvInvestPeriod.setText(contented);
+                            } else if (titleed.equals("预计回款期")) {
+                                String contenteds = objed.getString("content");
+                                mTvRemoneyDate.setText(contenteds);
+                            } else if (titleed.equals("产品转让")) {
+                                String contentteds = objed.getString("content");
+                                mTvProductTransfer.setText(contentteds);
+                                mllShowProductTransfer.setVisibility(View.VISIBLE);
+                            } else if (!titleed.equals("产品转让")) {
+                                mllShowProductTransfer.setVisibility(View.GONE);
+                            }
+
                         }
-
+                    }else {
+                        mllShowProductTransfer.setVisibility(View.GONE);
                     }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

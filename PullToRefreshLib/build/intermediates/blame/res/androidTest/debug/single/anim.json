@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\jia16gaiban\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
-        "source": "C:\\Users\\Administrator\\Desktop\\jia16gaiban\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
         "source": "C:\\Users\\DELL\\Desktop\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\jia16gaiban\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\jia16gaiban\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\jia16gaiban\\Jia16App-Android\\PullToRefreshLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",

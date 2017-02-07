@@ -318,42 +318,51 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     case  MotionEvent.ACTION_UP :
                         if (flage == 0) {
                             int item = mViewPager.getCurrentItem()%infos.size();
-                            if (item == 0) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(0).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
-                            } else if (item == 1) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(1).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
-                            } else if (item == 2) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(2).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
-                            }else if (item == 3) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(3).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
-                            }else if (item == 4) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(4).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
-                            }else if (item == 5) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(5).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
-                            }else if (item == 6) {
-                                Intent intent = new Intent(getActivity(), WebActivity.class);
-                                intent.putExtra("linkUrl",infos.get(6).getUrl());
-                                intent.putExtra("title","公告");
-                                getActivity().startActivity(intent);
+
+                            for (int i=0;i<infos.size();i++){
+                                if(item==i){
+                                    Intent intent = new Intent(getActivity(), WebActivity.class);
+                                    intent.putExtra("linkUrl",infos.get(i).getUrl());
+                                    intent.putExtra("title","公告");
+                                    getActivity().startActivity(intent);
+                                }
                             }
+//                            if (item == 0) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(0).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            } else if (item == 1) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(1).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            } else if (item == 2) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(2).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            }else if (item == 3) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(3).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            }else if (item == 4) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(4).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            }else if (item == 5) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(5).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            }else if (item == 6) {
+//                                Intent intent = new Intent(getActivity(), WebActivity.class);
+//                                intent.putExtra("linkUrl",infos.get(6).getUrl());
+//                                intent.putExtra("title","公告");
+//                                getActivity().startActivity(intent);
+//                            }
                         }
                         //在手指滑动完图片后，能够让轮播图继续自动滚动
                         handler.sendEmptyMessageDelayed(0, 5000);
