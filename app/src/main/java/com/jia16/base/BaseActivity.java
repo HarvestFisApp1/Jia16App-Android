@@ -3,6 +3,8 @@ package com.jia16.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
@@ -18,6 +20,7 @@ import com.jia16.bean.LockPwd;
 import com.jia16.bean.UserInfo;
 import com.jia16.util.AppManager;
 import com.jia16.util.Constants;
+import com.jia16.util.Lg;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +35,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
      * 保存上一次点击时间
      */
     private SparseArray<Long> lastClickTimes;
+    private CookieManager cookieManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,6 +164,64 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
             }
         }
         sharedPreferences.edit().putString(Constants.LOCK_PWD, new Gson().toJson(lockPwds)).apply();
+    }
+
+
+    String versionName;
+
+    //获取app当前版本的方法
+    public String getVersionName(){
+        try {
+            versionName = getPackageManager().getPackageInfo(getPackageName(),0).versionName;
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionName;
+    }
+
+
+    //同步应用程序当前版本的cookie
+    public void synVersionNameCookie(Context context){
+        String app_channel = getAppMetaData(activity, "UMENG_CHANNEL");
+        Lg.e("app_channel",app_channel);
+        CookieSyncManager.createInstance(context);
+        cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptCookie(true);
+        cookieManager.setCookie(Constants.HOME_PAGE,"versionNo="+getVersionName());
+        cookieManager.setCookie(Constants.HOME_PAGE,"app_channel="+app_channel);
+        CookieSyncManager.getInstance().sync();
+    }
+
+
+
+
+    /**
+     * 获取application中指定的meta-data
+     * @return 如果没有获取成功(没有对应值，或者异常)，则返回值为空
+     * 获取友盟的渠道号
+     */
+    public static String getAppMetaData(Context ctx, String key) {
+        if (ctx == null || TextUtils.isEmpty(key)) {
+            return null;
+        }
+        String resultData = null;
+        try {
+            PackageManager packageManager = ctx.getPackageManager();
+            if (packageManager != null) {
+                ApplicationInfo applicationInfo = packageManager.getApplicationInfo(ctx.getPackageName(), PackageManager.GET_META_DATA);
+                if (applicationInfo != null) {
+                    if (applicationInfo.metaData != null) {
+                        resultData = applicationInfo.metaData.getString(key);
+                    }
+                }
+
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return resultData;
     }
 
 }

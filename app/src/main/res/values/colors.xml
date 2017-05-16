@@ -22,4 +22,16 @@
     <color name="main_color">#ff6600</color>
     <color name="devider_color_gray">#d9d9d9</color>
 
+    <color name="umeng_white">#ffffff</color>
+<color name="umeng_blue">#0086DC</color>
+<color name="umeng_black">#000000</color>
+<color name="umeng_background">#D4E0E5</color>
+<color name="umeng_text_color">#575A5C</color>
+<color name="umeng_divide">#C3C6C9</color>
+
+    <color name="progress_bar">#ff0000</color>
+
+    <color name="welcome_register">#ff0808</color>
+    <color name="welcome_open">#09ad8c</color>
+
 </resources>

@@ -27,6 +27,7 @@ import com.jia16.util.AlertUtil;
 import com.jia16.util.Constants;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.List;
 
@@ -231,5 +232,13 @@ public class LoadingActivity extends BaseActivity {
         }else{
             BaseApplication.getInstance().urlData = null;
         }
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        MobclickAgent.setDebugMode(true);
     }
 }

@@ -39,6 +39,7 @@ import com.jia16.util.Lg;
 import com.jia16.util.ToastUtil;
 import com.jia16.util.UrlHelper;
 import com.jia16.util.Util;
+import com.umeng.analytics.MobclickAgent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -82,6 +83,10 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //同步应用程序当前版本的cookie
+        synVersionNameCookie(LoginActivity.this);
+
         initViews();
         removePwd = getIntent().getBooleanExtra("removePwd", false);//UnlockGesturePasswordActivity传递过来的清除手势密码
         changeUser = getIntent().getBooleanExtra("changeUser", false);//UnlockGesturePasswordActivity传递过来的使用其他账户登录
@@ -356,6 +361,7 @@ public class LoginActivity extends BaseActivity {
                 cookieManager.setCookie(Constants.HOME_PAGE, cookie);
                 Lg.e("cookie.....%%",cookie);
             }
+
         }
         String cookieGesture =  "";
         if ("1".equals(sharedPreferences.getString(Constants.GESTURE_STATUS, "0"))) {//已经设置密码 已经开启
@@ -383,6 +389,21 @@ public class LoginActivity extends BaseActivity {
                         UserInfo userInfo = new Gson().fromJson(response.toString(), new TypeToken<UserInfo>() {
                         }.getType());
                         BaseApplication.getInstance().setUserInfo(userInfo);
+
+
+
+                        //shangjing修改增加友盟统计
+                        //友盟 统计 登录帐号
+                        if(userInfo!=null){
+                            int userId = userInfo.getId();
+                            MobclickAgent.onProfileSignIn(String.valueOf(userId));
+                        }
+
+                        //统计用户登录的事件
+                        MobclickAgent.onEvent(LoginActivity.this,"login_user");
+
+
+
 
 
                         String lockPwdstr = sharedPreferences.getString(Constants.LOCK_PWD, "");

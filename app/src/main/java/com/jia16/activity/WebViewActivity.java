@@ -3,6 +3,7 @@ package com.jia16.activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
@@ -10,6 +11,8 @@ import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.TelephonyManager;
+import android.text.ClipboardManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +25,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -41,9 +45,19 @@ import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
 import com.jia16.util.Util;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.common.SocializeConstants;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
+import com.umeng.socialize.shareboard.SnsPlatform;
+import com.umeng.socialize.utils.ShareBoardlistener;
 
 import org.json.JSONObject;
 
+import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,10 +82,32 @@ public class WebViewActivity extends BaseActivity {
 
     private RelativeLayout mLoadingView;
 
+
+    /**
+     * 添加友盟分享
+     */
+    private UMShareListener mShareListener;
+    private ShareAction mShareAction;
+    /**
+     * 分享的标题，内容，图片
+     */
+    private String sharTitle;
+    private String sharImage;
+    private String sharText;
+    private String sharUrl;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
+
+        //同步应用程序当前版本的cookie
+        synVersionNameCookie(WebViewActivity.this);
+
+        mShareListener = new CustomShareListener(this);
+
+
         String cookie = getIntent().getStringExtra("cookie");
         initViews();
         if (!TextUtils.isEmpty(cookie)) {
@@ -81,14 +117,38 @@ public class WebViewActivity extends BaseActivity {
         }
         //处理唤醒
         String url = BaseApplication.getInstance().urlData;
-        if(url == null){
+        if (url == null) {
             url = getIntent().getStringExtra("targetUrl");
         }
-        if(url == null){
-            url=Constants.HOME_PAGE;
+        if (url == null) {
+            url = Constants.HOME_PAGE;
         }
         mWebView.loadUrl(url);
         mWebView.reload();
+
+
+        /**
+         * 添加友盟分享
+         //                 */
+//          /*无自定按钮的分享面板*/
+//        mShareAction = new ShareAction(WebViewActivity.this).setDisplayList(
+//                SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ)
+//                .withText("我是分享内容,快来下载嘉石榴一起投资吧")  //设置分享内容
+//                .withTitle("来自友盟自定义分享面板")//设置分享title
+//                .withTargetUrl("http://www.qq.com")//设置分享链接
+//                //.withMedia(new UMImage(WebViewActivity.this,getResources().getDrawable(R.drawable.umeng_back_icon)))
+//                .withMedia(new UMImage(WebViewActivity.this, R.mipmap.ic_launcher))//设置分享的图片
+////                .addButton("umeng_sharebutton_custom","umeng_sharebutton_custom","umeng_socialize_qq","umeng_socialize_qq")
+////                .setShareboardclickCallback(shareBoardlistener)
+//                .setCallback(mShareListener);
+
+
+        /**
+         * 添加友盟分享
+         */
+        mShareAction = new ShareAction(WebViewActivity.this).setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ)
+                .addButton("umeng_sharebutton_custom", "umeng_sharebutton_custom", "umeng_socialize_menu_default", "umeng_socialize_menu_default")
+                .setShareboardclickCallback(shareBoardlistener);
     }
 
     @Override
@@ -133,6 +193,53 @@ public class WebViewActivity extends BaseActivity {
 
     }
 
+
+    //增加自定义分享按钮
+    private ShareBoardlistener shareBoardlistener = new ShareBoardlistener() {
+
+        @Override
+        public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
+            if (share_media == null) {
+                if (snsPlatform.mKeyword.equals("umeng_sharebutton_custom")) {
+                    Toast.makeText(WebViewActivity.this, "复制链接成功", Toast.LENGTH_LONG).show();
+                    // 得到剪贴板管理器
+                    ClipboardManager cmb = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    cmb.setText(Constants.HOME_PAGE+sharUrl);
+                }
+
+            } else {
+
+                //友盟分享sdk升级前
+//                new ShareAction(WebViewActivity.this).setPlatform(share_media)
+//                        .withText(sharText)  //设置分享内容
+//                        //.withTitle(sharTitle)//设置分享title
+//                        //.withTargetUrl(Constants.HOME_PAGE+sharUrl)//设置分享链接
+//                        //https://app.jia16.com/mjia/dist/page/more/0.0.2/images/news.png
+//                        //Constants.HOME_PAGE+sharImage
+//                        .withMedia(new UMImage(WebViewActivity.this,Constants.HOME_PAGE+sharImage))//设置分享的图片
+//                        .setCallback(mShareListener)
+//                        .share();
+
+                //友盟分享sdk升级后
+                UMWeb web = new UMWeb(Constants.HOME_PAGE+sharUrl);//(分享的链接)
+                web.setTitle(sharTitle);//标题
+                web.setThumb(new UMImage(WebViewActivity.this,Constants.HOME_PAGE+sharImage));  //缩略图(设置分享的图片)
+                web.setDescription(sharText);//描述(设置分享内容)
+
+                new ShareAction(WebViewActivity.this).setPlatform(share_media)
+                        //.withText(sharText)  //设置分享内容
+                        .withMedia(web)//设置分享的图片
+                        .setCallback(mShareListener)
+                        .share();
+            }
+        }
+    };
+
+
+
+
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -147,7 +254,39 @@ public class WebViewActivity extends BaseActivity {
 
         MobclickAgent.onResume(this);
         synCookies(this);
+
+
+        //统计用户的设备号码
+        TelephonyManager telephonyManager = (TelephonyManager) WebViewActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+        //获取本机MIEI号码（仅手机存在）
+        //String deviceId = telephonyManager.getDeviceId();
+        //获取设备序列号
+        String sn = telephonyManager.getSimSerialNumber();
+
+        //获取用户机型
+        String phonetype = android.os.Build.MODEL;
+
+        //获取Android版本号
+        String phoneVersionCode = android.os.Build.VERSION.RELEASE;
+
+        Lg.e("设备：" + sn + "机型" + phonetype + "版本号：" + phoneVersionCode);
+
+        //int duration=1;
+        //统计用户机型，版本号,设备序列号
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("userType", phonetype);//机型
+        map.put("viersionCode", phoneVersionCode);//Android版本
+        map.put("serialNumber", sn);//设备序列号
+        MobclickAgent.onEvent(WebViewActivity.this, "phone_information", map);
+        //MobclickAgent.onEventValue(WebViewActivity.this, "phoneinformation", map, duration);
+
+
+
+        //友盟分享sdk版本
+        Lg.e("...版本....", SocializeConstants.SDK_VERSION);
+
     }
+
 
     @Override
     protected void onPause() {
@@ -192,14 +331,14 @@ public class WebViewActivity extends BaseActivity {
         webSettings.setUserAgentString("android/1.0");
         Lg.e("ua", webSettings.getUserAgentString());
 
-//        targetUrl = getIntent().getStringExtra("targetUrl");
+        targetUrl = getIntent().getStringExtra("targetUrl");
 
 
-//        if (targetUrl == null) {
-//            mWebView.loadUrl(Constants.HOME_PAGE);
-//        } else {
-//            mWebView.loadUrl(targetUrl);
-//        }
+        if (targetUrl == null) {
+            mWebView.loadUrl(Constants.HOME_PAGE);
+        } else {
+            mWebView.loadUrl(targetUrl);
+        }
 
         mWebView.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) { //重写此方法表明点击网页里面的链接还是在当前的webview里跳转，不跳到浏览器那边
@@ -295,10 +434,10 @@ public class WebViewActivity extends BaseActivity {
                 String targetUrl = data.getStringExtra("targetUrl");
 
                 //shangjing修改
-                if(targetUrl==null){
-                    if(!data.getBooleanExtra("viewhome",false)){
+                if (targetUrl == null) {
+                    if (!data.getBooleanExtra("viewhome", false)) {
                         //没有设置手势密码
-                        targetUrl=WebViewActivity.this.targetUrl;
+                        targetUrl = WebViewActivity.this.targetUrl;
                     }
                 }
 
@@ -334,7 +473,7 @@ public class WebViewActivity extends BaseActivity {
             if (requestCode == 10003 || requestCode ==
                     REQUEST_CODE_CHANGE_GUESTURE) {//getUrl()获取当前页面的URL
                 String url = mWebView.getUrl();//此时应该在个人设置页面
-                Lg.e("getUrl....",url);
+                Lg.e("getUrl....", url);
                 if (url != null && url.contains("?")) {
                     String[] urls = url.split("[?]");
                     if (urls != null && urls.length > 0) {
@@ -361,6 +500,10 @@ public class WebViewActivity extends BaseActivity {
             synCookies(this);
             super.onActivityResult(requestCode, resultCode, data);
         }
+
+        //添加友盟分享
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+
 
     }
 
@@ -425,6 +568,8 @@ public class WebViewActivity extends BaseActivity {
                         UserInfo userInfo = new Gson().fromJson(response.toString(), new TypeToken<UserInfo>() {
                         }.getType());
                         BaseApplication.getInstance().setUserInfo(userInfo);
+
+
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -458,7 +603,7 @@ public class WebViewActivity extends BaseActivity {
                 mLoadingView.setVisibility(View.GONE);
             }
         } else if (url.contains("AutoLogin")) {
-            Lg.e("AutoLogin...",url);
+            Lg.e("AutoLogin...", url);
             getCurrentUser();
             synCookies(this);
         } else if (url.contains("?PDFurl")) {//注册协议
@@ -474,6 +619,41 @@ public class WebViewActivity extends BaseActivity {
             targetUrl = strings[0];
             Intent intent = new Intent(WebViewActivity.this, LoginActivity.class);
             startActivityForResult(intent, REQUEST_CODE_LOGIN);
+
+
+            //友盟分享
+//            mShareAction.open();
+
+        } else if (url.contains("shareNative")) {
+
+            Lg.e("分享的url.....",url);
+
+            String[] strin = url.split("[?]");
+            targetUrl = strin[0];
+            String paramStr = strin[1];
+            String[] params = paramStr.split("&");
+            for(int i=0;i<params.length;i++){
+                if(params[i].contains("title")){
+                    sharTitle = params[i].split("=")[1];
+                }else if(params[i].contains("image")){
+                    sharImage = params[i].split("=")[1];
+                }else if(params[i].contains("text")){
+                    sharText = params[i].split("=")[1];
+                }/*else if(params[i].contains("url")){
+                    sharUrl = params[i].split("=")[1];
+                }*/
+            }
+
+            if(url.contains("&url")){
+                sharUrl = url.split("&url=")[1];
+            }
+
+
+            Lg.e("分享的相关",sharTitle+"..."+sharImage+"...."+sharText);
+
+            //友盟分享
+            mShareAction.open();
+
         } else if (url.contains("LogoutVC")) {
             UserInfo userInfo = BaseApplication.getInstance().getUserInfo();
             int userid = 0;
@@ -485,9 +665,12 @@ public class WebViewActivity extends BaseActivity {
                 setCurrentRemindStatus(userid, "0");
             }
             BaseApplication.getInstance().setUserInfo(null);
-//            sharedPreferences.edit().putString(Constants.LOCK_PWD_REMIND, "0").apply();
             //清除登录状态
             removeCookie();
+
+            //退出登录成功后，取消账号统计
+            MobclickAgent.onProfileSignOff();
+
         } else if (url.contains("?InvestConfirmVC") && url.contains("?")) {
             mWebView.goBack();
 //http://10.139.98.226/#!list?
@@ -625,9 +808,95 @@ public class WebViewActivity extends BaseActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         String url = BaseApplication.getInstance().urlData;
-        if(url != null){
+        if (url != null) {
             mWebView.loadUrl(url);
             mWebView.reload();
         }
     }
+
+
+    /**
+     * 添加友盟分享的监听
+     */
+    private static class CustomShareListener implements UMShareListener {
+
+        private WeakReference<WebViewActivity> mActivity;
+
+        private CustomShareListener(WebViewActivity activity) {
+            mActivity = new WeakReference(activity);
+        }
+
+        @Override
+        public void onStart(SHARE_MEDIA share_media) {
+
+        }
+
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+
+            if (platform.name().equals("WEIXIN_FAVORITE")) {
+                Toast.makeText(mActivity.get(), platform + " 收藏成功啦", Toast.LENGTH_SHORT).show();
+            } else {
+                if (platform != SHARE_MEDIA.WEIXIN && platform != SHARE_MEDIA.WEIXIN_CIRCLE
+
+//                        &&platform!=SHARE_MEDIA.FOURSQUARE
+//                        &&platform!=SHARE_MEDIA.TUMBLR
+//                        &&platform!=SHARE_MEDIA.POCKET
+//                        &&platform!=SHARE_MEDIA.PINTEREST
+//                        &&platform!=SHARE_MEDIA.LINKEDIN
+//                        &&platform!=SHARE_MEDIA.INSTAGRAM
+//                        &&platform!=SHARE_MEDIA.GOOGLEPLUS
+//                        &&platform!=SHARE_MEDIA.YNOTE
+                        && platform != SHARE_MEDIA.QQ) {
+                    Toast.makeText(mActivity.get(), platform + " 分享成功啦", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            if (platform != SHARE_MEDIA.WEIXIN
+                    && platform != SHARE_MEDIA.WEIXIN_CIRCLE
+//                    &&platform!=SHARE_MEDIA.FOURSQUARE
+//                    &&platform!=SHARE_MEDIA.TUMBLR
+//                    &&platform!=SHARE_MEDIA.POCKET
+//                    &&platform!=SHARE_MEDIA.PINTEREST
+//                    &&platform!=SHARE_MEDIA.LINKEDIN
+//                    &&platform!=SHARE_MEDIA.INSTAGRAM
+//                    &&platform!=SHARE_MEDIA.GOOGLEPLUS
+//                    &&platform!=SHARE_MEDIA.YNOTE
+                    && platform != SHARE_MEDIA.QQ) {
+                Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
+                if (t != null) {
+                    com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
+                }
+            }
+
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+
+            Toast.makeText(mActivity.get(), platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        /** attention to this below ,must add this**/
+//        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+//    }
+
+    /**
+     * 屏幕横竖屏切换时避免出现window leak的问题
+     */
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mShareAction.close();
+    }
+
+
 }

@@ -8,8 +8,8 @@ android {
         applicationId "com.jia16"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 2
-        versionName "1.1"
+        versionCode 4
+        versionName "1.2.0"
     }
     buildTypes {
         release {
@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
 
     allprojects {
         repositories {
@@ -44,40 +47,27 @@ android {
 
     productFlavors {
 
-        yingyongbao {}
-        safe360 {}
+        tengxun {}
+        sougousjzs {}
+        baidusjzs {}
+        yyhzs {}
+        lianxiang {}
+        vivo {}
+        ppzs {}
+        sanxing {}
+        chuizi {}
+        sjzs360 {}
         xiaomi {}
         meizu {}
         wandoujia {}
         oppo {}
-        pp {}
         anzhi {}
-        leshangdian {}
-        samsung {}
         leshi {}
-        mumayi {}
-        aiqiyi {}
-        jinli {}
-        changhong {}
-        sougou {}
         jifeng {}
-        anbei {}
-        xiazai {}
-        shenma {}
-        zalljf {}
-        baidu {}
         huawei {}
-        guanwang {}
-        zhushou91{}
-        hiapk{}
-        Google{}
-        Nduo{}
-        woshangdian{}
-        zalljf1 {}
-        zalljf2 {}
-        zalljf3 {}
-        zalljf4 {}
-        zalljf5 {}
+        sjzs91{}
+        anzhuosjzs {}
+        jia16 {}
 
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
@@ -93,7 +83,15 @@ dependencies {
     compile project(path: ':volley')
     //    compile 'com.loopj.android:android-async-http:1.4.9'
     compile files('src/main/libs/android-support-v4.jar')
-    compile 'com.umeng.analytics:analytics:latest.integration'
-    compile files('src/main/libs/umeng-analytics-v6.0.4.jar')
     compile files('src/main/libs/utdid4all-1.0.4.jar')
+    compile files('src/main/libs/umeng-analytics-v6.0.4.jar')
+    compile files('src/main/libs/open_sdk_r5781.jar')
+    compile files('src/main/libs/SocialSDK_QQ_Full.jar')
+    compile files('src/main/libs/SocialSDK_WeiXin_Full.jar')
+    compile files('src/main/libs/umeng_shareboard_widget.jar')
+    compile files('src/main/libs/umeng_social_api.jar')
+    compile files('src/main/libs/umeng_social_net.jar')
+    compile files('src/main/libs/umeng_social_shareboard.jar')
+    compile files('src/main/libs/umeng_social_tool.jar')
+    compile files('src/main/libs/wechat-sdk-android-with-mta-1.1.6.jar')
 }

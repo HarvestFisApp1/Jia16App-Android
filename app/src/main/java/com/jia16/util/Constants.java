@@ -16,12 +16,18 @@ public class Constants {
 
 //    public static final String HOME_PAGE = "https://test2.jia16.com/mjia";
 
-    //public static final String HOME_PAGE = "http://114.55.156.253/";
-    //线上测试
-//     public static final String HOME_PAGE = "http://114.55.156.253/";
+
+    //测试环境
+    //public static final String HOME_PAGE = "http://test2app.jia16.com/";
+
+//    public static final String HOME_PAGE = "http://testapp.jia16.com/";
+
+    //线上环境
     public static final String HOME_PAGE = "https://app.jia16.com/";
+
+
     //vpn
-//    public static final String HOME_PAGE = "http://10.139.98.226/";
+//    public static final String HOME_PAGE = "http://192.168.1.116/";
 
     public static final String GESTURE_STATUS = "gesturestatus";//0本地未设置, 1本地开启 2 本地关闭
 

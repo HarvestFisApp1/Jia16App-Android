@@ -18,6 +18,7 @@ import android.widget.ImageView;
 
 import com.jia16.R;
 import com.jia16.base.BaseActivity;
+import com.jia16.util.Constants;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -50,6 +51,8 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
 
 
     private Button start;
+    private Button startRegister;
+    private ImageView mWelcomeClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +68,9 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
      */
     @SuppressLint("InflateParams")
     protected void initView() {
-        findViewById(R.id.welcomeClose).setOnClickListener(this);
+//        findViewById(R.id.welcomeClose).setOnClickListener(this);
+        mWelcomeClose = (ImageView) findViewById(R.id.welcomeClose);
+        mWelcomeClose.setOnClickListener(this);
         point1 = (ImageView) findViewById(R.id.loading_point_1);
         point2 = (ImageView) findViewById(R.id.loading_point_2);
         point3 = (ImageView) findViewById(R.id.loading_point_3);
@@ -98,6 +103,9 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
         }
         start = (Button) findViewById(R.id.start_btn);
         start.setOnClickListener(this);
+        startRegister = (Button) findViewById(R.id.start_bt);
+        startRegister.setOnClickListener(this);
+
         viewPager.setAdapter(myAdapter);
         //初始化当前显示的view
         viewPager.setCurrentItem(0);
@@ -107,33 +115,43 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
             public void onPageSelected(int arg0) {
                 if (arg0 == 0) {
                     start.setVisibility(View.GONE);
+                    startRegister.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_yellow_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
                     point4.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomeClose.setVisibility(View.GONE);
                 } else if (arg0 == 1) {
                     start.setVisibility(View.GONE);
+                    startRegister.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_yellow_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
                     point4.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomeClose.setVisibility(View.GONE);
                 } else if (arg0 == 2) {
                     start.setVisibility(View.GONE);
+                    startRegister.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_yellow_dot);
                     point4.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomeClose.setVisibility(View.GONE);
                 } else if (arg0 == 3) {
                     start.setVisibility(View.VISIBLE);
+                    startRegister.setVisibility(View.VISIBLE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
                     point4.setImageResource(R.mipmap.icon_page_yellow_dot);
+                    mWelcomeClose.setVisibility(View.VISIBLE);
                 } else {
                     start.setVisibility(View.GONE);
+                    startRegister.setVisibility(View.GONE);
                     point1.setImageResource(R.mipmap.icon_page_blue_dot);
                     point2.setImageResource(R.mipmap.icon_page_blue_dot);
                     point3.setImageResource(R.mipmap.icon_page_blue_dot);
+                    mWelcomeClose.setVisibility(View.GONE);
                 }
             }
 
@@ -184,10 +202,17 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
                 point4.setImageResource(R.mipmap.icon_page_yellow_dot);
                 break;
             case R.id.start_btn:
+                //跳转到首页
                 gotoMainPage();
                 break;
             case R.id.welcomeClose:
-                gotoMainPage();
+                //跳转到首页
+                //gotoMainPage();
+                break;
+
+            case R.id.start_bt:
+                //跳转到注册页面
+                gotoRegisterPage();
                 break;
             default:
                 break;
@@ -198,10 +223,24 @@ public class WelcomeActivity extends BaseActivity implements OnClickListener {
      * 跳转到首页
      */
     private void gotoMainPage() {
+        sharedPreferences.edit().putBoolean("isFirstRun", false).apply();
+        //跳转到注册页面
+        Intent intent = new Intent(this, WebViewActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+
+    /**
+     * 跳转到注册页面
+     */
+    private void gotoRegisterPage() {
 
         sharedPreferences.edit().putBoolean("isFirstRun", false).apply();
-        //跳转到首页
+        //跳转到注册页面
         Intent intent = new Intent(this, WebViewActivity.class);
+        intent.putExtra("targetUrl", Constants.HOME_PAGE+"/#!register");
         startActivity(intent);
         finish();
     }
