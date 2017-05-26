@@ -18,12 +18,12 @@ public class Constants {
 
 
     //测试环境
-    //public static final String HOME_PAGE = "http://test2app.jia16.com/";
+//    public static final String HOME_PAGE = "http://test2app.jia16.com/";
 
-//    public static final String HOME_PAGE = "http://testapp.jia16.com/";
+    public static final String HOME_PAGE = "https://testapp.jia16.com/";
 
     //线上环境
-    public static final String HOME_PAGE = "https://app.jia16.com/";
+//    public static final String HOME_PAGE = "https://app.jia16.com/";
 
 
     //vpn

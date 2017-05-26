@@ -328,7 +328,17 @@ public class WebViewActivity extends BaseActivity {
         webSettings.setAppCachePath(getCacheDir().getPath());
         webSettings.setUseWideViewPort(true);// 影响默认满屏和双击缩放
         webSettings.setLoadWithOverviewMode(true);// 影响默认满屏和手势缩放
-        webSettings.setUserAgentString("android/1.0");
+        //webSettings.setUserAgentString("android/1.0");
+
+        // 修改ua使得web端正确判断
+//        String ua = webSettings.getUserAgentString();
+//
+//        Lg.e("ua", webSettings.getUserAgentString());
+
+        // 修改ua使得web端正确判断
+        String ua = webSettings.getUserAgentString();
+        webSettings.setUserAgentString(ua+"; android/1.0");
+
         Lg.e("ua", webSettings.getUserAgentString());
 
         targetUrl = getIntent().getStringExtra("targetUrl");
