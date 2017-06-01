@@ -40,6 +40,7 @@ import com.jia16.base.BaseApplication;
 import com.jia16.bean.LockPwd;
 import com.jia16.bean.UserInfo;
 import com.jia16.util.AlertUtil;
+import com.jia16.util.AppManager;
 import com.jia16.util.Constants;
 import com.jia16.util.Lg;
 import com.jia16.util.UrlHelper;
@@ -624,15 +625,15 @@ public class WebViewActivity extends BaseActivity {
             intent.setData(content_url);
             startActivity(intent);
         } else if (url.contains("LoginVC") && url.contains("?")) { //                http://100.100.5.96:1990/#!account?LoginVC 跳转登录
-            Lg.e("currentcookie====", CookieManager.getInstance().getCookie(Constants.HOME_PAGE));
-            String[] strings = url.split("[?]");
-            targetUrl = strings[0];
-            Intent intent = new Intent(WebViewActivity.this, LoginActivity.class);
-            startActivityForResult(intent, REQUEST_CODE_LOGIN);
 
+            if(AppManager.getAppManager().getActivity(LoginActivity.class) == null){
+                Lg.e("currentcookie====", CookieManager.getInstance().getCookie(Constants.HOME_PAGE));
+                String[] strings = url.split("[?]");
+                targetUrl = strings[0];
+                Intent intent = new Intent(WebViewActivity.this, LoginActivity.class);
+                startActivityForResult(intent, REQUEST_CODE_LOGIN);
+            }
 
-            //友盟分享
-//            mShareAction.open();
 
         } else if (url.contains("shareNative")) {
 

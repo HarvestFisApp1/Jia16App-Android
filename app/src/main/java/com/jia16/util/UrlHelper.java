@@ -12,9 +12,9 @@ public class UrlHelper {
     public static final String HTTPS = "https://";
 
     //线上测试
-//    public static final String HTTP_SERVER = "114.55.156.98";
-//
-//    public static final String HTTPS_SERVER = "app.jia16.com";
+    public static final String HTTP_SERVER = "114.55.156.98";
+
+    public static final String HTTPS_SERVER = "app.jia16.com";
 
 
 //http://114.55.156.253/test.html
@@ -25,9 +25,9 @@ public class UrlHelper {
 
 
 
-    public static final String HTTP_SERVER = "testapp.jia16.com";
-
-    public static final String HTTPS_SERVER = "testapp.jia16.com";
+//    public static final String HTTP_SERVER = "testapp.jia16.com";
+//
+//    public static final String HTTPS_SERVER = "testapp.jia16.com";
 
 
 

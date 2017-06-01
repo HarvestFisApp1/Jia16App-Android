@@ -82,10 +82,12 @@
 
         </activity>
 
+        <!--android:windowSoftInputMode="adjustResize|stateHidden|adjustPan"为了在弹出键盘时不要把导航栏顶上去-->
         <activity
             android:name=".activity.WebViewActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden|adjustPan"></activity>
 
         <activity
             android:name=".activity.LoginActivity"
