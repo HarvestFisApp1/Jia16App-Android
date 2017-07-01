@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 
@@ -222,6 +223,18 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         }
 
         return resultData;
+    }
+
+
+    /**
+     * 当软键盘没有关闭时，关闭软键盘
+     */
+    public void closeKeyboard() {
+        View view = getWindow().peekDecorView();
+        if (view != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
 }

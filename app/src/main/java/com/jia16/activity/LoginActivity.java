@@ -159,6 +159,10 @@ public class LoginActivity extends BaseActivity {
                 goHome();
                 break;
             case R.id.btn_sure:
+
+                //当软键盘没有关闭时，关闭软键盘
+                closeKeyboard();
+
                 String mPhone = mEditPhone.getText().toString();
                 String mPwd = mEditPword.getText().toString();
                 if (TextUtils.isEmpty(mPhone)) {

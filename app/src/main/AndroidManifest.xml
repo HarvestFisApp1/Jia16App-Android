@@ -60,7 +60,7 @@
 
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="anzhuosjzs" >
+            android:value="xykjapp" >
         </meta-data>
 
         <activity

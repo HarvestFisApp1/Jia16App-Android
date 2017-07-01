@@ -329,6 +329,9 @@ public class WebViewActivity extends BaseActivity {
         webSettings.setAppCachePath(getCacheDir().getPath());
         webSettings.setUseWideViewPort(true);// 影响默认满屏和双击缩放
         webSettings.setLoadWithOverviewMode(true);// 影响默认满屏和手势缩放
+
+        webSettings.setTextZoom(100);//用户设置字体大小不影响webview的字体改变
+
         //webSettings.setUserAgentString("android/1.0");
 
         // 修改ua使得web端正确判断
@@ -625,7 +628,7 @@ public class WebViewActivity extends BaseActivity {
             intent.setData(content_url);
             startActivity(intent);
         } else if (url.contains("LoginVC") && url.contains("?")) { //                http://100.100.5.96:1990/#!account?LoginVC 跳转登录
-
+            Lg.e("进来未登陆的地址。。。。",url);
             if(AppManager.getAppManager().getActivity(LoginActivity.class) == null){
                 Lg.e("currentcookie====", CookieManager.getInstance().getCookie(Constants.HOME_PAGE));
                 String[] strings = url.split("[?]");

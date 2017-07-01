@@ -68,6 +68,7 @@ android {
         sjzs91{}
         anzhuosjzs {}
         jia16 {}
+        xykjapp {}
 
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
