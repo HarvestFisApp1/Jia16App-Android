@@ -95,4 +95,5 @@ dependencies {
     compile files('src/main/libs/umeng_social_shareboard.jar')
     compile files('src/main/libs/umeng_social_tool.jar')
     compile files('src/main/libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    compile files('src/main/libs/universal-image-loader-1.9.4-with-sources.jar')
 }

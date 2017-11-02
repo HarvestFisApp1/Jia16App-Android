@@ -14,6 +14,8 @@ import com.jia16.bean.LockPwd;
 import com.jia16.bean.UserInfo;
 import com.jia16.util.Constants;
 import com.jia16.util.PreferencesUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -36,6 +38,8 @@ public class BaseApplication extends Application {
     // 不必为每一次HTTP请求都创建一个RequestQueue对象，推荐在application中初始化
     private static RequestQueue requestQueue;
 
+    public SharedPreferences sharedPreferences;
+
     public static RequestQueue getRequestQueue() {
         return requestQueue;
     }
@@ -54,7 +58,7 @@ public class BaseApplication extends Application {
     /**
      * 是否调试模式
      */
-    public boolean isDebug = false;
+    public boolean isDebug = true;
 
 
     private UserInfo userInfo;
@@ -88,6 +92,12 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        sharedPreferences=getSharedPreferences(Constants.STORE_NAME,MODE_PRIVATE);
+
+        //加载图片,初始化imageloader.
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(this));
+
         requestQueue = Volley.newRequestQueue(this);
         instance = this;
         AppContext.init(this);
@@ -116,6 +126,23 @@ public class BaseApplication extends Application {
 
     }
 
+
+    /**
+     * 判断是否登录过
+     */
+
+    public boolean isLogined(){
+        boolean isLogined=false;
+        String Cookie = sharedPreferences.getString("Cookie", "");
+        String csrf = sharedPreferences.getString("_csrf", "");
+//        if(Cookie==null||Cookie.isEmpty()){
+        if(TextUtils.isEmpty(csrf)){
+            isLogined=false;
+        }else{
+            isLogined=true;
+        }
+        return isLogined;
+    }
 
 
     //各个平台的配置，建议放在全局Application或者程序入口

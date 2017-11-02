@@ -33,6 +33,7 @@ public class Version implements Serializable {
     private String modifyTime;
     private String modifyBy;
     private String url;
+    private String image;
 
     public String getType() {
         return type;
@@ -120,5 +121,13 @@ public class Version implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -396,6 +396,91 @@ public class AlertUtil {
         return dlg;
     }
 
+//    /**
+//     * 显示app更新的提示框
+//     *
+//     * @param context
+//     * @param content
+//     */
+//    public static AlertDialog showUpdateDialog(Activity context, String title, String content, String image, final DialogListener dmDialogListener,
+//                                               final boolean forceUpdate) {
+//        View view = View.inflate(context, R.layout.dialog_app_update, null);
+//        final AlertDialog dlg = new AlertDialog.Builder(context).create();
+//        dlg.setView(view);
+//        if (context.isFinishing()) {
+//            return null;
+//        }
+//        dlg.show();
+//        final Window window = dlg.getWindow();
+//        // 实例化一个ColorDrawable颜色为半透明//#19e64dff  #c0000000   #88000000
+//        ColorDrawable dw = new ColorDrawable(Color.parseColor("#00000000"));
+//        window.setBackgroundDrawable(dw);
+//        window.setContentView(R.layout.dialog_app_update);
+//        //TextView contentView = (TextView) window.findViewById(R.id.tv_content);
+//        //TextView updateTitle = (TextView) window.findViewById(R.id.tv_title);
+//        //contentView.setText(content);
+//        //updateTitle.setText(title);
+//
+//        ImageView mIvImage = (ImageView) window.findViewById(R.id.iv_image);
+//
+//        ImageLoader.getInstance().displayImage(image, mIvImage, ImageLoadOptions.fadeIn_options_nocache, new ImageLoadingListener() {
+//            @Override
+//            public void onLoadingStarted(String s, View view) {
+//
+//            }
+//
+//            @Override
+//            public void onLoadingFailed(String s, View view, FailReason failReason) {
+//
+//            }
+//
+//            @Override
+//            public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+//                //加载完成,显示立即更新按钮,显示关闭图片
+//                window.findViewById(R.id.tv_update_now).setVisibility(View.VISIBLE);
+//
+//                if (forceUpdate) {
+//                    window.findViewById(R.id.tv_ignore).setVisibility(View.GONE);
+//                    //window.findViewById(R.id.update_devider).setVisibility(View.GONE);
+//                    //window.findViewById(R.id.tv_update_now).setBackgroundResource(R.drawable.selector_dialog_force_update_button);
+//                }else {
+//                    window.findViewById(R.id.tv_ignore).setVisibility(View.VISIBLE);
+//                }
+//            }
+//
+//            @Override
+//            public void onLoadingCancelled(String s, View view) {
+//
+//            }
+//        });
+//
+//
+//
+//        window.findViewById(R.id.tv_ignore).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (dmDialogListener != null) {
+//                    dmDialogListener.onLeftClick(dlg);
+//                }
+//                if (!forceUpdate)
+//                    dlg.cancel();
+//            }
+//        });
+//        window.findViewById(R.id.tv_update_now).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (dmDialogListener != null) {
+//                    dmDialogListener.onRightClick(dlg);
+//                }
+//                dlg.cancel();
+//
+//            }
+//        });
+//        return dlg;
+//    }
+
+
+
     public interface DialogListener {
         void onLeftClick(final AlertDialog dlg);
 

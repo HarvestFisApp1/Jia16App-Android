@@ -250,6 +250,7 @@ public class LoginActivity extends BaseActivity {
 //            jsonObject.put("password", "abcd1234");
             jsonObject.put("name", mEditPhone.getText().toString());
             jsonObject.put("password", mEditPword.getText().toString());
+            jsonObject.put("channel", "app");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -382,7 +383,7 @@ public class LoginActivity extends BaseActivity {
     }
 
 
-    private void getCurrentUser() {
+    public void getCurrentUser() {
         String url = UrlHelper.getUrl("/ums/users/current");
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {

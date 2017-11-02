@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -56,6 +57,11 @@ public class LoadingActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
         isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
+
+//        if(BaseApplication.getInstance().isLogined()){
+//            getCurrentUser();
+//        }
+
         if (isFirstRun) {
             //第一次安装使用显示欢迎、指引页
             Intent intent = new Intent(this, WelcomeActivity.class);
@@ -70,13 +76,13 @@ public class LoadingActivity extends BaseActivity {
         //shangjing修改
         //卓金服H5页面唤醒嘉石榴app获取参数
         Uri uridata = this.getIntent().getData();
-        if(uridata !=null){
+        if (uridata != null) {
             String url = Constants.HOME_PAGE + uridata.toString().substring(8);
-            Lg.e("uridata.........",uridata);//jia16://#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN]
-            Lg.e("url......",url);//https://app.jia16.com/#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN
+            Lg.e("uridata.........", uridata);//jia16://#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN]
+            Lg.e("url......", url);//https://app.jia16.com/#!newdetail&userid=15&subjectid=17&canVoucher=n&type=P2P_LOAN
             //将数据存储到全局变量中
             BaseApplication.getInstance().urlData = url;
-        }else{
+        } else {
             BaseApplication.getInstance().urlData = null;
         }
 
@@ -94,6 +100,7 @@ public class LoadingActivity extends BaseActivity {
                     String content = version.getDescr();
                     final String url = version.getUrl();
                     String ifUpdate = version.getIfUpdate();
+
 //                    final String url = "http://apk.hiapk.com/web/api.do?qt=8051&id=723";
                     if (version.getVersionId() > getVerCode()) {//当前版本有更新
                         AlertDialog dialog = AlertUtil.showUpdateDialog(LoadingActivity.this, versionName == null ? "" : versionName + "新版本更新", content == null ? "" : content, new AlertUtil.DialogListener() {
@@ -111,6 +118,7 @@ public class LoadingActivity extends BaseActivity {
                             public void onTopClick(AlertDialog dlg) {
 
                             }
+
                             @Override
                             public void onCenterClick(AlertDialog dlg) {
 
@@ -226,10 +234,10 @@ public class LoadingActivity extends BaseActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Uri uridata = this.getIntent().getData();
-        if(uridata !=null){
+        if (uridata != null) {
             String url = Constants.HOME_PAGE + uridata.toString().substring(8);
             BaseApplication.getInstance().urlData = url;
-        }else{
+        } else {
             BaseApplication.getInstance().urlData = null;
         }
     }
@@ -240,5 +248,15 @@ public class LoadingActivity extends BaseActivity {
         super.onResume();
 
         MobclickAgent.setDebugMode(true);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

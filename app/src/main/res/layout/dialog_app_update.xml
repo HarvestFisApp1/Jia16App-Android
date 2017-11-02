@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--&lt;!&ndash;<?xml version="1.0" encoding="utf-8"?>&ndash;&gt;&lt;!&ndash;<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&lt;!&ndash;android:layout_gravity="center"&ndash;&gt;&lt;!&ndash;android:background="@drawable/update_dialog_bg"&ndash;&gt;&lt;!&ndash;android:orientation="vertical">&ndash;&gt;<?xml version="1.0" encoding="utf-8"?>-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

@@ -8,12 +8,18 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jia16.R;
@@ -22,11 +28,15 @@ import com.jia16.bean.UserInfo;
 import com.jia16.util.AppManager;
 import com.jia16.util.Constants;
 import com.jia16.util.Lg;
+import com.jia16.util.UrlHelper;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class BaseActivity extends FragmentActivity implements View.OnClickListener {
 
@@ -168,6 +178,46 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
+
+    public void getCurrentUser() {
+        String url = UrlHelper.getUrl("/ums/users/current");
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Lg.e("getcurrentUser", response.toString());
+                        UserInfo userInfo = new Gson().fromJson(response.toString(), new TypeToken<UserInfo>() {
+                        }.getType());
+                        BaseApplication.getInstance().setUserInfo(userInfo);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("CSRF-TOKEN", sharedPreferences.getString("_csrf", ""));
+                headers.put("Cookie", sharedPreferences.getString("Cookie", ""));
+//                headers.put("Content-Type", "application/json; charset=utf-8");
+                return headers;
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+
+        };
+        BaseApplication.getRequestQueue().add(stringRequest);
+    }
+
+
+
     String versionName;
 
     //获取app当前版本的方法
@@ -236,5 +286,8 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
             inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+
+
 
 }

@@ -127,6 +127,9 @@ public class WebViewActivity extends BaseActivity {
         mWebView.loadUrl(url);
         mWebView.reload();
 
+        String app_channel = getAppMetaData(WebViewActivity.this, "UMENG_CHANNEL");
+        Lg.e(".....app_channel......",app_channel);
+
 
         /**
          * 添加友盟分享
@@ -416,7 +419,13 @@ public class WebViewActivity extends BaseActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_CODE_SET_GUESTURE) {
                 mWebView.loadUrl(WebViewActivity.this.targetUrl);
-                mWebView.reload();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mWebView.reload();
+                    }
+                },20);
+
             } else if (requestCode == REQUEST_CODE_CHANGE_GUESTURE) {
                 String targetUrl = data.getStringExtra("targetUrl");
                 if (!TextUtils.isEmpty(targetUrl)) {
@@ -442,7 +451,7 @@ public class WebViewActivity extends BaseActivity {
                     public void run() {
                         mWebView.reload();
                     }
-                }, 500);
+                }, 20);
             } else if (requestCode == REQUEST_CODE_LOGIN) {
                 String cookie = data.getStringExtra("cookie");
                 String targetUrl = data.getStringExtra("targetUrl");
@@ -475,7 +484,7 @@ public class WebViewActivity extends BaseActivity {
                                 mWebView.reload();
                             }
                         }
-                    }, 500);
+                    }, 20);
                 } else {
                     mWebView.loadUrl(WebViewActivity.this.targetUrl);
                     mWebView.reload();
@@ -497,7 +506,7 @@ public class WebViewActivity extends BaseActivity {
                             public void run() {
                                 mWebView.reload();
                             }
-                        }, 500);
+                        }, 20);
                     }
                 }
                 //关闭手势密码 直接退出 这里不能刷新 刷新的话会重新进页面
@@ -571,7 +580,7 @@ public class WebViewActivity extends BaseActivity {
         Lg.e("Cookie", cookieManager.getCookie(Constants.HOME_PAGE));
     }
 
-    private void getCurrentUser() {
+    public void getCurrentUser() {
         String url = UrlHelper.getUrl("/ums/users/current");
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
